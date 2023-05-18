@@ -1,0 +1,50 @@
+section.vacancies
+  @include pt-30
+  @include pb-30
+  background: linear-gradient(to bottom,$blue-grey8 0%, $blue-grey8 80%, $neutral0 80%, $neutral0 100%)
+
+
+  .wrapper
+    align-items: center
+
+    .item_1
+      grid-column: 1/7
+
+    .item_2
+      grid-column: 8/-1
+      display: flex
+      justify-content: center
+      flex-direction: column
+      align-items: flex-start
+      .topline
+        @include mb-2
+
+        span.vacancies_amount
+          background: $green50
+          border-radius: 50%
+          width: 32px
+          height: 32px
+          display: inline-block
+          color: $neutral0
+          margin-right: 8px
+
+@include s
+  section.vacancies
+    .wrapper
+
+      .item_1
+        grid-column: 1/-1
+        order: 2
+        margin-right: -20px
+        margin-left: -20px
+
+      .item_2
+        grid-column: 1/-1
+        order: 1
+        @include mb-12
+
+@include m
+  section.vacancies
+    background: linear-gradient(to bottom,$blue-grey8 0%, $blue-grey8 90%, $neutral0 90%, $neutral0 100%)
+
+    .wrapper

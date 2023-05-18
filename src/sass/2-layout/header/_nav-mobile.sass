@@ -1,0 +1,104 @@
+//******* Mobile Menu *******//
+@media only screen and (max-width: 1023px)
+	.menu-button-links
+		height: 0
+		width: 100vw
+		display: flex
+
+	.menu-button-links button, .menu-button-links button:active, .menu-button-links button:focus, .menu-button-links button:visited, .menu-button-links button:focus-visible, #menubutton
+		margin: 0
+		padding: 0
+		background: none !important
+		border: none !important
+		z-index: 100
+		position: absolute
+		right: 24px
+		align-self: center
+
+	.menu-button-links [role="menu"]
+		margin-left: auto
+		margin-right:  auto
+		display: flex
+		flex-direction: column
+		align-items: center
+		text-align: center
+		background: $neutral0
+		height: 100vh
+		width: 100%
+		overflow: scroll
+		transform: translateY(50vw)
+		transition: transform ease .7s, opacity ease .7s
+		will-change: transform, opacity, translate
+
+	.menu-button-links [role="menuitem"],
+	.menu-button-links [role="separator"]
+		margin: 0
+		padding: 0
+		color: $red50
+		font-size: 28px
+		line-height: 34px
+
+	a.st_lvl__link
+		font-size: 29px !important
+		line-height: 120% !important
+
+	svg.nxt_lvl__arrow
+		//display: none
+
+
+	ul.nav
+		padding-top: 40px
+		position: relative
+		z-index: 90
+		li.st_lvl__item
+			margin-bottom: 24px
+
+	[aria-expanded="true"] + ul.nav
+		margin-top: 55px
+		transition: margin-top ease 1.4s
+		will-change: margin-top
+
+	header.sticky .header_bar .menu-button-links [aria-expanded="true"] + ul.nav
+		margin-top: 47px
+
+	[aria-expanded="true"] + [role="menu"]
+		opacity: 1
+		visibility: visible
+		transform: translateY(0)
+
+	[aria-expanded="false"] + [role="menu"]
+		opacity: 0
+		visibility: hidden
+
+
+
+
+	ul.leistungen_items, ul.karriere_items
+		display: flex
+		flex-direction: column
+		justify-content: center
+		transition: opacity ease 1s, max-height ease 1.4s
+		opacity: 0
+		max-height: 0
+		overflow: hidden
+		visibility: hidden
+		li
+			margin-bottom: 16px
+			a
+				h6
+					color: $red50
+					transition: inherit
+					margin-bottom: 0
+				picture
+					display: none
+
+	.leistungen_items.open
+		visibility: visible
+		opacity: 1
+		max-height: 100%
+		margin-top: 24px
+
+
+@include s
+	#menubutton
+		right: 20px

@@ -1,0 +1,80 @@
+p
+	@include paragraph_regular
+	@include mb-8
+	margin-top: 0
+
+.topline
+	color: $blue-grey50
+	@include font_heavy
+	text-align: center
+	@include mb-4
+
+.h_intro
+	font-size: 58px
+	line-height: 150%
+
+.copy_intro
+	font-size: 23px
+	line-height: 150%
+
+
+.percent
+	@include font_heavy
+	color: $green50
+	font-size: 120px
+	line-height: 120%
+
+
+.quote_line
+	text-align: center
+	font-size: min(max(6vw), 3.111rem)
+	line-height: min(max(9vw), 4.667rem)
+	margin-top: 40px
+	margin-bottom: 0
+	width: 80%
+
+.quote_line_small
+	text-align: center
+	font-size: min(max(5vw), 2.222rem)
+	line-height: min(max(6vw), 3.333rem)
+	margin-top: 40px
+	width: 80%
+
+dfn, cite, em, i
+	font-style: italic
+
+
+blockquote
+	margin: 0 1.5em
+
+
+address
+	margin: 0 0 1.5em
+
+
+pre
+	background: $black
+	font-family: $font_pre
+	margin-bottom: 1.6em
+	max-width: 100%
+	overflow: auto
+	padding: 1.6em
+
+
+code, kbd, tt, var
+	font-family: $font_code
+
+
+
+abbr, acronym
+	border-bottom: 1px dotted $black
+	cursor: help
+
+
+mark, ins
+	background: $black
+	text-decoration: none
+
+
+strong
+	@include font_heavy

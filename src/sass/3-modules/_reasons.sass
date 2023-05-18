@@ -1,0 +1,39 @@
+section.reasons
+	background: $neutral0
+	@include pt-30
+	margin-bottom: 0
+
+	.swiper-slide
+		display: flex
+		justify-content: space-between
+		align-items: center
+		flex-direction: row
+		flex-wrap: wrap
+		line-height: 0
+		height: 840px
+		.item_1
+			display: flex
+			flex-direction: column
+			align-items: center
+			width: 50%
+			p.topline
+				margin-bottom: 16px
+			h3
+				margin: 0
+			svg
+				@include mt-10
+				@include mb-10
+			p.copy
+				margin: 0
+				text-align: center
+
+		.item_2
+			width: 50%
+
+	@include s
+		.swiper-slide
+			height: 100%
+			.item_1, .item_2
+				width: 100%
+			.item_1
+				margin-bottom: 128px

@@ -1,0 +1,164 @@
+@import '../node_modules/swiper/swiper'
+@import '../node_modules/swiper/modules/autoplay/autoplay'
+@import '../node_modules/swiper/modules/lazy/lazy'
+@import '../node_modules/swiper/modules/pagination/pagination'
+@import '../node_modules/swiper/modules/effect-fade/effect-fade'
+@import '../node_modules/swiper/modules/effect-cards/effect-cards'
+//@import '../node_modules/swiper/modules/navigation/navigation'
+
+.swiper-btn-prev, .swiper-btn-next
+  border: solid 2px
+  border-color: $green50
+  height: 64px
+  width: 64px
+  cursor: pointer
+  z-index: 10
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: border-color ease .7s
+  will-change: border-color
+
+  &:hover
+    border-color: $red50
+  //svg.next_btn
+    width: 64px
+    height: 64px
+    transition: fill ease .7s
+    will-change: fill
+    fill: $red
+
+  //svg.next_btn:hover
+    fill: url(#darkred__hover)
+
+.swiper-btn-prev
+  left: 0
+  right: auto
+
+.swiper-btn-next
+  left: auto
+  right: 0
+  svg.next_btn
+    transform: rotate(180deg)
+
+.swiper-button-disabled
+  border-color: $blue-grey30
+  transition: border-color ease .7s
+  will-change: border-color
+  svg.next_btn
+    stroke: $blue-grey30
+    &:hover
+      stroke: $red
+
+
+.swiper-pagination
+  span.swiper-pagination-bullet
+    width: 64px
+    height: 4px
+    background: rgba($green40, .4)
+    transition: all ease .7s
+    opacity: 1
+    border-radius: 0
+
+  span.swiper-pagination-bullet-active
+    background: $green50
+
+
+//indexSwiper
+.index_swiper
+  height: 70vh
+  .visual
+    width: 100vw
+    height: 100%
+    display: block
+    position: absolute
+    z-index: 2
+    background: rgba($black, 0.35)
+
+
+//Sliders
+.galerie_swiper, .historie_swiper
+  //overflow-y: visible !important
+
+  .swiper-wrapper
+    .swiper-slide
+      width: 538px
+      height: 100%
+      max-width: 538px
+      //max-height: 404px
+      p
+        margin-bottom: 0
+        @include mt-4
+
+  .swiper-pagination
+    position: relative
+    margin-top: 86px
+    display: flex
+    justify-content: flex-end
+
+  .swiper-nav
+    position: absolute
+    top: 0
+    right: 0
+    display: flex
+    justify-content: space-between
+
+    div:nth-of-type(1)
+      margin-right: 32px
+
+
+//reasonsSwiper
+.reasons_swiper
+
+  .swiper-pagination
+    display: flex
+    width: 50%
+    justify-content: center
+    bottom: 124px
+    span.swiper-pagination-bullet
+      width: 56px
+      height: 56px
+      transition: all ease .7s
+      opacity: 1
+      color: $red50
+      background: transparent
+      border: solid 2px
+      border-color: $green50
+      border-radius: 50%
+      display: flex
+      justify-content: center
+      align-items: center
+      transition: border-color ease .7s
+      will-change: border-color
+      &:hover
+        border-color: $red50
+
+    span.swiper-pagination-bullet-active
+      border-color: $red50
+
+
+
+
+@include m
+  .galerie_swiper, .historie_swiper
+    .swiper-nav
+      display: none
+
+    .swiper-pagination
+      span.swiper-pagination-bullet
+        width: 32px
+
+@include s
+  .reasons_swiper
+
+    .swiper-pagination
+      width: 100%
+      bottom: 54%
+
+  .galerie_swiper, .historie_swiper
+    .swiper-nav
+      display: none
+
+    .swiper-pagination
+      span.swiper-pagination-bullet
+        width: 16px

@@ -1,0 +1,115 @@
+form
+  display: flex
+  flex-wrap: wrap
+  margin: 0 auto
+  position: relative
+  justify-content: space-between
+  appearance: none
+
+  span
+    display: flex
+    justify-content: flex-end
+    width: 100%
+
+    p
+      margin: 0
+      padding: 0
+
+input, textarea, select, input:required
+  border: solid 2px $blue-grey20
+  background: $neutral0
+  padding: .5rem
+  transition: all ease .7s
+  outline: none
+  margin-top: .25rem
+  border-radius: 0px
+  appearance: none
+
+label
+  display: flex
+  flex-direction: column
+  width: 48%
+  color: $blue-grey80
+  outline: none
+  @include mb-8
+  text-align: left
+
+input:hover, textarea:hover, select:hover
+  border: solid 2px $blue-grey30
+
+input:not(:focus):not(:placeholder-shown):invalid, input:not(:focus):not(:placeholder-shown):required:invalid
+  border: solid 2px $error
+
+span.error-message
+  display: none
+  text-align: left
+  color: $error
+
+input:not(:focus):not(:placeholder-shown):invalid ~ span.error-message
+  display: block
+
+
+//input:focus:invalid
+  border: solid 3px $red_light50
+  color: $red_light50
+
+input:focus-visible, textarea:focus-visible, select:focus-visible,
+input:focus, textarea:focus, select:focus
+  border: solid 2px $blue-grey40
+  outline: none
+  color: $red
+
+textarea
+  min-height: 160px
+  width: 100%
+
+fieldset
+  padding: 0
+  border: none
+  width: 100%
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+fieldset.client_contact
+  label
+
+fieldset.message
+  label
+    width: 100%
+
+fieldset.privacy
+  display: flex
+  align-items: center
+
+  input[type="checkbox"]
+    height: 32px
+    width: 32px
+    margin-right: 16px
+    display: grid
+    place-content: center
+    &:checked
+      &::before
+        content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>')
+        position: absolute
+        width: 24px
+        height: 24px
+        position: absolute
+        top: 7px
+        left: 5px
+  label
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    flex-direction: row
+    align-items: center
+    p
+      margin-bottom: 0
+      width: auto
+    span.error-message
+      width: 100%
+
+
+@include s
+  label
+    width: 100%

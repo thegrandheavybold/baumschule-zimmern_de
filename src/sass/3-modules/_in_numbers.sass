@@ -1,0 +1,31 @@
+section.in_numbers
+	@include pt-30
+	@include pb-30
+	background: $blue-grey8
+
+	.wrapper
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+
+		.topline
+			width: 100%
+			display: block
+
+		.jahre, .mitarbeiter, .projekte
+			text-align: center
+			width: 33.33%
+			p
+				margin-bottom: 0
+
+	@include s
+		.wrapper
+			.jahre, .mitarbeiter, .projekte
+				display: flex
+				flex-direction: column
+				align-items: center
+				width: 100%
+
+			.mitarbeiter
+				@include mb-10
+				@include mt-10

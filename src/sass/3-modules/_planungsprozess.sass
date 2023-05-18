@@ -1,0 +1,143 @@
+section.planungsprozess
+	background: $blue-grey70
+	color: $neutral0
+	@include pt-30
+	@include pb-30
+
+	.prozess_intro
+		text-align: center
+		p, h2
+			color: $neutral0
+		p
+			@include mb-4
+	.prcss
+		overflow: hidden
+	ul.phasen
+		display: flex
+		flex-direction: row
+		justify-content: center
+		width: 100%
+
+		li
+			display: flex
+			align-items: center
+			flex-direction: column
+			border-top: dashed 2px
+			border-bottom: dashed 2px
+			border-right: dashed 2px
+			border-color: $blue-grey50 !important
+			span.phase__name
+				@include small_regular
+				padding: 42px 2em
+
+			&:nth-of-type(1)
+				flex-grow: 1
+				border-left: dashed 2px
+
+			&:nth-of-type(2)
+				flex-grow: 2
+
+			&:nth-of-type(3)
+				flex-grow: 1
+
+			&:nth-of-type(4)
+				flex-grow: 5
+
+			&:nth-of-type(5)
+				flex-grow: 2
+
+	ul.phasen_stages
+		display: flex
+		flex-direction: row
+		justify-content: center
+		width: 100%
+
+		li
+			display: flex
+			align-items: center
+			flex-direction: column
+			border-bottom: dashed 2px
+			border-color: $blue-grey50 !important
+			h1.phase__nr
+				color: $neutral0
+				margin: 0
+				padding: 42px 2em
+
+			&:nth-of-type(1)
+				flex-grow: 1
+
+			&:nth-of-type(2)
+				flex-grow: 2
+
+			&:nth-of-type(3)
+				flex-grow: 1
+
+			&:nth-of-type(4)
+				flex-grow: 5
+
+			&:nth-of-type(5)
+				flex-grow: 2
+				&::after
+					content: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 5.33317L8 10.6665L2 5.33317" stroke="%23788C8C" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></svg>')
+					display: block
+					position: absolute
+					bottom: -14px
+					right: -14px
+					transform: rotate(-90deg)
+	.timeline
+		color: $blue-grey50
+		@include mt-2
+		display: block
+
+	.phase_detail
+		display: flex
+		justify-content: center
+		flex-direction: column
+
+		ul.phase_detail__content
+			@include mb-20
+			h4
+				color: $neutral0
+				@include mb-4
+				text-align: center
+			li
+				color: $neutral0
+				@include paragraph_regular
+				@include mb-14
+				&::before
+					content: url('data:image/svg+xml,<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" stroke="white" stroke-width="2"/><path d="M16.2856 23.0649L22.7999 29.1429L32.5714 18" stroke="white" stroke-width="2" stroke-linecap="square"/></svg>')
+					display: block
+					height: 48px
+					width: 48px
+					position: absolute
+					transform: translate(-64px, -9px)
+				&:last-of-type
+					margin-bottom: 0
+	#detail_oc
+		position: relative
+		z-index: 10
+		display: flex
+		flex-direction: column
+		align-items: center
+		width: 150px
+		align-self: center
+		cursor: pointer
+		svg.nxt_lvl__arrow
+			stroke: $neutral0
+			transition: transform ease .7s
+		&.is_open
+			svg.nxt_lvl__arrow
+				transform: rotate(180deg)
+
+	.phase_detail__more
+		height: 0px
+		display: block
+		overflow: hidden
+		position: relative
+		opacity: 0
+		transition: height ease 1s, opacity ease .7s
+		will-change: height
+		&.is_open
+			height: auto
+			overflow: visible
+			opacity: 1

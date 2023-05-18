@@ -1,0 +1,68 @@
+button
+  cursor: pointer
+  @include paragraph_regular
+  box-sizing: border-box
+  appearance: none !important
+  border: solid 2px
+  background: transparent
+  transition: border-color ease .7s
+  will-change: border-color
+  position: relative
+  z-index: 90
+
+  &:hover
+    border-color: $red50
+
+  &:active
+    border-color: $red50
+
+.btn
+  padding: 17px 24px 17px 24px
+
+
+.btn_ql
+  border-color: $green50
+  padding: 9px 16px
+  color: $red50
+  border-radius: 25px
+  @include small_regular
+
+.btn_red
+  border-color: $green50
+  color: $red50
+
+
+
+.btn_wht
+  border-color: $neutral0
+  background: transparent
+  color: $neutral0
+
+.ww_top
+  width: 64px
+  height: 64px
+  display: block
+
+.ww_phone, .sticky_btn
+  color: $red50
+  background: $neutral0
+  &:hover
+    border-color: $red50
+  &:active
+    border-color: $red50
+    color: $red50
+
+
+.ww_message
+  border: 3px solid $red50
+  background-color: $neutral0
+  color: $red50
+  transition: background-color ease 1s
+  &:hover
+    border: 3px solid transparent
+    background: $red50 border-box
+    color: $neutral0
+  &:active
+    border: 3px solid transparent
+    background: $red50
+    color: $neutral0

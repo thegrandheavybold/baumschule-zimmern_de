@@ -1,0 +1,127 @@
+<nav class="menu-button-links">
+
+  <button type="button" id="menubutton" title="Navigation" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+
+    <div class="hamburger">
+              <span></span>
+            </div>
+
+  </button>
+
+  <ul id="menu" role="menu" aria-labelledby="menubutton" class="nav">
+    <li role="none" class="nav__item st_lvl__item">
+
+      <a role="menuitem" href="/" class="st_lvl__link {{ 'active' if '/' in page.url }}">Home</a>
+
+    </li>
+
+    <li role="none" class="nav__item nxt_lvl st_lvl__item" id="leistungen">
+      <a role="menuitem" href="#" class="st_lvl__link {{ 'active' if '/leistungen' in page.url }}">
+        Leistungen
+        <span>
+          <svg class="nxt_lvl__arrow">
+            <use xlink:href="#nxt_lvl__arrow"></use>
+          </svg>
+        </span>
+      </a>
+
+      <ul role="none" class="leistungen_items">
+
+        <li role="none" class="nav__item nd_lvl__item">
+          <a role="menuitem" href="/gartenneubau" aria-current="{{ 'current' if '/gartenneubau' in page.url }}page">
+            {% picture "gartenbau.png", "Gartenneubau – Zimmern Garten und Landschaftsbau GmbH" %}
+            <h6>Gartenneubau</h6>
+          </a>
+        </li>
+
+        <li role="none" class="nav__item nd_lvl__item">
+          <a role="menuitem" href="/baumpflege" aria-current="{{ 'current' if '/baumpflege' in page.url }}page">
+            {% picture "baumpflege.png", "Baumpflege – Zimmern Garten und Landschaftsbau GmbH" %}
+            <h6>Baumpflege</h6>
+          </a>
+        </li>
+
+        <li role="none" class="nav__item nd_lvl__item">
+          <a role="menuitem" href="/gartenpflege" aria-current="{{ 'current' if '/gartenpflege' in page.url }}page">
+            {% picture "gartenpflege.png", "Gartenpflege – Zimmern Garten und Landschaftsbau GmbH" %}
+            <h6>Gartenpflege</h6>
+          </a>
+        </li>
+
+        <li role="none" class="nav__item nd_lvl__item">
+          <a role="menuitem" href="/baumschule" aria-current="{{ 'current' if '/baumschule' in page.url }}page">
+            {% picture "baumschule.png", "Baumschule – Zimmern Garten und Landschaftsbau GmbH" %}
+            <h6>Baumschule</h6>
+          </a>
+        </li>
+
+        <li role="none" class="nav__item nd_lvl__item">
+          <a role="menuitem" href="/baufelderschließung" aria-current="{{ 'current' if '/baufelderschließung' in page.url }}page">
+            {% picture "baufelderschließung.png", "Baufelderschließung – Zimmern Garten und Landschaftsbau GmbH" %}
+            <h6>Baufelderschließung</h6>
+          </a>
+        </li>
+
+        <li role="none" class="nav__item nd_lvl__item">
+          <a role="menuitem" href="/idee-beratung-planung" aria-current="{{ 'current' if '/idee-beratung-planung' in page.url }}page">
+            {% picture "idee-beratung-planung.png", "Idee, Beratung, Planung – Zimmern Garten und Landschaftsbau GmbH" %}
+            <h6>Idee, Beratung, Planung</h6>
+          </a>
+        </li>
+
+      </ul>
+
+    </li>
+
+    <li role="none" class="nav__item st_lvl__item">
+
+      <a role="menuitem" href="/Projektgalerie" aria-current="{{ 'current' if '/Projektgalerie' in page.url }}page" class="st_lvl__link">Projektgalerie</a>
+
+    </li>
+
+    <li role="none" class="nav__item st_lvl__item">
+
+      <a role="menuitem" href="/Unternehmen" class="st_lvl__link {{ 'active' if '/Unternehmen' in page.url }}">Unternehmen</a>
+
+    </li>
+
+    <li role="none" class="nav__item nxt_lvl st_lvl__item">
+
+      <a role="menuitem" href="#" aria-current="{{ 'current' if '/karriere' in page.url }}page" class="st_lvl__link">
+        Karriere
+        <span>
+          <svg class="nxt_lvl__arrow">
+            <use xlink:href="#nxt_lvl__arrow"></use>
+          </svg>
+        </span>
+      </a>
+
+      <ul role="none" class="karriere_items">
+
+        <li role="none" class="nav__item nd_lvl__item">
+          <a role="menuitem" href="/karriere-ausbildung" aria-current="{{ 'current' if '/karriere-ausbildung' in page.url }}page">
+            {% picture "ausbildung.png", "Ausbildung – Zimmern Garten und Landschaftsbau GmbH" %}
+            <h6>Ausbildung</h6>
+          </a>
+        </li>
+
+        <li role="none" class="nav__item nd_lvl__item">
+          <a role="menuitem" href="/karriere-berufserfahrene" aria-current="{{ 'current' if '/karriere-berufserfahrene' in page.url }}page">
+            {% picture "stellenangebote.png", "Stellenangebote – Zimmern Garten und Landschaftsbau GmbH" %}
+            <h6>Stellenangebote für Berufserfahrene</h6>
+          </a>
+        </li>
+
+      </ul>
+
+    </li>
+
+    <li role="none" class="nav__item st_lvl__item">
+      <a role="menuitem" href="/Kontakt" aria-current="{{ 'current' if '/Kontakt' in page.url }}page" class="st_lvl__link">Kontakt</a>
+    </li>
+
+  </ul><!-- .menu_items -->
+
+
+
+</nav><!-- .menu-button-links -->

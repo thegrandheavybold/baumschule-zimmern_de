@@ -1,0 +1,19 @@
+section.intro
+  @include ptop
+  @include pbottom
+
+  .intro_content
+    text-align: center
+    p
+      margin: 0
+
+  .h_intro
+    text-align: center
+    @include font_regular
+    color: $green80
+    a
+      color: $green80
+      &:hover
+        color: $red50
+      &::before
+        height: 4px

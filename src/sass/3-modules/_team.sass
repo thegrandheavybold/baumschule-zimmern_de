@@ -1,0 +1,24 @@
+section.team
+  @include mb-30
+  background: linear-gradient(to bottom,$blue-grey8 0%, $blue-grey8 50vw, $neutral0 50vw, $neutral0 100%)
+
+  .item_1
+    @include mb-30
+    grid-column: 1/-1
+
+  .item_2
+    grid-column: 3/11
+
+
+@include s
+  section.team
+    .item_1, .item_2
+      grid-column: 1/-1
+
+@include xl
+  section.team
+    background: linear-gradient(to bottom,$blue-grey8 0%, $blue-grey8 45vw, $neutral0 45vw, $neutral0 100%)
+
+@include xxl
+  section.team
+    background: linear-gradient(to bottom,$blue-grey8 0%, $blue-grey8 45vw, $neutral0 45vw, $neutral0 100%)

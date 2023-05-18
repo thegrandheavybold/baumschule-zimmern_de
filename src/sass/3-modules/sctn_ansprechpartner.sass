@@ -1,0 +1,123 @@
+ul.ansprechpartner
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: space-evenly
+		li
+			text-align: center
+			display: flex
+			flex-direction: column
+			align-items: center
+			flex-wrap: nowrap
+			width: 33.33%
+			span.profile
+				height: 160px
+				width: 160px
+				border-radius: 50%
+				display: block
+				background: $blue-grey40
+				margin-bottom: 24px
+
+		p.name
+			@include font_heavy
+			margin-bottom: 5px
+		p.pro
+
+.meta_informations
+	.meta_informations__item
+		p
+			margin-bottom: 0
+		&:nth-of-type(2)
+			p
+				span.spc
+					text-indent: 18px
+					display: inline-block
+				span.spc_psh
+					margin-right: 22px
+
+		&:nth-of-type(3)
+			strong
+				margin-bottom: 12px
+				display: block
+
+		ul.oeffnungszeiten
+			li
+				&:nth-of-type(1)
+					span.spc
+						text-indent: 25px
+				span.spc
+					text-indent: 55px
+					display: inline-block
+
+	a
+		color: $blue-grey80
+
+#unternehmen
+	body
+		footer
+			.wrapper
+				.item_1, .item_2, .item_3
+					display: none
+				.item_4
+					.directions
+						margin-top: 0
+
+
+section.sctn_ansprechpartner
+	background: $neutral0
+
+	.wrapper
+		.item_1
+			ul.ansprechpartner
+				border-top: solid 2px
+				border-bottom: solid 2px
+				border-color: $blue-grey20
+				@include pt-8
+				li
+					width: 20%
+
+		.item_2
+			@include pt-8
+			border-bottom: solid 2px
+			border-color: $blue-grey20
+			@include pb-30
+
+			.meta_informations
+				.item_1, .item_2, .item_3
+					grid-column: span 4
+					padding-top: 0
+					padding-bottom: 0
+					border: none
+
+	@include s
+		.wrapper
+			.item_1
+				ul.ansprechpartner
+					li
+						width: 100%
+
+	@include m
+		.wrapper
+			.item_1
+				ul.ansprechpartner
+					flex-wrap: wrap
+					li
+						width: 33.33%
+
+#kontakt
+	section.sctn_ansprechpartner
+		.wrapper
+			.item_1
+				@include pt-30
+				@include pb-30
+				ul.ansprechpartner
+					border-bottom: none
+
+			.item_2
+				border: none
+				@include pt-30
+
+				.meta_informations
+					.item_1, .item_2, .item_3
+						padding-top: 0
+						padding-bottom: 0

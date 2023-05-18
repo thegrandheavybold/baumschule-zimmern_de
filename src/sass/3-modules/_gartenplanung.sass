@@ -1,0 +1,49 @@
+section.gartenplanung
+	background: $neutral0
+	@include pt-30
+	@include pb-30
+
+	ul.gp_detail__content
+		text-align: left
+		position: relative
+		li
+			grid-column: span 6
+			@include mb-8
+			position: relative
+			padding-left: 60px
+			&::before
+				content: url('data:image/svg+xml,<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" stroke="%23C9D1D1" stroke-width="2"/><path d="M16.2859 23.0649L22.8002 29.1429L32.5716 18" stroke="%23628D33" stroke-width="2" stroke-linecap="square"/></svg>')
+				position: absolute
+				left: 0
+				top: -10px
+
+
+section.gp_gllry
+	background: $neutral0
+	@include pb-30
+
+	ul.gp_gllry__content
+		position: relative
+		@include row-gaps
+		li
+			grid-column: span 4
+			position: relative
+			cursor: zoom-in
+			&::before
+				content: ''
+				width: 100%
+				height: 100%
+				background: linear-gradient(180deg, rgba(0,0,0,0.500437675070028) 0%, rgba(0,0,0,0) 40%)
+				position: absolute
+
+@include s
+	section.gartenplanung
+		ul.gp_detail__content
+			li
+				grid-column: span 4
+
+@include m
+	section.gp_gllry
+		ul.gp_gllry__content
+			li
+				grid-column: span 6

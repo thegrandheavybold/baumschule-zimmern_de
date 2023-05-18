@@ -1,0 +1,183 @@
+---
+title: Home
+layout: "layouts/base.njk"
+
+seoTitle: Startseite
+seoDescription:
+metaImage:
+---
+
+<section class="main_stage lax">
+
+  <div class="wrapper">
+    <div class="opener_cta">
+      <h1>Garten. Landschaft. Zimmern.</h1>
+      <p>Wir sind ein Familienbetrieb.<br> Seit 1952. Mit viel Erfahrung, von der Sie profitieren können. Im Westen Hamburgs.</p>
+      <button type="button" name="button" class="btn btn_wht">Lernen Sie uns kennen</button>
+      <a class="scroll_down" href="">
+        <svg class="scroll__arrow" alt="Scroll to down">
+          <use xlink:href="#scroll__arrow"></use>
+        </svg>
+      </a>
+    </div><!-- .opener_cta -->
+  </div><!-- .wrapper -->
+
+  {% include "partials/index_swiper.njk" %}
+
+</section><!-- .header_stage -->
+
+
+<section class="intro">
+
+  <div class="wrapper">
+
+    <h1 class="h_intro" data="fade-up">Herzlich willkommen! Kurz und knapp: <br><a class="link" href="#">Wir kümmern uns um Gärten.</a> Von klein bis groß.</h1>
+
+  </div><!-- .wrapper -->
+
+</section><!-- .intro -->
+
+<section class="intro_numbers">
+  <div class="item_1">
+
+    <div class="wrapper grd">
+      <p class="copy_intro" data="fade-up">
+        Wir <a class="link" href="">planen</a> Gärten, <a class="link" href="">realisieren</a> sie und wenn Sie wünschen, <br><a class="link" href="">unterhalten</a> wir sie.
+        <br><br>
+        Und das <a class="link" href="">seit 1952</a>. Mit viel Erfahrung und Leidenschaft.
+      </p>
+
+      <span data="fade-up delay">{% picture "index-intro.png", "Planen, realisieren und unterhalten – Zimmern Garten und Landschaftsbau GmbH" %}</span>
+
+    </div><!-- .wrapper -->
+  </div>
+
+  <div class="item_2 numbers">
+
+    <div class="wrapper">
+
+      <p class="topline" data="fade-up">Zimmern in Zahlen</p>
+
+      <div class="jahre" data="fade-up delay">
+        <span class="percent">70</span>
+        <p>Jahre Erfahrung</p>
+
+      </div>
+
+      <div class="mitarbeiter" data="fade-up delay">
+        <span class="percent">20</span>
+        <p>MitarbeiterInnen</p>
+      </div>
+
+      <div class="projekte" data="fade-up delay">
+        <span class="percent">228</span>
+        <p>realisierte Projekte</p>
+
+      </div>
+
+    </div><!-- .wrapper -->
+
+  </div><!-- .numbers -->
+
+
+</section><!-- .intro_numbers -->
+
+
+{% include "partials/quicklinks.njk" %}
+
+
+<section class="teaser_tiles_leistungen">
+
+  <div class="wrapper">
+
+    <div class="item_1">
+      <h2 data="fade-up">Leistungen</h2>
+      <p class="copy_intro sxty" data="fade-up delay">Gartenneubau, Baum- und Gartenpflege, Baumschule, Ideenentwicklung, Beratung, Planung ... – was wir tun im Überblick.</p>
+    </div><!-- .item_1 -->
+
+    <div class="item_2 grd">
+      <div data="fade-up" class="lnd">
+        {% picture "gartenbau.png", "Gartenneubau – Zimmern Garten und Landschaftsbau GmbH" %}
+      </div>
+      <div>
+        <h3 data="fade-up">Gartenneubau</h3>
+        <p class="copy" data="fade-up delay">Vor, während und nach dem Gartenneubau – vertrauen Sie uns und unserer Kompetenz. In jeder Phase.</p>
+        <button class="btn btn_red" onclick="location.href='/leistungen'" type="button" data="fade-up">Mehr erfahren</button>
+      </div>
+
+    </div><!-- .item_2 -->
+
+    <div class="item_3 grd">
+      <div data="fade-up" class="sqr">
+        {% picture "baumpflege.png", "Baumpflege – Zimmern Garten und Landschaftsbau GmbH" %}
+      </div>
+      <div>
+        <h3 data="fade-up">Baumpflege</h3>
+        <p class="copy" data="fade-up delay">Eine unserer Kernkompetenzen: Sanierungs- und Pflegemaß-nahmen Ihrer Bäume.</p>
+        <button class="btn btn_red" onclick="location.href='/leistungen'" type="button" data="fade-up">Mehr erfahren</button>
+      </div>
+    </div><!-- .item_3 -->
+
+    <div class="item_4 grd">
+      <div data="fade-up" class="sqr">
+        {% picture "gartenpflege.png", "Gartenpflege – Zimmern Garten und Landschaftsbau GmbH" %}
+      </div>
+      <div>
+        <h3 data="fade-up">Gartenpflege</h3>
+        <p class="copy" data="fade-up delay">Ein neuer Garten ist schön. Schön ist es jedoch auch, wenn er es bleibt.</p>
+        <button class="btn btn_red" onclick="location.href='/leistungen'" type="button" data="fade-up">Mehr erfahren</button>
+      </div>
+    </div><!-- .item_4 -->
+
+    <div class="item_5 grd">
+      <div data="fade-up" class="lnd">
+        {% picture "baumschule.png", "Baumschule – Zimmern Garten und Landschaftsbau GmbH" %}
+      </div>
+      <div>
+        <h3 data="fade-up">Baumschule</h3>
+        <p class="copy" data="fade-up delay">Machen Sie doch mal einen Spaziergang durch unsere Baumschule. Virtuell und gerne auch vor Ort.</p>
+        <button class="btn btn_red" onclick="location.href='/leistungen'" type="button" data="fade-up">Mehr erfahren</button>
+      </div>
+    </div><!-- .item_5 -->
+
+    <div class="item_6 grd">
+      <div data="fade-up" class="sqr">
+        {% picture "idee-beratung-planung.png", "Idee, Beratung, Planung – Zimmern Garten und Landschaftsbau GmbH" %}
+      </div>
+      <div>
+        <h3 data="fade-up">Idee, Beratung, Planung</h3>
+        <p class="copy" data="fade-up delay">Bevor es losgeht braucht es einen Plan. Wir haben ihn, Sie können ihn bekommen.</p>
+        <button class="btn btn_red" onclick="location.href='/idee-beratung-planung'" type="button" data="fade-up">Mehr erfahren</button>
+      </div>
+    </div><!-- .item_6 -->
+
+  </div><!-- .wrapper -->
+
+</section>
+
+
+{% include "partials/projektgalerie_sldr.njk" %}
+
+{% include "partials/reasons_slider.njk" %}
+
+<section class="vacancies">
+
+  <div class="wrapper grd">
+
+    <div data="fade-up" class="item_1">
+      {% picture "vacancies.png", "Offene Stellen – Zimmern Garten und Landschaftsbau GmbH" %}
+    </div>
+
+    <div class="item_2">
+
+        <span data="fade-up" class="topline"><span class="vacancies_amount">3</span> <a class="link" href="/karriere">offene Stellen</a></span>
+        <h3 data="fade-up">Karriere</h3>
+        <p class="copy" data="fade-up delay">Interesse an einer <a class="link" href="/ausbildung">Ausbildung?</a> <a class="link" href="/berufserfahren">Berufserfahren?</a> Einfach mal reinschauen – vielleicht ist etwas Passendes dabei.</p>
+        <button class="btn btn_red" onclick="location.href='/karriere'" type="button" data="fade-up">Mehr erfahren</button>
+
+
+    </div>
+
+  </div><!-- .wrapper -->
+
+</section>

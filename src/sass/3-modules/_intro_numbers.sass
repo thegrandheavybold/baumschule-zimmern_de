@@ -1,0 +1,62 @@
+.intro_numbers
+  .wrapper
+    align-items: center
+
+    p
+      grid-column: 1/6
+    span
+      grid-column: 7/13
+
+.numbers
+  background: $blue-grey8
+  @include pb-30
+  padding-top: 180px
+  margin-top: -60px
+
+  .wrapper
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+
+    .topline
+      width: 100%
+      display: block
+      text-align: center
+
+    .jahre, .mitarbeiter, .projekte
+      text-align: center
+      width: 33.33%
+      p
+        margin-bottom: 0
+
+
+@include s
+  .intro_numbers
+    .item_1
+      @include mb-16
+    .wrapper
+      p
+        grid-column: 1/-1
+        text-align: left
+        order: 2
+      span
+        grid-column: 1/-1
+        order: 1
+        @include mb-10
+
+    .numbers
+      margin-top: 0
+      padding-top: 64px
+      .topline
+        order: 1
+
+      .jahre, .mitarbeiter, .projekte
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 100%
+        order: 2
+
+      .mitarbeiter
+        @include mb-10
+        @include mt-10
