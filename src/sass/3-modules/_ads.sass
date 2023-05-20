@@ -1,0 +1,64 @@
+section.ad
+	background: linear-gradient(to bottom,$blue-grey8 0%, $blue-grey8 5vw, $neutral0 5vw, $neutral0 100%)
+	//@include pt-30
+	//@include pb-30
+
+section.ad_ausbildung
+	.wrapper
+		.item_1
+			grid-column: span 6
+
+		.item_2
+			grid-column: 7/-1
+			place-self: center
+			p.topline
+				text-align: left
+
+		ul.ad_list
+			li.ad_list__items
+				@include mb-12
+				&:last-child
+					margin-bottom: 0
+
+section.ad_schnuppern
+	@include pb-30
+	.wrapper
+		.item_2
+			grid-column: 1/7
+			place-self: center
+
+		.item_1
+			grid-column: span 6
+
+
+@include s
+	section.ad
+		background: $neutral0
+
+	section.ad_ausbildung
+		.wrapper
+			.item_1
+				grid-column: 1/-1
+				@include mb-12
+
+			.item_2
+				grid-column: 1/-1
+				place-self: normal
+
+	section.ad_schnuppern
+		.wrapper
+			.item_2
+				grid-column: 1/-1
+				place-self: normal
+				p
+					margin-bottom: 0
+				@include mt-12
+				@include mb-12
+
+			.item_1
+				grid-column: 1/-1
+
+
+@include m
+	section.ad
+		background: $neutral0

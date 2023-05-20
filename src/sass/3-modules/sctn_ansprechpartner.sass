@@ -52,7 +52,7 @@ ul.ansprechpartner
 	a
 		color: $blue-grey80
 
-#unternehmen
+#unternehmen, #kontakt
 	body
 		footer
 			.wrapper
@@ -89,6 +89,11 @@ section.sctn_ansprechpartner
 					padding-bottom: 0
 					border: none
 
+				@include s
+					.item_2
+						@include pt-8
+						@include pb-8
+
 	@include s
 		.wrapper
 			.item_1
@@ -121,3 +126,8 @@ section.sctn_ansprechpartner
 					.item_1, .item_2, .item_3
 						padding-top: 0
 						padding-bottom: 0
+
+					@include s
+						.item_2
+							@include pt-8
+							@include pb-8

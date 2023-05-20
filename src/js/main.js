@@ -70,19 +70,7 @@ ELs_inViewport.forEach(EL => {
 });
 
 
-//Navigation SubMenu Toggle
-window.addEventListener('click', function(){
 
-  const target = document.querySelector('#leistungen');
-  const leistungen = document.querySelector('.leistungen_items');
-  const karriere = document.querySelector('.karriere_items');
-
-  target.onclick = function(){
-  leistungen.classList.toggle("open")
-  karriere.classList.remove("open")
-  }
-
-});
 
 //Detail toggle more Content
 const button = document.querySelector('#detail_oc');

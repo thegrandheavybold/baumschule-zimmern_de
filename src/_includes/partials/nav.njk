@@ -16,7 +16,7 @@
     </li>
 
     <li role="none" class="nav__item nxt_lvl st_lvl__item" id="leistungen">
-      <a role="menuitem" href="#" class="st_lvl__link {{ 'active' if '/leistungen' in page.url }}">
+      <a role="menuitem" href="/leistungen" class="st_lvl__link {{ 'active' if '/leistungen' in page.url }}{{ 'active' if '/gartenneubau' in page.url }}{{ 'active' if '/baumpflege' in page.url }}{{ 'active' if '/gartenpflege' in page.url }}{{ 'active' if '/baumschule' in page.url }}{{ 'active' if '/baufelderschließung' in page.url }}{{ 'active' if '/idee-beratung-planung' in page.url }}">
         Leistungen
         <span>
           <svg class="nxt_lvl__arrow">
@@ -75,19 +75,19 @@
 
     <li role="none" class="nav__item st_lvl__item">
 
-      <a role="menuitem" href="/Projektgalerie" aria-current="{{ 'current' if '/Projektgalerie' in page.url }}page" class="st_lvl__link">Projektgalerie</a>
+      <a role="menuitem" href="/projektgalerie" aria-current="{{ 'current' if '/projektgalerie' in page.url }}page" class="st_lvl__link">Projektgalerie</a>
 
     </li>
 
     <li role="none" class="nav__item st_lvl__item">
 
-      <a role="menuitem" href="/Unternehmen" class="st_lvl__link {{ 'active' if '/Unternehmen' in page.url }}">Unternehmen</a>
+      <a role="menuitem" href="/unternehmen" class="st_lvl__link {{ 'active' if '/unternehmen' in page.url }}">Unternehmen</a>
 
     </li>
 
-    <li role="none" class="nav__item nxt_lvl st_lvl__item">
+    <li role="none" class="nav__item nxt_lvl st_lvl__item" id="karriere">
 
-      <a role="menuitem" href="#" aria-current="{{ 'current' if '/karriere' in page.url }}page" class="st_lvl__link">
+      <a role="menuitem" href="/karriere" class="st_lvl__link" aria-current="{{ 'active' if '/karriere' in page.url }}" class="st_lvl__link {{ 'active' if '/karriere' in page.url }}{{ 'active' if '/karriere-ausbildung' in page.url }}{{ 'active' if '/karriere-berufserfahrene' in page.url }}">
         Karriere
         <span>
           <svg class="nxt_lvl__arrow">

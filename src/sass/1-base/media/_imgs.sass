@@ -6,3 +6,26 @@
     object-fit: cover
     height: 100%
     width: 100%
+
+@include xl
+  .lft
+    transform: matrix(1, 0, 0, 1, -80, 0)!important
+  .rght
+    transform: matrix(1, 0, 0, 1, 80, 0)!important
+
+@include l
+  .lft
+    transform: matrix(1, 0, 0, 1, -32, 0)!important
+  .rght
+    transform: matrix(1, 0, 0, 1, 32, 0)!important
+
+@include m
+  .lft
+    transform: matrix(1, 0, 0, 1, -24, 0)!important
+  .rght
+    transform: matrix(1, 0, 0, 1, 24, 0)!important
+
+@include s
+  .lft, .rght
+    transform: matrix(1, 0, 0, 1, -20, 0)!important
+    width: calc(100% + 40px)

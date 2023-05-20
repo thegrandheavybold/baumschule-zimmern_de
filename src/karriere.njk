@@ -12,8 +12,8 @@ metaImage:
   <div class="wrapper">
 
     <div class="opener">
-      <p class="topline">Ausbildung</p>
-      <h1>Pack's an!</h1>
+      <p class="topline wht">Ausbildung</p>
+      <h1 class="wht">Pack's an!</h1>
     </div><!-- .opener -->
 
   </div><!-- .wrapper -->
@@ -38,12 +38,35 @@ metaImage:
 
     </div><!-- .intro_content -->
 
-  </div><!-- .wrapper -->
+  </div>
 
 </section><!-- .intro -->
 
+<section class="ad ad_ausbildung">
 
-<section class="sctn gartenplanung">
+  <div class="wrapper grd">
+    <div data="fade-up" class="item_1 lft">
+      {% picture "vacancies.png", "Offene Stellen – Zimmern Garten und Landschaftsbau GmbH" %}
+    </div>
+    <div class="item_2">
+      <p data="fade-up" class="topline">Wir bilden aktuell aus:</p>
+      <ul class="ad_list">
+        <li data="fade-up" class="ad_list__items">
+          <h5>Gärtner (m/w/d) Fachrichtung Garten- und Landschaftsbau</h5>
+          <button class="btn btn_red" onclick="location.href='/#'" type="button" data="fade-up">Jetzt bewerben</button>
+        </li>
+        <li data="fade-up" class="ad_list__items">
+          <h5>Kaufmann / Kauffrau für Büromanagement (m/w/d)</h5>
+          <button class="btn btn_red" onclick="location.href='/#'" type="button" data="fade-up">Jetzt bewerben</button>
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- .wrapper -->
+
+</section><!-- .ad -->
+
+<section class="sctn benefits">
 
   <div class="wrapper">
 
@@ -80,19 +103,25 @@ metaImage:
 </section><!-- .gartenplanung -->
 
 
-{% include "partials/contact.njk"%}
+{% include "partials/kontakt_ausbildung.njk"%}
 
-<section class="sctn gartenplanung">
+<section class="ad ad_schnuppern">
 
-  <div class="wrapper">
+  <div class="wrapper grd">
+    <div class="item_2">
+      <h2 data="fade-up">Erst mal schnuppern?</h2>
+      <p data="fade-up delay">
+        Wie heißt es noch mal? Die Katze kaufe ich doch nicht im Sack. Daher bieten wir Schnuppertage an. <strong>Eine Woche, um einen Einblick in unsere Ausbildungsberufe zu bekommen.</strong> Interessiert? Dann <a class="link" href="#kontakt_ausbildung">schreib uns</a> oder ruf unter <a class="link" href:"tel:+4940815803">040 . 81 58 03</a> kurz durch.
+      </p>
+    </div>
 
-    <div class="sctn_content">
-
-    </div><!-- .sctn_content -->
+    <div data="fade-up" class="item_1 rght">
+      {% picture "vacancies_2.png", "Offene Stellen – Zimmern Garten und Landschaftsbau GmbH" %}
+    </div>
 
   </div><!-- .wrapper -->
 
-</section><!-- .gartenplanung -->
+</section><!-- .ad -->
 
 {% include "partials/in_numbers.njk"%}
 

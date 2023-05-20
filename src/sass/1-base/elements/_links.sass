@@ -25,7 +25,10 @@ a
 
 a.link
 	position: relative
-	&::before
+	background: linear-gradient($red50, $red50) right bottom no-repeat
+	background-size: 100% 2px
+	transition: all .7s
+	//&::before
 		content: ''
 		position: absolute
 		width: 100%
@@ -38,10 +41,10 @@ a.link
 		transform: scaleX(1)
 		transition: all ease .7s
 
-a.link:hover::before
-	visibility: hidden
-	transform: scaleX(0)
+a.link:hover, a.link.wht:hover
+	background-size: 0% 2px
 
 a.link.wht
-	&::before
-		background-color: $white
+	background: linear-gradient($neutral0, $neutral0) right bottom no-repeat
+	background-size: 100% 2px
+	transition: all .7s

@@ -63,7 +63,8 @@
 					display: block
 					overflow: hidden
 					max-width: 194px
-					max-height: 169px
+					max-height: 129px
+					height: 129px
 					margin-bottom: 16px
 					img
 						object-fit: cover
@@ -104,8 +105,10 @@
 				stroke: $green50
 
 
-	[role="menuitem"][aria-current="currentpage"]
+	[role="menuitem"][aria-current="currentpage"], [role="menuitem"][aria-current="active"]
 		color: $green50 !important
+		h6
+			color: $green50 !important
 
 	.nxt_lvl svg.nxt_lvl__arrow
 		margin-left: 6px

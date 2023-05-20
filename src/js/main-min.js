@@ -15773,17 +15773,6 @@ ELs_inViewport.forEach(function (EL) {
   Obs.observe(EL, obsOptions);
 });
 
-//Navigation SubMenu Toggle
-window.addEventListener('click', function () {
-  var target = document.querySelector('#leistungen');
-  var leistungen = document.querySelector('.leistungen_items');
-  var karriere = document.querySelector('.karriere_items');
-  target.onclick = function () {
-    leistungen.classList.toggle("open");
-    karriere.classList.remove("open");
-  };
-});
-
 //Detail toggle more Content
 var button = document.querySelector('#detail_oc');
 var more = document.querySelector('.phase_detail__more');

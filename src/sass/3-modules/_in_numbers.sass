@@ -18,7 +18,23 @@ section.in_numbers
 			p
 				margin-bottom: 0
 
-	@include s
+		.insta
+			display: flex
+			align-items: center
+			flex-direction: column
+			@include mt-20
+			p
+				@include mt-6
+				margin-bottom: 0
+
+html#unternehmen, html#karriere-berufserfahrene
+	section.in_numbers
+		.wrapper
+			.insta
+				display: none
+
+@include s
+	section.in_numbers
 		.wrapper
 			.jahre, .mitarbeiter, .projekte
 				display: flex
