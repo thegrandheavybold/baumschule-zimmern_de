@@ -12,14 +12,14 @@ metaImage:
   <div class="wrapper">
 
     <div class="opener">
-      <p data="fade-up" class="topline wht">Ausbildung</p>
-      <h1 data="fade-up delay" class="wht">Gärtner (m/w/d) Fachrichtung Garten- und Landschaftsbau</h1>
+      <p class="topline wht">Ausbildung</p>
+      <h1 class="wht">Pack's an!</h1>
     </div><!-- .opener -->
 
   </div><!-- .wrapper -->
 
   <div class="visual"></div>
-  {% picture "karriere-ausbildung.png", "Karriere Ausbildung – Zimmern Garten und Landschaftsbau GmbH" %}
+  {% picture "ausbildung.png", "Karriere – Zimmern Garten und Landschaftsbau GmbH" %}
 
 </section><!-- .header_stage -->
 
@@ -30,53 +30,50 @@ metaImage:
 
     <div class="intro_content sxty">
 
-
+      <h2 data="fade-up">Werde Teil von einem tollen Team</h2>
       <p class="copy_intro" data="fade-up delay">
-        Lorem ipsum kurze Einleitung <strong>zur Ausbildung / zur Ausbildungsstelle bei Zimmern</strong>. Dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. <br><br>
+        Tägliches Neues schaffen – mit und bei uns. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. <br><br>
         Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
       </p>
 
     </div><!-- .intro_content -->
 
-  </div><!-- .wrapper -->
+  </div>
 
 </section><!-- .intro -->
 
+<section class="ad ad_ausbildung">
 
-<section class="sctn gartenplanung">
+  <div class="wrapper grd">
+    <div data="fade-up" class="item_1 lft">
+      {% picture "vacancies.png", "Offene Stellen – Zimmern Garten und Landschaftsbau GmbH" %}
+    </div>
+    <div class="item_2">
+      <p data="fade-up" class="topline">Wir bilden aktuell aus:</p>
+      <ul class="ad_list">
+        <li data="fade-up" class="ad_list__items">
+          <h5>Gärtner (m/w/d) Fachrichtung Garten- und Landschaftsbau</h5>
+          <button class="btn btn_red" onclick="location.href='/karriere-ausbildung-stellenanzeige'" type="button" data="fade-up">Jetzt bewerben</button>
+        </li>
+        <li data="fade-up" class="ad_list__items">
+          <h5>Kaufmann / Kauffrau für Büromanagement (m/w/d)</h5>
+          <button class="btn btn_red" onclick="location.href='/karriere-ausbildung-stellenanzeige'" type="button" data="fade-up">Jetzt bewerben</button>
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- .wrapper -->
+
+</section><!-- .ad -->
+
+<section class="sctn benefits">
 
   <div class="wrapper">
 
     <div class="sctn_content">
 
-      <h2 data="fade-up delay">Deine Tätigkeiten</h2>
-
-      <ul data="fade-up delay" class="gp_detail__content grd">
-        <li>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-        </li>
-        <li>
-          Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu
-        </li>
-        <li>
-          Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
-        </li>
-        <li>
-          In enim justo, rhoncus ut, imperdiet a
-        </li>
-        <li>
-          Donec quam felis, ultricies nec, pellentesque eu
-        </li>
-        <li>
-          Nullam dictum felis eu pede mollis pretium. Integer tincidunt
-        </li>
-      </ul>
-
-    </div><!-- .sctn_content -->
-
-    <div class="sctn_content mt-20">
-
-      <h2 data="fade-up delay">Was wir Dir bieten</h2>
+      <p data="fade-up" class="topline">Ausbildung bei Zimmern</p>
+      <h2 data="fade-up delay">Deine Vorteile im Überblick</h2>
 
       <ul data="fade-up delay" class="gp_detail__content grd">
         <li>
@@ -106,19 +103,25 @@ metaImage:
 </section><!-- .gartenplanung -->
 
 
-{% include "partials/kontakt.njk"%}
+{% include "partials/kontakt_ausbildung.njk"%}
 
-<section class="sctn gartenplanung">
+<section class="ad ad_schnuppern">
 
-  <div class="wrapper">
+  <div class="wrapper grd">
+    <div class="item_2">
+      <h2 data="fade-up">Erst mal schnuppern?</h2>
+      <p data="fade-up delay">
+        Wie heißt es noch mal? Die Katze kaufe ich doch nicht im Sack. Daher bieten wir Schnuppertage an. <strong>Eine Woche, um einen Einblick in unsere Ausbildungsberufe zu bekommen.</strong> Interessiert? Dann <a class="link" href="#kontakt_ausbildung">schreib uns</a> oder ruf unter <a class="link" href:"tel:+4940815803">040 . 81 58 03</a> kurz durch.
+      </p>
+    </div>
 
-    <div class="sctn_content">
-
-    </div><!-- .sctn_content -->
+    <div data="fade-up" class="item_1 rght">
+      {% picture "vacancies_2.png", "Offene Stellen – Zimmern Garten und Landschaftsbau GmbH" %}
+    </div>
 
   </div><!-- .wrapper -->
 
-</section><!-- .gartenplanung -->
+</section><!-- .ad -->
 
 {% include "partials/in_numbers.njk"%}
 

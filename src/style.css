@@ -2159,6 +2159,9 @@ label {
   outline: none;
   margin-bottom: 32px;
   text-align: left;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   label {
@@ -2175,26 +2178,10 @@ input:hover, textarea:hover, select:hover {
   border: solid 2px #AEBABA;
 }
 
-input:not(:focus):not(:-moz-placeholder-shown):invalid, input:not(:focus):not(:-moz-placeholder-shown):required:invalid {
-  border: solid 2px #E33E0A;
-}
-
-input:not(:focus):not(:placeholder-shown):invalid, input:not(:focus):not(:placeholder-shown):required:invalid {
-  border: solid 2px #E33E0A;
-}
-
 span.error-message {
   display: none;
   text-align: left;
   color: #E33E0A;
-}
-
-input:not(:focus):not(:-moz-placeholder-shown):invalid ~ span.error-message {
-  display: block;
-}
-
-input:not(:focus):not(:placeholder-shown):invalid ~ span.error-message {
-  display: block;
 }
 
 input:focus-visible, textarea:focus-visible, select:focus-visible,
@@ -2230,6 +2217,7 @@ fieldset.privacy input[type=checkbox] {
   height: 32px;
   width: 32px;
   margin-right: 16px;
+  margin-top: 0;
   display: grid;
   place-content: center;
 }
@@ -2238,8 +2226,7 @@ fieldset.privacy input[type=checkbox]:checked::before {
   position: absolute;
   width: 24px;
   height: 24px;
-  position: absolute;
-  top: 7px;
+  top: 2px;
   left: 5px;
 }
 fieldset.privacy label {
@@ -2255,6 +2242,40 @@ fieldset.privacy label p {
 }
 fieldset.privacy label span.error-message {
   width: 100%;
+}
+
+input[type=checkbox].radio {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: block;
+}
+input[type=checkbox].radio:checked::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #990033;
+  position: relative;
+  display: block;
+  top: 6px;
+  left: 6px;
+}
+
+span.ansprache {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+span.ansprache label {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: auto;
+  margin-right: 32px;
+}
+span.ansprache label input {
+  margin: 0 16px 0 0;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
@@ -3497,7 +3518,7 @@ footer .footer_bar ul.footer_links li span.scrollUp {
   background: rgba(0, 0, 0, 0.35);
 }
 
-.sctn .wrapper .sctn_content {
+.wrapper .sctn_content {
   text-align: center;
 }
 
@@ -3718,114 +3739,122 @@ section.quicklinks .wrapper button:last-of-type {
 /*** Languages */
 /*** Teaser Tiles Praxis */
 /*** Teaser Tiles Leistungen */
-section.teaser_tiles_leistungen {
-  background: #fff;
-  padding-bottom: 120px;
-}
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  section.teaser_tiles_leistungen {
-    padding-bottom: 64px;
-  }
-}
-@media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.teaser_tiles_leistungen {
-    padding-bottom: 64px;
-  }
-}
-section.teaser_tiles_leistungen .wrapper .item_1, section.teaser_tiles_leistungen .wrapper .item_2, section.teaser_tiles_leistungen .wrapper .item_3, section.teaser_tiles_leistungen .wrapper .item_4, section.teaser_tiles_leistungen .wrapper .item_5, section.teaser_tiles_leistungen .wrapper .item_6, section.teaser_tiles_leistungen .wrapper .item_7 {
+.tiles div[class*=item_] {
   align-items: center;
   margin-bottom: 80px;
+  flex-direction: column;
+}
+.tiles div[class*=item_]:nth-of-type(odd) div:nth-child(1) {
+  grid-column: 1/7;
+}
+.tiles div[class*=item_]:nth-of-type(odd) div:nth-child(2) {
+  grid-column: 8/-1;
+}
+.tiles div[class*=item_]:nth-of-type(even) div:nth-child(1) {
+  order: 2;
+  grid-column: 7/-1;
+}
+.tiles div[class*=item_]:nth-of-type(even) div:nth-child(2) {
+  order: 1;
+  grid-column: 1/6;
+}
+.tiles div[class*=item_]:last-of-type {
+  margin-bottom: 0;
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  section.teaser_tiles_leistungen .wrapper .item_1, section.teaser_tiles_leistungen .wrapper .item_2, section.teaser_tiles_leistungen .wrapper .item_3, section.teaser_tiles_leistungen .wrapper .item_4, section.teaser_tiles_leistungen .wrapper .item_5, section.teaser_tiles_leistungen .wrapper .item_6, section.teaser_tiles_leistungen .wrapper .item_7 {
+  .tiles div[class*=item_] {
     margin-bottom: 40px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.teaser_tiles_leistungen .wrapper .item_1, section.teaser_tiles_leistungen .wrapper .item_2, section.teaser_tiles_leistungen .wrapper .item_3, section.teaser_tiles_leistungen .wrapper .item_4, section.teaser_tiles_leistungen .wrapper .item_5, section.teaser_tiles_leistungen .wrapper .item_6, section.teaser_tiles_leistungen .wrapper .item_7 {
+  .tiles div[class*=item_] {
     margin-bottom: 40px;
   }
 }
-section.teaser_tiles_leistungen .wrapper .item_1 div.sqr picture img, section.teaser_tiles_leistungen .wrapper .item_2 div.sqr picture img, section.teaser_tiles_leistungen .wrapper .item_3 div.sqr picture img, section.teaser_tiles_leistungen .wrapper .item_4 div.sqr picture img, section.teaser_tiles_leistungen .wrapper .item_5 div.sqr picture img, section.teaser_tiles_leistungen .wrapper .item_6 div.sqr picture img, section.teaser_tiles_leistungen .wrapper .item_7 div.sqr picture img {
+.tiles div[class*=item_] h2 {
+  text-align: center;
+}
+.tiles div[class*=item_] .copy_intro {
+  text-align: center;
+}
+.tiles div[class*=item_] div.sqr picture img {
   aspect-ratio: 1/1;
   max-height: 681px;
 }
-section.teaser_tiles_leistungen .wrapper .item_1 div.lnd picture img, section.teaser_tiles_leistungen .wrapper .item_2 div.lnd picture img, section.teaser_tiles_leistungen .wrapper .item_3 div.lnd picture img, section.teaser_tiles_leistungen .wrapper .item_4 div.lnd picture img, section.teaser_tiles_leistungen .wrapper .item_5 div.lnd picture img, section.teaser_tiles_leistungen .wrapper .item_6 div.lnd picture img, section.teaser_tiles_leistungen .wrapper .item_7 div.lnd picture img {
+.tiles div[class*=item_] div.lnd picture img {
   aspect-ratio: unset;
   max-height: 560px;
+  max-width: 840px;
 }
-section.teaser_tiles_leistungen .wrapper .item_1 {
-  flex-direction: column;
-}
-section.teaser_tiles_leistungen .wrapper .item_1 h2 {
-  text-align: center;
-}
-section.teaser_tiles_leistungen .wrapper .item_1 .copy_intro {
-  text-align: center;
-}
-section.teaser_tiles_leistungen .wrapper .item_2 div:nth-child(1) {
-  grid-column: 1/7;
-}
-section.teaser_tiles_leistungen .wrapper .item_2 div:nth-child(2) {
-  grid-column: 8/-1;
-}
-section.teaser_tiles_leistungen .wrapper .item_3 div:nth-child(1) {
-  order: 2;
-  grid-column: 8/-1;
-}
-section.teaser_tiles_leistungen .wrapper .item_3 div:nth-child(2) {
-  grid-column: 2/7;
-}
-section.teaser_tiles_leistungen .wrapper .item_4 div:nth-child(1) {
-  grid-column: 1/6;
-}
-section.teaser_tiles_leistungen .wrapper .item_4 div:nth-child(2) {
-  grid-column: 7/-1;
-}
-section.teaser_tiles_leistungen .wrapper .item_5 div:nth-child(1) {
-  order: 2;
-  grid-column: 7/-1;
-}
-section.teaser_tiles_leistungen .wrapper .item_5 div:nth-child(2) {
-  grid-column: 1/6;
-}
-section.teaser_tiles_leistungen .wrapper .item_6 {
-  margin-bottom: 0;
-}
-section.teaser_tiles_leistungen .wrapper .item_6 div:nth-child(1) {
-  grid-column: 1/6;
-}
-section.teaser_tiles_leistungen .wrapper .item_6 div:nth-child(2) {
-  grid-column: 7/-1;
-}
+
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.teaser_tiles_leistungen .wrapper .item_1 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_2 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_3 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_4 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_5 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_6 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_7 div:nth-child(1) {
+  .tiles div[class*=item_]:nth-of-type(2n+1) div:nth-child(1) {
     grid-column: 1/-1;
     margin-bottom: 32px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) and (min-width: 768px) and (max-width: 1023px) {
-  section.teaser_tiles_leistungen .wrapper .item_1 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_2 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_3 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_4 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_5 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_6 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_7 div:nth-child(1) {
+  .tiles div[class*=item_]:nth-of-type(2n+1) div:nth-child(1) {
     margin-bottom: 24px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) and (min-width: 0px) and (max-width: 767px) {
-  section.teaser_tiles_leistungen .wrapper .item_1 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_2 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_3 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_4 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_5 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_6 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_7 div:nth-child(1) {
+  .tiles div[class*=item_]:nth-of-type(2n+1) div:nth-child(1) {
     margin-bottom: 24px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.teaser_tiles_leistungen .wrapper .item_1 div:nth-child(2), section.teaser_tiles_leistungen .wrapper .item_2 div:nth-child(2), section.teaser_tiles_leistungen .wrapper .item_3 div:nth-child(2), section.teaser_tiles_leistungen .wrapper .item_4 div:nth-child(2), section.teaser_tiles_leistungen .wrapper .item_5 div:nth-child(2), section.teaser_tiles_leistungen .wrapper .item_6 div:nth-child(2), section.teaser_tiles_leistungen .wrapper .item_7 div:nth-child(2) {
+  .tiles div[class*=item_]:nth-of-type(2n+1) div:nth-child(2) {
     grid-column: 1/-1;
   }
-  section.teaser_tiles_leistungen .wrapper .item_3 div:nth-child(1), section.teaser_tiles_leistungen .wrapper .item_5 div:nth-child(1) {
+  .tiles div[class*=item_]:nth-of-type(even) div:nth-child(1) {
     order: 1;
+    grid-column: 1/-1;
+    margin-bottom: 32px;
   }
-  section.teaser_tiles_leistungen .wrapper .item_3 div:nth-child(2), section.teaser_tiles_leistungen .wrapper .item_5 div:nth-child(2) {
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) and (min-width: 768px) and (max-width: 1023px) {
+  .tiles div[class*=item_]:nth-of-type(even) div:nth-child(1) {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) and (min-width: 0px) and (max-width: 767px) {
+  .tiles div[class*=item_]:nth-of-type(even) div:nth-child(1) {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .tiles div[class*=item_]:nth-of-type(even) div:nth-child(2) {
     order: 2;
+    grid-column: 1/-1;
   }
-  section.teaser_tiles_leistungen .wrapper .item_1 h2 {
-    text-align: center;
+}
+section.teaser_leistungen {
+  background: #FFFFFF;
+  padding-bottom: 120px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.teaser_leistungen {
+    padding-bottom: 64px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.teaser_leistungen {
+    padding-bottom: 64px;
+  }
+}
+section.teaser_leistungen .wrapper .sctn_content {
+  text-align: center;
+  margin-bottom: 80px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.teaser_leistungen .wrapper .sctn_content {
+    margin-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.teaser_leistungen .wrapper .sctn_content {
+    margin-bottom: 40px;
   }
 }
 
@@ -3955,6 +3984,16 @@ html#unternehmen section.in_numbers .wrapper .insta, html#karriere-berufserfahre
   display: none;
 }
 
+html#karriere-berufserfahrene section.in_numbers .wrapper .topline::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #C9D1D1;
+  position: absolute;
+  display: block;
+  top: -120px;
+}
+
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   section.in_numbers .wrapper .jahre, section.in_numbers .wrapper .mitarbeiter, section.in_numbers .wrapper .projekte {
     display: flex;
@@ -3985,6 +4024,16 @@ html#unternehmen section.in_numbers .wrapper .insta, html#karriere-berufserfahre
 @media only screen and (min-width: 0px) and (max-width: 767px) and (min-width: 0px) and (max-width: 767px) {
   section.in_numbers .wrapper .mitarbeiter {
     margin-top: 32px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  html#karriere-berufserfahrene section.in_numbers .wrapper .topline::before {
+    top: -64px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  html#karriere-berufserfahrene section.in_numbers .wrapper .topline::before {
+    top: -64px;
   }
 }
 /*** Team  Detail */
@@ -4882,30 +4931,30 @@ section.ad {
   background: linear-gradient(to bottom, #F4F6F6 0%, #F4F6F6 5vw, #FFFFFF 5vw, #FFFFFF 100%);
 }
 
-section.ad_ausbildung .wrapper .item_1 {
+section.ad_ausbildung .wrapper .item_1, section.ad_berufserfahrene .wrapper .item_1 {
   grid-column: span 6;
 }
-section.ad_ausbildung .wrapper .item_2 {
+section.ad_ausbildung .wrapper .item_2, section.ad_berufserfahrene .wrapper .item_2 {
   grid-column: 7/-1;
   place-self: center;
 }
-section.ad_ausbildung .wrapper .item_2 p.topline {
+section.ad_ausbildung .wrapper .item_2 p.topline, section.ad_berufserfahrene .wrapper .item_2 p.topline {
   text-align: left;
 }
-section.ad_ausbildung .wrapper ul.ad_list li.ad_list__items {
+section.ad_ausbildung .wrapper ul.ad_list li.ad_list__items, section.ad_berufserfahrene .wrapper ul.ad_list li.ad_list__items {
   margin-bottom: 48px;
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  section.ad_ausbildung .wrapper ul.ad_list li.ad_list__items {
+  section.ad_ausbildung .wrapper ul.ad_list li.ad_list__items, section.ad_berufserfahrene .wrapper ul.ad_list li.ad_list__items {
     margin-bottom: 32px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.ad_ausbildung .wrapper ul.ad_list li.ad_list__items {
+  section.ad_ausbildung .wrapper ul.ad_list li.ad_list__items, section.ad_berufserfahrene .wrapper ul.ad_list li.ad_list__items {
     margin-bottom: 32px;
   }
 }
-section.ad_ausbildung .wrapper ul.ad_list li.ad_list__items:last-child {
+section.ad_ausbildung .wrapper ul.ad_list li.ad_list__items:last-child, section.ad_berufserfahrene .wrapper ul.ad_list li.ad_list__items:last-child {
   margin-bottom: 0;
 }
 

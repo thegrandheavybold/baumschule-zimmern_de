@@ -70,8 +70,6 @@ ELs_inViewport.forEach(EL => {
 });
 
 
-
-
 //Detail toggle more Content
 const button = document.querySelector('#detail_oc');
 const more = document.querySelector('.phase_detail__more');

@@ -1,0 +1,63 @@
+<section class="sctn contact">
+  <div class="wrapper grd">
+
+    <div class="sctn_content">
+
+			<h2 data="fade-up">Der ganz schnelle Weg</h2>
+      <p class="copy_intro" data="fade-up delay">
+        Sie haben Fragen zu dem Thema Karriere bei Zimmern?  Dann schreiben Sie uns einfach eine Nachricht.<br><br>
+        Oder noch direkter: Rufen Sie uns unter <a class="link" href="tel:+4940815803">040 . 81 58 03</a> an. Wie es Ihnen lieber ist.
+      </p>
+
+			<form id="kontakt_berufserfahren" name="kontakt_berufserfahren" method="POST" data-netlify="true" data="fade-up">
+
+      <fieldset data="fade-up" class="client_contact">
+
+        <label for="Name">Name*
+          <input type="text" id="name" name="Name" required/>
+					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
+        </label>
+
+
+        <label for="Email">E-Mail-Adresse*
+          <input type="email" id="email" name="Email" required/>
+					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
+        </label>
+
+				<label for="Telefon">Telefon
+          <input type="tel" id="phone" name="Telefon" pattern="[0-9]"/>
+        </label>
+
+      </fieldset>
+
+
+      <fieldset data="fade-up delay" class="message">
+
+        <label for="message">Nachricht*
+          <textarea id="message" name="message" required></textarea>
+					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
+        </label>
+
+      </fieldset>
+
+			<fieldset data="fade-up" class="privacy">
+      	<label for="datenschutz">
+					<input type="checkbox" id="datenschutz" name="datenschutz" required>
+					<p>Ich habe die <a href="/datenschutz" class="link">Datenschutzbestimmungen</a> gelesen und akzeptiere diese.*</p>
+					<span class="error-message">Bitte stimmen Sie den Datenschutzbestimmungen zu.</span>
+				</label>
+			</fieldset>
+			<p data="fade-up">* Pflichtfelder</p>
+      <span data="fade-up delay">
+
+        <button class="btn btn_red" type="submit" data="fade-up">Formular abschicken</button>
+
+      </span>
+
+    </form>
+
+
+    </div><!-- .sctn_content -->
+
+  </div><!-- .wrapper -->
+</section><!-- .contact -->

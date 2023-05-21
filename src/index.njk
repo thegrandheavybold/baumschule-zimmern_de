@@ -86,70 +86,74 @@ metaImage:
 {% include "partials/quicklinks.njk" %}
 
 
-<section class="teaser_tiles_leistungen">
+<section class="teaser_leistungen">
 
   <div class="wrapper">
 
-    <div class="item_1">
+    <div class="sctn_content">
       <h2 data="fade-up">Leistungen</h2>
       <p class="copy_intro sxty" data="fade-up delay">Gartenneubau, Baum- und Gartenpflege, Baumschule, Ideenentwicklung, Beratung, Planung ... – was wir tun im Überblick.</p>
-    </div><!-- .item_1 -->
+    </div><!-- .opener -->
 
-    <div class="item_2 grd">
-      <div data="fade-up" class="lnd">
-        {% picture "gartenbau.png", "Gartenneubau – Zimmern Garten und Landschaftsbau GmbH" %}
-      </div>
-      <div>
-        <h3 data="fade-up">Gartenneubau</h3>
-        <p class="copy" data="fade-up delay">Vor, während und nach dem Gartenneubau – vertrauen Sie uns und unserer Kompetenz. In jeder Phase.</p>
-        <button class="btn btn_red" onclick="location.href='/gartenneubau'" type="button" data="fade-up">Mehr erfahren</button>
-      </div>
+    <div class="tiles">
 
-    </div><!-- .item_2 -->
+      <div class="item_1 grd">
+        <div data="fade-up" class="lnd">
+          {% picture "gartenbau.png", "Gartenneubau – Zimmern Garten und Landschaftsbau GmbH" %}
+        </div>
+        <div>
+          <h3 data="fade-up">Gartenneubau</h3>
+          <p class="copy" data="fade-up delay">Vor, während und nach dem Gartenneubau – vertrauen Sie uns und unserer Kompetenz. In jeder Phase.</p>
+          <button class="btn btn_red" onclick="location.href='/gartenneubau'" type="button" data="fade-up">Mehr erfahren</button>
+        </div>
 
-    <div class="item_3 grd">
-      <div data="fade-up" class="sqr">
-        {% picture "baumpflege.png", "Baumpflege – Zimmern Garten und Landschaftsbau GmbH" %}
-      </div>
-      <div>
-        <h3 data="fade-up">Baumpflege</h3>
-        <p class="copy" data="fade-up delay">Eine unserer Kernkompetenzen: Sanierungs- und Pflegemaß-nahmen Ihrer Bäume.</p>
-        <button class="btn btn_red" onclick="location.href='/baumpflege'" type="button" data="fade-up">Mehr erfahren</button>
-      </div>
-    </div><!-- .item_3 -->
+      </div><!-- .item_1 -->
 
-    <div class="item_4 grd">
-      <div data="fade-up" class="sqr">
-        {% picture "gartenpflege.png", "Gartenpflege – Zimmern Garten und Landschaftsbau GmbH" %}
-      </div>
-      <div>
-        <h3 data="fade-up">Gartenpflege</h3>
-        <p class="copy" data="fade-up delay">Ein neuer Garten ist schön. Schön ist es jedoch auch, wenn er es bleibt.</p>
-        <button class="btn btn_red" onclick="location.href='/gartenpflege'" type="button" data="fade-up">Mehr erfahren</button>
-      </div>
-    </div><!-- .item_4 -->
+      <div class="item_2 grd">
+        <div data="fade-up" class="sqr">
+          {% picture "baumpflege.png", "Baumpflege – Zimmern Garten und Landschaftsbau GmbH" %}
+        </div>
+        <div>
+          <h3 data="fade-up">Baumpflege</h3>
+          <p class="copy" data="fade-up delay">Eine unserer Kernkompetenzen: Sanierungs- und Pflegemaß-nahmen Ihrer Bäume.</p>
+          <button class="btn btn_red" onclick="location.href='/baumpflege'" type="button" data="fade-up">Mehr erfahren</button>
+        </div>
+      </div><!-- .item_2 -->
 
-    <div class="item_5 grd">
-      <div data="fade-up" class="lnd">
-        {% picture "baumschule.png", "Baumschule – Zimmern Garten und Landschaftsbau GmbH" %}
-      </div>
-      <div>
-        <h3 data="fade-up">Baumschule</h3>
-        <p class="copy" data="fade-up delay">Machen Sie doch mal einen Spaziergang durch unsere Baumschule. Virtuell und gerne auch vor Ort.</p>
-        <button class="btn btn_red" onclick="location.href='/baumschule'" type="button" data="fade-up">Mehr erfahren</button>
-      </div>
-    </div><!-- .item_5 -->
+      <div class="item_3 grd">
+        <div data="fade-up" class="sqr">
+          {% picture "gartenpflege.png", "Gartenpflege – Zimmern Garten und Landschaftsbau GmbH" %}
+        </div>
+        <div>
+          <h3 data="fade-up">Gartenpflege</h3>
+          <p class="copy" data="fade-up delay">Ein neuer Garten ist schön. Schön ist es jedoch auch, wenn er es bleibt.</p>
+          <button class="btn btn_red" onclick="location.href='/gartenpflege'" type="button" data="fade-up">Mehr erfahren</button>
+        </div>
+      </div><!-- .item_3 -->
 
-    <div class="item_6 grd">
-      <div data="fade-up" class="sqr">
-        {% picture "idee-beratung-planung.png", "Idee, Beratung, Planung – Zimmern Garten und Landschaftsbau GmbH" %}
-      </div>
-      <div>
-        <h3 data="fade-up">Idee, Beratung, Planung</h3>
-        <p class="copy" data="fade-up delay">Bevor es losgeht braucht es einen Plan. Wir haben ihn, Sie können ihn bekommen.</p>
-        <button class="btn btn_red" onclick="location.href='/idee-beratung-planung'" type="button" data="fade-up">Mehr erfahren</button>
-      </div>
-    </div><!-- .item_6 -->
+      <div class="item_4 grd">
+        <div data="fade-up" class="lnd">
+          {% picture "baumschule.png", "Baumschule – Zimmern Garten und Landschaftsbau GmbH" %}
+        </div>
+        <div>
+          <h3 data="fade-up">Baumschule</h3>
+          <p class="copy" data="fade-up delay">Machen Sie doch mal einen Spaziergang durch unsere Baumschule. Virtuell und gerne auch vor Ort.</p>
+          <button class="btn btn_red" onclick="location.href='/baumschule'" type="button" data="fade-up">Mehr erfahren</button>
+        </div>
+      </div><!-- .item_4 -->
+
+      <div class="item_5 grd">
+        <div data="fade-up" class="sqr">
+          {% picture "idee-beratung-planung.png", "Idee, Beratung, Planung – Zimmern Garten und Landschaftsbau GmbH" %}
+        </div>
+        <div>
+          <h3 data="fade-up">Idee, Beratung, Planung</h3>
+          <p class="copy" data="fade-up delay">Bevor es losgeht braucht es einen Plan. Wir haben ihn, Sie können ihn bekommen.</p>
+          <button class="btn btn_red" onclick="location.href='/idee-beratung-planung'" type="button" data="fade-up">Mehr erfahren</button>
+        </div>
+      </div><!-- .item_5 -->
+
+    </div><!-- .tiles -->
 
   </div><!-- .wrapper -->
 

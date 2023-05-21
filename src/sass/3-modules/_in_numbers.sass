@@ -32,6 +32,18 @@ html#unternehmen, html#karriere-berufserfahrene
 		.wrapper
 			.insta
 				display: none
+				
+html#karriere-berufserfahrene
+	section.in_numbers
+		.wrapper
+			.topline::before
+				content: ''
+				height: 2px
+				width: 100%
+				background: $blue-grey20
+				position: absolute
+				display: block
+				top: -120px
 
 @include s
 	section.in_numbers
@@ -45,3 +57,16 @@ html#unternehmen, html#karriere-berufserfahrene
 			.mitarbeiter
 				@include mb-10
 				@include mt-10
+
+	html#karriere-berufserfahrene
+		section.in_numbers
+			.wrapper
+				.topline::before
+					top: -64px
+
+@include m
+	html#karriere-berufserfahrene
+		section.in_numbers
+			.wrapper
+				.topline::before
+					top: -64px

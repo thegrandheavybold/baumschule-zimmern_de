@@ -12,7 +12,7 @@ metaImage:
   <div class="wrapper">
 
     <div class="opener">
-      <p class="topline wht">Berufserfahrene</p>
+      <p class="topline wht">Berufserfahren</p>
       <h1 class="wht">Jetzt durchstarten!</h1>
     </div><!-- .opener -->
 
@@ -42,8 +42,27 @@ metaImage:
 
 </section><!-- .intro -->
 
+<section class="ad ad_berufserfahrene">
 
-<section class="sctn gartenplanung">
+  <div class="wrapper grd">
+    <div data="fade-up" class="item_1 lft">
+      {% picture "karriere-berufserfahrene-ad.png", "Offene Stellen – Zimmern Garten und Landschaftsbau GmbH" %}
+    </div>
+    <div class="item_2">
+      <p data="fade-up" class="topline">Wir suchen aktuell:</p>
+      <ul class="ad_list">
+        <li data="fade-up" class="ad_list__items">
+          <h5>Gärtner (m/w/d) Fachrichtung Garten- und Landschaftsbau</h5>
+          <button class="btn btn_red" onclick="location.href='/karriere-berufserfahren-stellenanzeige'" type="button" data="fade-up">Jetzt bewerben</button>
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- .wrapper -->
+
+</section><!-- .ad -->
+
+<section class="sctn benefits">
 
   <div class="wrapper">
 
@@ -80,19 +99,7 @@ metaImage:
 </section><!-- .gartenplanung -->
 
 
-{% include "partials/kontakt.njk"%}
-
-<section class="sctn gartenplanung">
-
-  <div class="wrapper">
-
-    <div class="sctn_content">
-
-    </div><!-- .sctn_content -->
-
-  </div><!-- .wrapper -->
-
-</section><!-- .gartenplanung -->
+{% include "partials/kontakt_berufserfahrene.njk"%}
 
 {% include "partials/in_numbers.njk"%}
 
