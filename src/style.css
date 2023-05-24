@@ -3522,6 +3522,22 @@ footer .footer_bar ul.footer_links li span.scrollUp {
   text-align: center;
 }
 
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  .detail_stage {
+    height: 75vh;
+  }
+  .detail_stage .wrapper .opener {
+    height: 75vh;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .detail_stage {
+    height: 75vh;
+  }
+  .detail_stage .wrapper .opener {
+    height: 75vh;
+  }
+}
 /*** intro */
 section.intro {
   padding-top: 120px;
