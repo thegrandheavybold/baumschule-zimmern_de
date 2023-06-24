@@ -1781,119 +1781,7 @@ button.swiper-pagination-bullet {
     width: 16px;
   }
 }
-/*** Accordion Styles */
-/**
- * Accordion v3.3.4
- * Lightweight and accessible accordion module created in pure Javascript
- * https://github.com/michu2k/Accordion
- *
- * Copyright (c) Michał Strumpf
- * Published under MIT License
- */
-.ac {
-  margin-top: 8px;
-  border: 1px solid #eee;
-  background-color: #fff;
-  box-sizing: border-box;
-}
-
-.ac .ac-header {
-  margin: 0;
-  padding: 0;
-}
-
-.ac .ac-trigger {
-  font: bold 16px "Arial", sans-serif;
-  color: #111;
-  text-align: left;
-  width: 100%;
-  padding: 8px 32px 8px 8px;
-  display: block;
-  cursor: pointer;
-  background-color: transparent;
-  transition: color 0.25s ease;
-  position: relative;
-  text-decoration: none;
-  margin: 0;
-  border: 0;
-}
-
-.ac .ac-trigger::after {
-  content: "+";
-  text-align: center;
-  width: 15px;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  position: absolute;
-  right: 10px;
-  top: 50%;
-}
-
-.ac .ac-trigger:focus {
-  color: #8a8a8a;
-}
-
-.ac .ac-panel {
-  overflow: hidden;
-  transition-property: height, visibility;
-  transition-timing-function: ease;
-}
-
-.ac .ac-panel .ac-text {
-  font: 15px/24px "Arial", sans-serif;
-  color: #111;
-  padding: 8px;
-  margin: 0;
-}
-
-.ac.js-enabled .ac-panel {
-  visibility: hidden;
-}
-
-.ac.is-active .ac-panel {
-  visibility: visible;
-}
-
-.ac.is-active > .ac-header .ac-trigger::after {
-  content: "–";
-}
-
-.ac {
-  background: transparent;
-  border: none;
-  padding: 0 1rem;
-}
-
-.ac .ac-header {
-  height: 100%;
-  padding: 1rem 0;
-  margin: 0;
-}
-
-.ac .ac-panel .ac-text {
-  padding: 0 0 1rem 0;
-  display: block;
-}
-
-.ac .ac-trigger {
-  color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 4.5rem 0 0;
-}
-.ac .ac-trigger::after {
-  content: url(/assets/img/plus.svg);
-  width: 48px;
-  top: 55%;
-  right: 0;
-  transition: all ease 0.7s;
-}
-
-.ac.is-active > .ac-header .ac-trigger::after {
-  content: url(/assets/img/minus.svg);
-}
-
+/*** Photoswipe */
 /*** elements */
 html,
 body {
@@ -3617,6 +3505,7 @@ section.intro .h_intro a::before {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: flex-end;
 }
 .numbers .wrapper .topline {
   width: 100%;
@@ -3749,12 +3638,7 @@ section.quicklinks .wrapper button {
 }
 section.quicklinks .wrapper button:last-of-type {
   margin-right: 0;
-} /*** quote */
-/*** impressions */
-/*** Card Slider */
-/*** Languages */
-/*** Teaser Tiles Praxis */
-/*** Teaser Tiles Leistungen */
+} /*** Teaser Tiles Leistungen */
 .tiles div[class*=item_] {
   align-items: center;
   margin-bottom: 80px;
@@ -3874,7 +3758,6 @@ section.teaser_leistungen .wrapper .sctn_content {
   }
 }
 
-/*** Teaser Tiles Service */
 /*** Das Team */
 section.team {
   margin-bottom: 120px;
@@ -3953,6 +3836,7 @@ section.in_numbers .wrapper {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-items: flex-end;
 }
 section.in_numbers .wrapper .topline {
   width: 100%;
@@ -4052,8 +3936,6 @@ html#karriere-berufserfahrene section.in_numbers .wrapper .topline::before {
     top: -64px;
   }
 }
-/*** Team  Detail */
-/*** FAQ Accordion */
 /*** Form Contact */
 section.contact {
   background: #F4F6F6;
@@ -4102,11 +3984,6 @@ section.contact .wrapper .sctn_content .copy_intro {
   }
 }
 
-/*** Link site */
-/*** Anfahrt & Kontakt Site */
-/*** Offene Stellen */
-/*** CTA Not Answered */
-/*** CTA Questions */
 /*** Projekt Galerie Slider */
 section.projektgalerie_sldr {
   background: #F4F6F6;

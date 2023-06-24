@@ -27,7 +27,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
 
-
   // You can return your Config object (optional).
   return {
     dir: {
