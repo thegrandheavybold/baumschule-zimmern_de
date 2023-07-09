@@ -3722,9 +3722,15 @@ button#menubutton {
     margin-top: 24px;
   }
 }
-html.touch .leistungen_items, html.touch .karriere_items {
+html.touch [aria-expanded=true] + [role=menu] .leistungen_items, html.touch [aria-expanded=true] + [role=menu] .karriere_items {
   visibility: visible;
   opacity: 1;
+  max-height: 100%;
+  margin-top: 24px;
+}
+html.touch [aria-expanded=false] + [role=menu] .leistungen_items, html.touch [aria-expanded=false] + [role=menu] .karriere_items {
+  visibility: hidden;
+  opacity: 0;
   max-height: 100%;
   margin-top: 24px;
 }

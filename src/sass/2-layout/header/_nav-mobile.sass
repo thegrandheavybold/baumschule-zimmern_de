@@ -98,14 +98,21 @@
 		max-height: 100%
 		margin-top: 24px
 
-html.touch
-
-	.leistungen_items, .karriere_items
-		visibility: visible
-		opacity: 1
-		max-height: 100%
-		margin-top: 24px
-		
+html.touch 
+	[aria-expanded="true"] + [role="menu"]
+		.leistungen_items, .karriere_items
+			visibility: visible
+			opacity: 1
+			max-height: 100%
+			margin-top: 24px
+	
+	[aria-expanded="false"] + [role="menu"]
+		.leistungen_items, .karriere_items
+			visibility: hidden
+			opacity: 0
+			max-height: 100%
+			margin-top: 24px
+			
 @include s
 	#menubutton
 		right: 20px
