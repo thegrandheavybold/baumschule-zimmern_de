@@ -41,7 +41,7 @@ metaImage:
 </section><!-- .intro -->
 
 
-<section class="sctn gartenplanung">
+<section class="sctn leistungen_detail">
 
   <div class="wrapper">
 
@@ -49,7 +49,7 @@ metaImage:
 
       <h2 data="fade-up delay">Deine Tätigkeiten</h2>
 
-      <ul data="fade-up delay" class="gp_detail__content grd">
+      <ul data="fade-up delay" class="leistungen_detail__content grd">
         <li>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit
         </li>
@@ -72,11 +72,11 @@ metaImage:
 
     </div><!-- .sctn_content -->
 
-    <div class="sctn_content mt-20">
+    <div class="sctn_content mt-20 leistungen_detail">
 
       <h2 data="fade-up delay">Was wir Dir bieten</h2>
 
-      <ul data="fade-up delay" class="gp_detail__content grd">
+      <ul data="fade-up delay" class="leistungen_detail__content grd">
         <li>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit
         </li>
@@ -106,14 +106,31 @@ metaImage:
 
 {% include "partials/kontakt_berufserfahren_bewerbung.njk"%}
 
-<section class="sctn gartenplanung">
+<section class="sctn direkterkontakt">
 
   <div class="wrapper">
 
-    <div class="sctn_content">
+    <div class="sctn_content grd">
+
+      <div class="item_1">
+        {% picture "julia.jpg", "Julia Peleikis-Zimmern – Zimmern Garten und Landschaftsbau GmbH" %}
+        <span class="caption"><strong>Julia Peleikis-Zimmern</strong>, zuständig für das Personalwesen, freut sich von Ihnen zu hören oder zu lesen.</span>
+
+      </div>
+
+      <div class="item_2">
+        {% include "partials/direkterkontakt_berufserfahrene.njk" %}
+      </div>
 
     </div><!-- .sctn_content -->
 
+     <div class="sctn_content success hidden">
+      <h2 data="fade-up">Vielen Dank!</h2>
+      <p class="copy_intro" data="fade-up delay">
+        Ihre Nachricht ist angekommen und wir melden uns zeitnah bei Ihnen.
+      </p>
+    </div>
+
   </div><!-- .wrapper -->
 
-</section><!-- .gartenplanung -->
+</section><!-- .direkterkontakt -->

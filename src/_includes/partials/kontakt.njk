@@ -8,27 +8,28 @@
 				Sie möchten mehr über unsere Leistung “Gartenplanung” erfahren? Wir können etwas für Sie tun? Wir freuen uns von Ihnen zu lesen und werden uns zeitnah bei Ihnen melden.
       </p>
 
-			<form name="kontakt" method="POST" data-netlify="true" data="fade-up">
+			<form id="kontakt" name="kontakt" method="POST" data-netlify="true" data="fade-up" autocomplete="on" novalidate>
+        
 
       <fieldset data="fade-up" class="client_contact">
 
-        <label for="Name">Name*
-          <input type="text" id="name" name="Name" required/>
+        <label for="name">Name*
+          <input type="text" id="name" name="name" minlength="2" required/>
 					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
         </label>
 
 
-        <label for="Email">E-Mail-Adresse*
-          <input type="email" id="email" name="Email" required/>
+        <label for="email">E-Mail-Adresse*
+          <input type="email" id="email" name="email" required/>
 					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
         </label>
 
-				<label for="Telefon">Telefon
-          <input type="tel" id="phone" name="Telefon" pattern="[0-9]"/>
+				<label for="tel">Telefon
+          <input type="tel" id="tel" name="tel" pattern="[0-9]"/>
         </label>
 
-				<label for="Interesse">Ich interessiere mich für ...
-          <select id="interesse" name="Interesse">
+				<label for="interesse">Ich interessiere mich für ...
+          <select id="interesse" name="interesse">
             <option value="Bitte wählen" disabled selected>Bitte wählen</option>
             <option value="Gartenneubau">Gartenneubau</option>
             <option value="Baumpflege">Baumpflege</option>
@@ -45,7 +46,7 @@
       <fieldset data="fade-up delay" class="message">
 
         <label for="message">Nachricht*
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" minlength="2" required></textarea>
 					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
         </label>
 
@@ -69,6 +70,13 @@
 
 
     </div><!-- .sctn_content -->
+
+    <div class="sctn_content success hidden">
+      <h2 data="fade-up">Vielen Dank!</h2>
+      <p class="copy_intro" data="fade-up delay">
+        Ihre Nachricht ist angekommen und wir melden uns zeitnah bei Ihnen.
+      </p>
+    </div>
 
   </div><!-- .wrapper -->
 </section><!-- .contact -->

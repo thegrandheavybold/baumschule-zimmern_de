@@ -1,0 +1,63 @@
+section.gllry
+	background: $neutral0
+	@include pb-30
+
+	ul.gllry__content
+		position: relative
+		@include row-gaps
+		li
+			grid-column: span 4
+			position: relative
+			height: 376px
+
+//Projektgallery Filter			
+section.projekt_gllry
+	@include pt-30 
+	p.topline 
+		margin-bottom: 0
+
+	.filter_btns
+		@include mt-8
+		display: flex
+		flex-wrap: wrap
+		justify-content: center 
+		button.gllry_filter
+			@include small_regular
+			border: none
+			cursor: pointer
+			display: flex
+			align-items: center
+			margin-right: 22px
+			margin-bottom: 24px
+			width: auto
+			&:last-of-type
+				margin-right: 0
+			&::before
+				content: ''
+				height: 32px
+				width: 32px
+				border: solid 2px $blue-grey20
+				display: block
+				margin-right: 16px
+		
+		.mixitup-control-active
+			&::after
+				content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>')
+				position: absolute
+				top: 6px
+				left: 10px
+
+
+	.gllry__content
+		@include pt-30
+		@include pb-20 
+
+	.gllry__content 
+		li.hidden
+			display: none
+
+@include m
+	section.gllry
+		ul.gllry__content
+			li
+				grid-column: span 6

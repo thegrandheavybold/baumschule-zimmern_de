@@ -1,7 +1,7 @@
 <section class="sctn contact">
   <div class="wrapper grd">
-
-    <div class="sctn_content">
+    
+    <div class="sctn_content form_section">
 
 			<h2 data="fade-up">Der ganz schnelle Weg</h2>
       <p class="copy_intro" data="fade-up delay">
@@ -9,23 +9,23 @@
         Oder noch direkter: Ruf uns unter <a class="link" href="tel:+4940815803">040 . 81 58 03</a> an. Wie's Dir lieber ist.
       </p>
 
-			<form id="kontakt_ausbildung" name="kontakt_ausbildung" method="POST" data-netlify="true" data="fade-up">
+			<form id="kontakt_ausbildung" name="kontakt_ausbildung" method="POST" data-netlify="true" data="fade-up" autocomplete="on" novalidate>
 
       <fieldset data="fade-up" class="client_contact">
 
-        <label for="Name">Name*
-          <input type="text" id="name" name="Name" required/>
+        <label for="name">Name*
+          <input type="text" id="name" name="name" required/>
 					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
         </label>
 
 
-        <label for="Email">E-Mail-Adresse*
-          <input type="email" id="email" name="Email" required/>
+        <label for="email">E-Mail-Adresse*
+          <input type="email" id="email" name="email" required/>
 					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
         </label>
 
-				<label for="Telefon">Telefon
-          <input type="tel" id="phone" name="Telefon" pattern="[0-9]"/>
+				<label for="tel">Telefon
+          <input type="tel" id="tel" name="tel" pattern="[0-9]"/>
         </label>
 
       </fieldset>
@@ -58,6 +58,13 @@
 
 
     </div><!-- .sctn_content -->
+
+    <div class="sctn_content success hidden">
+      <h2 data="fade-up">Vielen Dank!</h2>
+      <p class="copy_intro" data="fade-up delay">
+        Deine Nachricht ist angekommen und wir melden uns zeitnah bei Dir.
+      </p>
+    </div>
 
   </div><!-- .wrapper -->
 </section><!-- .contact -->

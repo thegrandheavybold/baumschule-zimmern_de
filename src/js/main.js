@@ -71,12 +71,12 @@ ELs_inViewport.forEach(EL => {
 
 
 //Detail toggle more Content
-window.addEventListener('click', function () {
-  const button = document.getElementById('#detail_oc');
-  const more = document.querySelector('.phase_detail__more');
-  more.classList.toggle("is_open");
-  button.classList.toggle("is_open");
-});
+//window.addEventListener('click', function () {
+  //const button = document.getElementById('#detail_oc');
+  //const more = document.querySelector('.phase_detail__more');
+  //more.classList.toggle("is_open");
+  //button.classList.toggle("is_open");
+//});
 
 
 //Import Accordion js
@@ -113,5 +113,103 @@ const oov = gsap.utils.toArray('.oov');
     })
 });
 
+//Paralax
+gsap.to(".para", {
+  scrollTrigger: {
+    scrub: true
+  }, 
+  y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+  ease: "none"
+});
+
 //Swiper js Sliders
 import 'swiper-sliders.js'
+
+
+// Include Lightbox > DimBox
+import dimbox from 'dimbox';
+
+//Lightbox Configurations
+dimbox.setConfig({
+    showDownloadButton: false,
+    svgCloseButton: '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="1.70711" y1="2.29289" x2="29.7071" y2="30.2929" stroke-width="2" stroke-linejoin="round"/><line x1="29.7071" y1="0.707107" x2="1.70711" y2="28.7071" stroke-width="2" stroke-linejoin="round"/></svg>',
+    svgPrevNextButton: '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="62" height="62" stroke-width="2"/><path d="M28 23L36 32L28 41" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></svg>'
+});
+
+    function reorder() {
+        let nav = document.createElement('div');
+        let prevBtn= document.querySelector('.dimbox-btn-prev');
+        let nextBtn= document.querySelector('.dimbox-btn-next');
+        let dimboxContent= document.querySelector('.dimbox-content');
+
+        nav.className = 'dimbox-navigation';
+
+
+        nav.appendChild(prevBtn);
+        nav.appendChild(nextBtn);
+        dimboxContent.appendChild(nav);
+    }
+
+import mixitup from 'mixitup';
+ 
+var containerEl = document.querySelector('.gllry__content');
+var mixer;
+
+if (containerEl) {
+  mixer = mixitup('.gllry__content', {
+    animation: {
+        effects: 'fade scale(0.7)',
+        easing: 'ease-in-out'
+    },
+    controls: {
+          toggleDefault: 'none',
+          toggleLogic: 'or'
+      }
+  });
+}
+
+
+//FormValidation
+const form = document.querySelector('form');
+const error = document.querySelector('.error-message');
+const input = document.querySelector('input');
+const label = document.querySelector('label');
+const success = document.querySelector('.success');
+const formSection = document.querySelector('.form_section');
+
+
+form.addEventListener('submit', event => {
+  success.classList.add('hidden');
+  formSection.classList.remove('hidden');
+  
+  form.checkValidity();
+  
+  event.preventDefault();
+
+  if (form.checkValidity()) {
+    success.classList.remove('hidden');
+    formSection.classList.add('hidden');    
+  }
+});
+
+// Revalidate on each keypress once the field has changed 
+input.addEventListener('input', event => {
+  // Clear out any previous error.
+  error.style.display = "none";
+  label.classList.remove('error');
+  
+  // Trigger the validation check. If the input field is invalid, it will emit an
+  // 'invalid' event.
+  input.checkValidity();
+});
+
+input.addEventListener('invalid', event => {
+  // Even with the novalidate attribute the form still
+  // gives us a suitable error message; we just have to display it
+  // ourselves.
+  error.style.display = "block";
+  label.classList.add('error');
+  input.focus();
+});
+
+

@@ -1,0 +1,159 @@
+@import '../node_modules/dimbox/src/scss/dimbox.scss'
+
+.gllry__zoom
+    cursor: zoom-in
+    &::after
+        content: ''
+        width: 100%
+        height: 490px
+        background: linear-gradient(180deg, rgba(0,0,0,0.500437675070028) 0%, rgba(0,0,0,0) 40%)
+        position: absolute
+        left: 0
+    &::before
+        content: url("data:image/svg+xml,%3Csvg width='25' height='32' viewBox='0 0 25 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.9625 0.40877C21.2966 2.12103 25.0657 8.70675 23.3681 15.0978C22.8712 16.9701 21.925 18.723 20.5777 20.1776C21.8888 22.5938 23.3737 24.9861 24.7145 27.3907C25.3107 28.4595 24.9427 29.8142 23.8916 30.4288C23.1502 30.8534 22.3914 31.3403 21.6412 31.736C20.587 32.3042 19.271 31.9265 18.6729 30.8811C17.3012 28.4815 15.9283 26.0823 14.556 23.6827C12.6375 24.1306 10.664 24.0799 8.81095 23.5791C2.484 21.869 -1.28881 15.2729 0.405302 8.89038C2.10098 2.50594 8.63552 -1.30003 14.9625 0.40877ZM18.8808 27.4761L21.6762 25.8476L19.2285 21.5651L16.43 23.1954L18.8808 27.4761ZM22.6096 27.4802L19.8157 29.108L20.2896 29.9361C20.3804 30.0946 20.5861 30.1588 20.75 30.082C21.4911 29.6423 22.2506 29.223 22.987 28.776C23.1165 28.68 23.1661 28.4992 23.1059 28.3489L22.6096 27.4802ZM21.561 14.6102C22.9923 9.2208 19.821 3.67548 14.4792 2.23191C9.14278 0.790533 3.64245 3.99142 2.21211 9.37798C0.783333 14.7611 3.95617 20.3136 9.29387 21.756C14.6309 23.1992 20.1307 19.9961 21.561 14.6102Z' fill='white'/%3E%3Cpath d='M6.83815 11.0489C5.60603 11.0489 5.60603 12.9391 6.83815 12.9391H10.9497V17.0878C10.9497 18.331 12.823 18.331 12.823 17.0878V12.9391H16.9345C18.1666 12.9391 18.1666 11.0489 16.9345 11.0489H12.823V6.90021C12.823 5.65696 10.9497 5.65696 10.9497 6.90021V11.0489H6.83815Z' fill='white'/%3E%3C/svg%3E%0A")
+        display: block
+        position: absolute
+        bottom: 313px
+        right: 20px
+        z-index: 1
+
+.dimbox-container
+    display: flex
+    flex-direction: column
+
+.dimbox-container::before
+    background: $blue-grey70
+    opacity: 1
+
+[class^=dimbox-btn]
+    opacity: 1
+[class^=dimbox-btn] svg
+    stroke: $neutral0
+    transition: stroke ease .5s
+    will-change: stroke
+
+.dimbox-btn-next:hover svg, .dimbox-btn-prev:hover svg
+    stroke: $red50
+        
+.dimbox-btn-next svg, .dimbox-btn-prev svg
+    height: 64px
+    width: 64px
+
+button.dimbox-btn-next, button.dimbox-btn-prev
+    position: relative
+    height: 64px
+    width: 64px
+    top: 0
+    left: 0
+    transform: translateY(0)
+
+button.dimbox-btn-prev
+    transform: rotate(180deg)
+    
+button.dimbox-btn-prev
+    margin-right: 32px
+
+.dimbox-content
+    max-width: 936px
+    max-height: 702px
+    display: flex
+    flex-wrap: wrap
+    order: 1
+
+.dimbox-figure
+    display: flex
+    align-items: flex-start
+    height: auto
+
+.dimbox-caption
+    text-align: left
+    margin: 0
+    @include mt-6
+    width: auto
+    @include paragraph_regular
+
+.dimbox-sequence
+    position: relative
+    top: 0
+    left: 0
+    order: 1
+    display: flex
+    flex-wrap: nowrap
+
+.dimbox-navigation
+    position: relative
+    height: auto
+    width: 100%
+    @include mt-6
+    order: 2
+    display: flex
+    max-width: 936px
+    justify-content: flex-end
+
+    .dimbox-btns
+        position: relative
+        order: 2
+        margin-left: 32px
+        height: auto
+        width: auto
+        display: flex
+    
+.dimbox-image, .dimbox-video
+    object-fit: cover
+
+.dimbox-container.dimbox-gallery .dimbox-content.dimbox-transition-left 
+    transform: translateX(0)
+    opacity: 0
+    transition: opacity .5s, transform .5s
+
+.dimbox-container.dimbox-gallery .dimbox-content.dimbox-transition-right 
+    transform: translateX(0)
+    opacity: 0
+    transition: opacity .5s, transform .5s
+
+.dimbox-loader
+    display: none
+
+.d-none
+    display: none !important
+
+.dimbox-ajax-content, .dimbox-inline-content
+    max-width: 936px
+    max-height: 702px
+    height: 702px
+    align-items: center
+    display: flex
+    flex-wrap: wrap
+    order: 1
+    background: transparent
+    picture
+        @include mb-6
+
+    p 
+        color: $neutral0
+
+.historie_content
+    display: flex
+    flex-direction: row
+    align-items: center
+    flex-wrap: wrap
+    p
+        margin-bottom: 0
+
+    .item_1
+        width: 60%
+    .item_2
+        width: 40%
+        padding: 0 0 0 2rem
+    
+    @include s
+        .item_1, .item_2
+            width: 100%
+            padding: 0
+
+#zwanzig13
+    flex-direction: column
+    .item_1
+        width: 50%
+    .item_2
+        width: 100%

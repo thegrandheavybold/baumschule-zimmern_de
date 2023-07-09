@@ -38,6 +38,17 @@ label
 input:hover, textarea:hover, select:hover
   border: solid 2px $blue-grey30
 
+.success
+  grid-column: 3/11
+  
+.hidden
+  display: none
+
+.error
+  color: $error
+  input, input:focus
+    border: solid 2px $error
+
 //input:not(:focus):not(:placeholder-shown):invalid, input:not(:focus):not(:placeholder-shown):required:invalid
   border: solid 2px $error
 
@@ -83,21 +94,28 @@ fieldset.privacy
   display: flex
   align-items: center
 
-  input[type="checkbox"]
-    height: 32px
-    width: 32px
-    margin-right: 16px
-    margin-top: 0
-    display: grid
-    place-content: center
-    &:checked
-      &::before
-        content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>')
-        position: absolute
-        width: 24px
-        height: 24px
-        top: 2px
-        left: 5px
+  label[for="datenschutz"]
+    flex-direction: row
+    width: auto
+    flex-wrap: nowrap
+    p 
+      margin-bottom: 0
+
+input[type="checkbox"]
+  height: 32px
+  width: 32px
+  margin-right: 16px
+  margin-top: 0
+  display: grid
+  place-content: center
+  &:checked
+    &::before
+      content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>')
+      position: absolute
+      width: 24px
+      height: 24px
+      top: 2px
+      left: 5px
   label
     width: 100%
     display: flex
@@ -131,6 +149,7 @@ span.ansprache
   display: flex
   align-items: center
   justify-content: flex-start
+  flex-wrap: wrap
 
   label
     display: flex
@@ -141,6 +160,67 @@ span.ansprache
     input
       margin: 0 16px 0 0
 
+fieldset.files
+  ul.fileUpload_fields
+    width: 100%
+    @include mb-8
+    li 
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      flex-wrap: wrap
+      padding: 27px 0
+
+      &::after
+        content: ''
+        height: 2px
+        width: 100%
+        background: $blue-grey20
+        display: block
+        position: relative
+        bottom: -27px
+      &:first-of-type
+        padding-top: 0
+
+      span
+        width: 50% 
+        justify-content: inherit
+        text-align: left
+      
+      input 
+        width: 40%
+    
+
+input[type="file"].fileUploadBtn
+  cursor: pointer
+  @include paragraph_regular
+  border: none
+  background: transparent
+  width: 40%
+  color: $blue-grey50
+  &::file-selector-button
+    margin-right: 16px
+    padding: 10px 16px 10px 16px
+    cursor: pointer
+    @include paragraph_regular
+    box-sizing: border-box
+    appearance: none !important
+    border: solid 2px
+    background: transparent
+    transition: border-color ease .7s
+    will-change: border-color
+    position: relative
+    z-index: 90
+    border-color: $green50
+    color: $red50
+
 @include s
   label
     width: 100%
+
+  fieldset.files
+    ul.fileUpload_fields
+      li 
+        span, input
+          width: 100%

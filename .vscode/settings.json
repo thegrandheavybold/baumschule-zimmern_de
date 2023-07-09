@@ -1,0 +1,10 @@
+{
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    "editor.inlineSuggest.suppressSuggestions": false,
+    "editor.acceptSuggestionOnEnter": "on",
+    "emmet.preferences": {},
+    "html.suggest.html5": true,
+    "terminal.integrated.tabStopWidth": 4,
+    "workbench.editor.tabSizingFixedMaxWidth": 80
+}

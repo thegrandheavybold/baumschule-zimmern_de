@@ -9,43 +9,43 @@
         Falls Sie vorab noch Fragen haben: Ruf Sie uns unter <a class="link" href="tel:+4940815803">040 . 81 58 03</a> an.
       </p>
 
-			<form id="kontakt_berufserfahren_bewerbung" name="kontakt_berufserfahren_bewerbung" method="POST" data-netlify="true" data="fade-up">
+			<form id="kontakt_berufserfahren_bewerbung" name="kontakt_berufserfahren_bewerbung" method="POST" data-netlify="true" data="fade-up" autocomplete="on" novalidate>
 
       <fieldset data="fade-up" class="client_contact">
 
         <span class="ansprache">
-          <label for="Frau">
-            <input class="radio" type="checkbox" name="Ansprache" />
+          <label for="frau">
+            <input class="radio" type="checkbox" name="ansprache" />
             Frau
           </label>
-          <label for="Herr">
-            <input class="radio" type="checkbox" name="Ansprache" />
+          <label for="herr">
+            <input class="radio" type="checkbox" name="ansprache" />
             Herr
           </label>
-          <label for="Divers">
-            <input class="radio" type="checkbox" name="Ansprache" />
+          <label for="divers">
+            <input class="radio" type="checkbox" name="ansprache" />
             Divers
           </label>
         </span>
 
-        <label for="Name">Vorname*
-          <input type="text" id="vorname" name="Vorname" required/>
+        <label for="vorname">Vorname*
+          <input type="text" id="vorname" name="vorname" required/>
 					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
         </label>
 
-        <label for="Name">Nachname*
-          <input type="text" id="nachname" name="Nachname" required/>
+        <label for="nachname">Nachname*
+          <input type="text" id="nachname" name="nachname" required/>
 					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
         </label>
 
 
-        <label for="Email">E-Mail-Adresse*
-          <input type="email" id="email" name="Email" required/>
+        <label for="email">E-Mail-Adresse*
+          <input type="email" id="email" name="email" required/>
 					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
         </label>
 
-				<label for="Telefon">Telefon
-          <input type="tel" id="phone" name="Telefon" pattern="[0-9]"/>
+				<label for="tel">Telefon
+          <input type="tel" id="tel" name="tel" pattern="[0-9]"/>
         </label>
 
       </fieldset>
@@ -58,6 +58,27 @@
 					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
         </label>
 
+      </fieldset>
+
+      <fieldset data="fade-up delay" class="files">
+        <ul class="fileUpload_fields">
+          <li>
+            <span>Anschreiben hochladen (PDF, max. 4 MB) *</span>
+            <input type="file" id="anschreiben" name="anschreiben" class="fileUploadBtn" accept="application/pdf" required>
+          </li>
+          <li>
+            <span>Foto hochladen (JPG, max. 4 MB)*</span>
+            <input type="file" id="foto" name="Foto" class="fileUploadBtn" accept="image/jpeg" required>
+          </li>
+          <li>
+            <span>Lebenslauf hochladen (PDF, max. 4 MB)*</span>
+            <input type="file" id="lebenslauf" name="Lebenslauf" class="fileUploadBtn" accept="application/pdf" required>
+          </li>
+          <li>
+            <span>Weitere Datei hochladen (PDF/JPG/MOV, max. 4 MB)</span>
+            <input type="file" id="weitereDateien" name="weitereDateien" class="fileUploadBtn" accept="application/pdf, image/jpeg, video/*">
+          </li>
+        </ul>
       </fieldset>
 
 			<fieldset data="fade-up" class="privacy">
@@ -78,6 +99,13 @@
 
 
     </div><!-- .sctn_content -->
+
+    <div class="sctn_content success hidden">
+      <h2 data="fade-up">Vielen Dank!</h2>
+      <p class="copy_intro" data="fade-up delay">
+        Ihre Bewerbung ist angekommen und wir melden uns zeitnah bei Ihnen.
+      </p>
+    </div>
 
   </div><!-- .wrapper -->
 </section><!-- .contact -->

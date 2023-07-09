@@ -1,22 +1,20 @@
 .sticky_badge
-  display: none
+  display: flex
   position: fixed
   right: -3px
-  top: calc(50vh - (194px / 2))
+  top: calc(50vh - (224px / 2))
   z-index: 100
   &::after
     content: ""
     width: 57px
-    height: 256px
+    height: 224px
     display: block
     right: 0
-    top: -34px
-    background: $white
+    top: -27px
+    background: $neutral0
     position: absolute
     z-index: 0
-    border-top-left-radius: 5rem
-    border-bottom-left-radius: 5rem
-    border: solid 3px $red
+    border: solid 2px $blue-grey8
 
   ul.sticky_icons
     position: relative
@@ -29,11 +27,16 @@
       display: flex
       flex-direction: row
       align-items: center
-      margin-bottom: 0.75rem
+      @include mb-8
       position: relative
       cursor: pointer
       height: 35px
       transition: all ease 2s
+      &:last-of-type
+        margin-bottom: 0
+
+      a 
+        line-height: 0
 
 
       span.sticky_content_item
@@ -45,10 +48,15 @@
         display: none
         position: relative
         right: 20px
+      button
+        border-color: $green50
+      a svg
+        height: 32px
+        width: 32px
 
       a:hover
-        svg
-          fill: $red
+        svg, svg.phone
+          fill: $red50 !important
 
   ul.sticky_icons li:hover > span.sticky_content_item
     transform: translateY(0)
@@ -57,6 +65,6 @@
     display: block
 
 // Hiding for Mobile
-@media only screen and (max-width: 768px)
+@include s
   .sticky_badge
     display: none

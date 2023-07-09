@@ -1,9 +1,9 @@
 @charset "UTF-8";
-/* 	Theme Name: Zimmern Garten und Landschaftsbau GmbH 
+/* 	Theme Name: Zimmern Garten undLandschaftsbau GmbH
  * Theme URI: https://www.baumschule-zimmern.de/
  * Author: Christian Kriegsheim
  * Author URI: https://tghb.studio
- * Description: Business Website of Zimmern Garten und  Landschaftsbau GmbH 
+ * Description: Business Website of Zimmern Garten und Landschaftsbau GmbH
  * Version: 1.0.0
  * Tags: */
 /*	Normalizing styles have been helped along thanks to the fine work of
@@ -1781,7 +1781,553 @@ button.swiper-pagination-bullet {
     width: 16px;
   }
 }
-/*** Photoswipe */
+/*** LightBox */
+.dimbox-container {
+  position: fixed;
+  inset: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 56px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 99999;
+}
+
+.dimbox-container.dimbox-light {
+  color: #000;
+}
+
+.dimbox-container.show {
+  opacity: 1;
+}
+
+.dimbox-container.close-on-overlay-click,
+.dimbox-container.close-on-overlay-click .dimbox-figure,
+.dimbox-container.close-on-overlay-click .dimbox-video-container,
+.dimbox-container.close-on-overlay-click .dimbox-iframe-container,
+.dimbox-container.close-on-overlay-click .dimbox-ajax-container,
+.dimbox-container.close-on-overlay-click:not(.dimbox-loaded) .dimbox-image {
+  cursor: pointer;
+}
+
+.dimbox-container * {
+  box-sizing: border-box;
+}
+
+.dimbox-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0 0 0 0;
+  background-color: #000;
+  opacity: 0.75;
+}
+
+.dimbox-container.dimbox-light::before {
+  background-color: #fff;
+}
+
+.dimbox-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  margin-left: -16px;
+  border: 4px solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  opacity: 0.5;
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+.dimbox-container.dimbox-light .dimbox-loader {
+  border-color: #000;
+  border-right-color: transparent;
+}
+
+.dimbox-container.dimbox-loaded .dimbox-loader {
+  display: none;
+}
+
+[class^=dimbox-btn] {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background-color: transparent;
+  color: #fff;
+  padding: 0;
+  border: none;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.dimbox-container.dimbox-light [class^=dimbox-btn] {
+  color: #000;
+}
+
+.dimbox-btn-close {
+  top: 16px;
+  right: 16px;
+}
+
+.dimbox-btn-download {
+  top: 16px;
+  right: 64px;
+}
+
+[class^=dimbox-btn]:hover,
+[class^=dimbox-btn]:active,
+[class^=dimbox-btn]:focus {
+  color: #fff;
+  opacity: 1;
+}
+
+.dimbox-container.dimbox-light [class^=dimbox-btn]:hover,
+.dimbox-container.dimbox-light [class^=dimbox-btn]:active,
+.dimbox-container.dimbox-light [class^=dimbox-btn]:focus {
+  color: #000;
+}
+
+.dimbox-btn-prev,
+.dimbox-btn-next {
+  top: 50%;
+}
+
+.dimbox-btn-prev {
+  left: 8px;
+  -webkit-transform: rotate(180deg) translateY(50%);
+          transform: rotate(180deg) translateY(50%);
+}
+
+.dimbox-btn-next {
+  right: 8px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+[class^=dimbox-btn] svg {
+  width: 32px;
+  height: 32px;
+}
+
+.dimbox-sequence {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.dimbox-content {
+  position: relative;
+  max-height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+  cursor: default;
+}
+
+.dimbox-container.show .dimbox-content {
+  opacity: 1;
+}
+
+.dimbox-container.dimbox-gallery .dimbox-content.dimbox-transition-left {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+}
+
+.dimbox-container.dimbox-gallery .dimbox-content.dimbox-transition-right {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  opacity: 0;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+}
+
+.dimbox-figure,
+.dimbox-video-container,
+.dimbox-iframe-container {
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: calc(100vh - 88px);
+  transition: width 0.5s, height 0.5s;
+}
+
+.dimbox-iframe-container {
+  width: calc(100vw - 112px);
+  height: calc(100vh - 88px);
+}
+
+.dimbox-ajax-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.dimbox-container.dimbox-loaded .dimbox-figure,
+.dimbox-container.dimbox-loaded .dimbox-video-container,
+.dimbox-container.dimbox-loaded .dimbox-iframe-container {
+  opacity: 1;
+}
+
+.dimbox-ajax-content,
+.dimbox-inline-content {
+  background-color: #fff;
+  color: #000;
+  max-width: 768px;
+  max-height: calc(100vh - 88px);
+  padding: 16px;
+  overflow: auto;
+}
+
+.dimbox-image,
+.dimbox-video,
+.dimbox-iframe {
+  display: block;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 100%;
+  cursor: default;
+  transition: width 0.5s, height 0.5s;
+}
+
+.dimbox-image,
+.dimbox-video {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.dimbox-caption {
+  color: #fff;
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 8px auto 0 auto;
+  cursor: default;
+}
+
+.dimbox-container.dimbox-light .dimbox-caption {
+  color: #000;
+}
+
+.dimbox-iframe {
+  border: none;
+}
+
+.dimbox-iframe.ratio-16x9 {
+  aspect-ratio: 16/9;
+}
+
+.dimbox-iframe.ratio-4x3 {
+  aspect-ratio: 4/3;
+}
+
+.dimbox-iframe.ratio-1x1 {
+  aspect-ratio: 1/1;
+}
+
+.dimbox-iframe.ratio-9x16 {
+  aspect-ratio: 9/16;
+}
+
+.dimbox-noscroll {
+  overflow: hidden !important;
+}
+
+@media (orientation: portrait) {
+  .dimbox-container {
+    padding: 56px 16px;
+  }
+  .dimbox-figure,
+  .dimbox-video-container {
+    max-width: 100%;
+    height: 100%;
+  }
+  .dimbox-iframe-container,
+  .dimbox-ajax-container {
+    width: 100%;
+    height: calc(100vh - 112px);
+  }
+  .dimbox-inline-content {
+    max-height: calc(100vh - 112px);
+  }
+  .dimbox-image,
+  .dimbox-video {
+    width: 100%;
+    height: auto;
+  }
+  .dimbox-btn-prev,
+  .dimbox-btn-next {
+    top: auto;
+    bottom: 0;
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.gllry__zoom {
+  cursor: zoom-in;
+}
+.gllry__zoom::after {
+  content: "";
+  width: 100%;
+  height: 490px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5004376751) 0%, rgba(0, 0, 0, 0) 40%);
+  position: absolute;
+  left: 0;
+}
+.gllry__zoom::before {
+  content: url("data:image/svg+xml,%3Csvg width='25' height='32' viewBox='0 0 25 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.9625 0.40877C21.2966 2.12103 25.0657 8.70675 23.3681 15.0978C22.8712 16.9701 21.925 18.723 20.5777 20.1776C21.8888 22.5938 23.3737 24.9861 24.7145 27.3907C25.3107 28.4595 24.9427 29.8142 23.8916 30.4288C23.1502 30.8534 22.3914 31.3403 21.6412 31.736C20.587 32.3042 19.271 31.9265 18.6729 30.8811C17.3012 28.4815 15.9283 26.0823 14.556 23.6827C12.6375 24.1306 10.664 24.0799 8.81095 23.5791C2.484 21.869 -1.28881 15.2729 0.405302 8.89038C2.10098 2.50594 8.63552 -1.30003 14.9625 0.40877ZM18.8808 27.4761L21.6762 25.8476L19.2285 21.5651L16.43 23.1954L18.8808 27.4761ZM22.6096 27.4802L19.8157 29.108L20.2896 29.9361C20.3804 30.0946 20.5861 30.1588 20.75 30.082C21.4911 29.6423 22.2506 29.223 22.987 28.776C23.1165 28.68 23.1661 28.4992 23.1059 28.3489L22.6096 27.4802ZM21.561 14.6102C22.9923 9.2208 19.821 3.67548 14.4792 2.23191C9.14278 0.790533 3.64245 3.99142 2.21211 9.37798C0.783333 14.7611 3.95617 20.3136 9.29387 21.756C14.6309 23.1992 20.1307 19.9961 21.561 14.6102Z' fill='white'/%3E%3Cpath d='M6.83815 11.0489C5.60603 11.0489 5.60603 12.9391 6.83815 12.9391H10.9497V17.0878C10.9497 18.331 12.823 18.331 12.823 17.0878V12.9391H16.9345C18.1666 12.9391 18.1666 11.0489 16.9345 11.0489H12.823V6.90021C12.823 5.65696 10.9497 5.65696 10.9497 6.90021V11.0489H6.83815Z' fill='white'/%3E%3C/svg%3E%0A");
+  display: block;
+  position: absolute;
+  bottom: 313px;
+  right: 20px;
+  z-index: 1;
+}
+
+.dimbox-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.dimbox-container::before {
+  background: #3B4D4D;
+  opacity: 1;
+}
+
+[class^=dimbox-btn] {
+  opacity: 1;
+}
+
+[class^=dimbox-btn] svg {
+  stroke: #FFFFFF;
+  transition: stroke ease 0.5s;
+  will-change: stroke;
+}
+
+.dimbox-btn-next:hover svg, .dimbox-btn-prev:hover svg {
+  stroke: #990033;
+}
+
+.dimbox-btn-next svg, .dimbox-btn-prev svg {
+  height: 64px;
+  width: 64px;
+}
+
+button.dimbox-btn-next, button.dimbox-btn-prev {
+  position: relative;
+  height: 64px;
+  width: 64px;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+button.dimbox-btn-prev {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+button.dimbox-btn-prev {
+  margin-right: 32px;
+}
+
+.dimbox-content {
+  max-width: 936px;
+  max-height: 702px;
+  display: flex;
+  flex-wrap: wrap;
+  order: 1;
+}
+
+.dimbox-figure {
+  display: flex;
+  align-items: flex-start;
+  height: auto;
+}
+
+.dimbox-caption {
+  text-align: left;
+  margin: 0;
+  margin-top: 24px;
+  width: auto;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .dimbox-caption {
+    margin-top: 16px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .dimbox-caption {
+    margin-top: 16px;
+  }
+}
+
+.dimbox-sequence {
+  position: relative;
+  top: 0;
+  left: 0;
+  order: 1;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.dimbox-navigation {
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin-top: 24px;
+  order: 2;
+  display: flex;
+  max-width: 936px;
+  justify-content: flex-end;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .dimbox-navigation {
+    margin-top: 16px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .dimbox-navigation {
+    margin-top: 16px;
+  }
+}
+.dimbox-navigation .dimbox-btns {
+  position: relative;
+  order: 2;
+  margin-left: 32px;
+  height: auto;
+  width: auto;
+  display: flex;
+}
+
+.dimbox-image, .dimbox-video {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.dimbox-container.dimbox-gallery .dimbox-content.dimbox-transition-left {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 0;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+}
+
+.dimbox-container.dimbox-gallery .dimbox-content.dimbox-transition-right {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  opacity: 0;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.5s, transform 0.5s, -webkit-transform 0.5s;
+}
+
+.dimbox-loader {
+  display: none;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.dimbox-ajax-content, .dimbox-inline-content {
+  max-width: 936px;
+  max-height: 702px;
+  height: 702px;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  order: 1;
+  background: transparent;
+}
+.dimbox-ajax-content picture, .dimbox-inline-content picture {
+  margin-bottom: 24px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .dimbox-ajax-content picture, .dimbox-inline-content picture {
+    margin-bottom: 16px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .dimbox-ajax-content picture, .dimbox-inline-content picture {
+    margin-bottom: 16px;
+  }
+}
+.dimbox-ajax-content p, .dimbox-inline-content p {
+  color: #FFFFFF;
+}
+
+.historie_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.historie_content p {
+  margin-bottom: 0;
+}
+.historie_content .item_1 {
+  width: 60%;
+}
+.historie_content .item_2 {
+  width: 40%;
+  padding: 0 0 0 2rem;
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .historie_content .item_1, .historie_content .item_2 {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+#zwanzig13 {
+  flex-direction: column;
+}
+#zwanzig13 .item_1 {
+  width: 50%;
+}
+#zwanzig13 .item_2 {
+  width: 100%;
+}
+
 /*** elements */
 html,
 body {
@@ -2066,6 +2612,21 @@ input:hover, textarea:hover, select:hover {
   border: solid 2px #AEBABA;
 }
 
+.success {
+  grid-column: 3/11;
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: #E33E0A;
+}
+.error input, .error input:focus {
+  border: solid 2px #E33E0A;
+}
+
 span.error-message {
   display: none;
   text-align: left;
@@ -2101,7 +2662,16 @@ fieldset.privacy {
   display: flex;
   align-items: center;
 }
-fieldset.privacy input[type=checkbox] {
+fieldset.privacy label[for=datenschutz] {
+  flex-direction: row;
+  width: auto;
+  flex-wrap: nowrap;
+}
+fieldset.privacy label[for=datenschutz] p {
+  margin-bottom: 0;
+}
+
+input[type=checkbox] {
   height: 32px;
   width: 32px;
   margin-right: 16px;
@@ -2109,7 +2679,7 @@ fieldset.privacy input[type=checkbox] {
   display: grid;
   place-content: center;
 }
-fieldset.privacy input[type=checkbox]:checked::before {
+input[type=checkbox]:checked::before {
   content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>');
   position: absolute;
   width: 24px;
@@ -2117,18 +2687,18 @@ fieldset.privacy input[type=checkbox]:checked::before {
   top: 2px;
   left: 5px;
 }
-fieldset.privacy label {
+input[type=checkbox] label {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
 }
-fieldset.privacy label p {
+input[type=checkbox] label p {
   margin-bottom: 0;
   width: auto;
 }
-fieldset.privacy label span.error-message {
+input[type=checkbox] label span.error-message {
   width: 100%;
 }
 
@@ -2154,6 +2724,7 @@ span.ansprache {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 span.ansprache label {
   display: flex;
@@ -2166,8 +2737,105 @@ span.ansprache label input {
   margin: 0 16px 0 0;
 }
 
+fieldset.files ul.fileUpload_fields {
+  width: 100%;
+  margin-bottom: 32px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  fieldset.files ul.fileUpload_fields {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  fieldset.files ul.fileUpload_fields {
+    margin-bottom: 24px;
+  }
+}
+fieldset.files ul.fileUpload_fields li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 27px 0;
+}
+fieldset.files ul.fileUpload_fields li::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: #C9D1D1;
+  display: block;
+  position: relative;
+  bottom: -27px;
+}
+fieldset.files ul.fileUpload_fields li:first-of-type {
+  padding-top: 0;
+}
+fieldset.files ul.fileUpload_fields li span {
+  width: 50%;
+  justify-content: inherit;
+  text-align: left;
+}
+fieldset.files ul.fileUpload_fields li input {
+  width: 40%;
+}
+
+input[type=file].fileUploadBtn {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  border: none;
+  background: transparent;
+  width: 40%;
+  color: #788C8C;
+}
+input[type=file].fileUploadBtn::-webkit-file-upload-button {
+  margin-right: 16px;
+  padding: 10px 16px 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  box-sizing: border-box;
+  -webkit-appearance: none !important;
+          appearance: none !important;
+  border: solid 2px;
+  background: transparent;
+  -webkit-transition: border-color ease 0.7s;
+  transition: border-color ease 0.7s;
+  will-change: border-color;
+  position: relative;
+  z-index: 90;
+  border-color: #628D33;
+  color: #990033;
+}
+input[type=file].fileUploadBtn::file-selector-button {
+  margin-right: 16px;
+  padding: 10px 16px 10px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  box-sizing: border-box;
+  -webkit-appearance: none !important;
+     -moz-appearance: none !important;
+          appearance: none !important;
+  border: solid 2px;
+  background: transparent;
+  transition: border-color ease 0.7s;
+  will-change: border-color;
+  position: relative;
+  z-index: 90;
+  border-color: #628D33;
+  color: #990033;
+}
+
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   label {
+    width: 100%;
+  }
+  fieldset.files ul.fileUpload_fields li span, fieldset.files ul.fileUpload_fields li input {
     width: 100%;
   }
 }
@@ -2462,6 +3130,7 @@ strong {
 svg.phone {
   width: 20.57px;
   height: 26.49px;
+  fill: #628D33;
 }
 
 svg.badge {
@@ -2537,6 +3206,13 @@ svg.fachverband {
   width: 162px;
   height: 218px;
   display: block;
+}
+
+svg.mail, svg.route {
+  width: 32px;
+  height: 32px;
+  display: block;
+  fill: #628D33;
 }
 
 /*** Header */ /*** Header */
@@ -3281,25 +3957,23 @@ footer .footer_bar ul.footer_links li span.scrollUp {
 /*** Misc Layout Styles for reuse */
 /*** sticky badge */
 .sticky_badge {
-  display: none;
+  display: flex;
   position: fixed;
   right: -3px;
-  top: calc(50vh - 97px);
+  top: calc(50vh - 112px);
   z-index: 100;
 }
 .sticky_badge::after {
   content: "";
   width: 57px;
-  height: 256px;
+  height: 224px;
   display: block;
   right: 0;
-  top: -34px;
-  background: #fff;
+  top: -27px;
+  background: #FFFFFF;
   position: absolute;
   z-index: 0;
-  border-top-left-radius: 5rem;
-  border-bottom-left-radius: 5rem;
-  border: solid 3px #990033;
+  border: solid 2px #F4F6F6;
 }
 .sticky_badge ul.sticky_icons {
   position: relative;
@@ -3313,11 +3987,27 @@ footer .footer_bar ul.footer_links li span.scrollUp {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 32px;
   position: relative;
   cursor: pointer;
   height: 35px;
   transition: all ease 2s;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .sticky_badge ul.sticky_icons li {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .sticky_badge ul.sticky_icons li {
+    margin-bottom: 24px;
+  }
+}
+.sticky_badge ul.sticky_icons li:last-of-type {
+  margin-bottom: 0;
+}
+.sticky_badge ul.sticky_icons li a {
+  line-height: 0;
 }
 .sticky_badge ul.sticky_icons li span.sticky_content_item {
   opacity: 0;
@@ -3330,8 +4020,15 @@ footer .footer_bar ul.footer_links li span.scrollUp {
   position: relative;
   right: 20px;
 }
-.sticky_badge ul.sticky_icons li a:hover svg {
-  fill: #990033;
+.sticky_badge ul.sticky_icons li button {
+  border-color: #628D33;
+}
+.sticky_badge ul.sticky_icons li a svg {
+  height: 32px;
+  width: 32px;
+}
+.sticky_badge ul.sticky_icons li a:hover svg, .sticky_badge ul.sticky_icons li a:hover svg.phone {
+  fill: #990033 !important;
 }
 .sticky_badge ul.sticky_icons li:hover > span.sticky_content_item {
   -webkit-transform: translateY(0);
@@ -3341,7 +4038,7 @@ footer .footer_bar ul.footer_links li span.scrollUp {
   display: block;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 0px) and (max-width: 767px) {
   .sticky_badge {
     display: none;
   }
@@ -4052,6 +4749,22 @@ section.historie_sldr {
     padding-bottom: 64px;
   }
 }
+section.historie_sldr .historie_swiper .swiper-wrapper .swiper-slide a {
+  width: 485px;
+  height: 367px;
+  overflow: hidden;
+  display: block;
+}
+section.historie_sldr .historie_swiper .swiper-wrapper .swiper-slide a picture img {
+  transition: -webkit-transform ease 0.7s;
+  transition: transform ease 0.7s;
+  transition: transform ease 0.7s, -webkit-transform ease 0.7s;
+  will-change: transform;
+}
+section.historie_sldr .historie_swiper .swiper-wrapper .swiper-slide:hover picture img {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
 section.historie_sldr .historie_swiper .swiper-wrapper .swiper-slide h1 {
   margin-bottom: 8px;
 }
@@ -4427,123 +5140,58 @@ section.planungsprozess .phase_detail__more.is_open {
 }
 
 /***Gartenplanung */
-section.gartenplanung, section.benefits {
+section.leistungen_detail, section.benefits {
   background: #FFFFFF;
   padding-top: 120px;
   padding-bottom: 120px;
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  section.gartenplanung, section.benefits {
+  section.leistungen_detail, section.benefits {
     padding-top: 64px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.gartenplanung, section.benefits {
+  section.leistungen_detail, section.benefits {
     padding-top: 64px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  section.gartenplanung, section.benefits {
+  section.leistungen_detail, section.benefits {
     padding-bottom: 64px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.gartenplanung, section.benefits {
+  section.leistungen_detail, section.benefits {
     padding-bottom: 64px;
   }
 }
-section.gartenplanung ul.gp_detail__content, section.benefits ul.gp_detail__content {
+section.leistungen_detail ul.leistungen_detail__content, section.benefits ul.leistungen_detail__content {
   text-align: left;
   position: relative;
 }
-section.gartenplanung ul.gp_detail__content li, section.benefits ul.gp_detail__content li {
+section.leistungen_detail ul.leistungen_detail__content li, section.benefits ul.leistungen_detail__content li {
   grid-column: span 6;
   margin-bottom: 32px;
   position: relative;
   padding-left: 60px;
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  section.gartenplanung ul.gp_detail__content li, section.benefits ul.gp_detail__content li {
+  section.leistungen_detail ul.leistungen_detail__content li, section.benefits ul.leistungen_detail__content li {
     margin-bottom: 24px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.gartenplanung ul.gp_detail__content li, section.benefits ul.gp_detail__content li {
+  section.leistungen_detail ul.leistungen_detail__content li, section.benefits ul.leistungen_detail__content li {
     margin-bottom: 24px;
   }
 }
-section.gartenplanung ul.gp_detail__content li::before, section.benefits ul.gp_detail__content li::before {
+section.leistungen_detail ul.leistungen_detail__content li::before, section.benefits ul.leistungen_detail__content li::before {
   content: url('data:image/svg+xml,<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="23" stroke="%23C9D1D1" stroke-width="2"/><path d="M16.2859 23.0649L22.8002 29.1429L32.5716 18" stroke="%23628D33" stroke-width="2" stroke-linecap="square"/></svg>');
   position: absolute;
   left: 0;
   top: -10px;
 }
 
-section.gp_gllry {
-  background: #FFFFFF;
-  padding-bottom: 120px;
-}
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  section.gp_gllry {
-    padding-bottom: 64px;
-  }
-}
-@media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.gp_gllry {
-    padding-bottom: 64px;
-  }
-}
-section.gp_gllry ul.gp_gllry__content {
-  position: relative;
-}
-@media only screen and (min-width: 1920px) {
-  section.gp_gllry ul.gp_gllry__content {
-    grid-row-gap: 32px;
-  }
-}
-@media only screen and (min-width: 1440px) and (max-width: 1919px) {
-  section.gp_gllry ul.gp_gllry__content {
-    grid-row-gap: 24px;
-  }
-}
-@media only screen and (min-width: 1024px) and (max-width: 1439px) {
-  section.gp_gllry ul.gp_gllry__content {
-    grid-row-gap: 24px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  section.gp_gllry ul.gp_gllry__content {
-    grid-row-gap: 24px;
-  }
-}
-@media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.gp_gllry ul.gp_gllry__content {
-    grid-row-gap: 16px;
-  }
-}
-section.gp_gllry ul.gp_gllry__content li {
-  grid-column: span 4;
-  position: relative;
-  cursor: zoom-in;
-}
-section.gp_gllry ul.gp_gllry__content li::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5004376751) 0%, rgba(0, 0, 0, 0) 40%);
-  position: absolute;
-}
-
-@media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.gartenplanung ul.gp_detail__content li, section.benefits ul.gp_detail__content li {
-    grid-column: span 4;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
-  section.gp_gllry ul.gp_gllry__content li {
-    grid-column: span 6;
-  }
-}
 /*** Section AnsprechpartnerInnen */
 ul.ansprechpartner {
   display: flex;
@@ -4961,4 +5609,199 @@ section.legal .wrapper .legal_content {
   section.legal .wrapper .legal_content {
     padding-bottom: 64px;
   }
+}
+
+/*** Drone Footage Section */
+.drone {
+  line-height: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: -1;
+}
+
+/*** Gallery Section */
+section.gllry {
+  background: #FFFFFF;
+  padding-bottom: 120px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.gllry {
+    padding-bottom: 64px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.gllry {
+    padding-bottom: 64px;
+  }
+}
+section.gllry ul.gllry__content {
+  position: relative;
+}
+@media only screen and (min-width: 1920px) {
+  section.gllry ul.gllry__content {
+    grid-row-gap: 32px;
+  }
+}
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  section.gllry ul.gllry__content {
+    grid-row-gap: 24px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  section.gllry ul.gllry__content {
+    grid-row-gap: 24px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.gllry ul.gllry__content {
+    grid-row-gap: 24px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.gllry ul.gllry__content {
+    grid-row-gap: 16px;
+  }
+}
+section.gllry ul.gllry__content li {
+  grid-column: span 4;
+  position: relative;
+  height: 376px;
+}
+
+section.projekt_gllry {
+  padding-top: 120px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.projekt_gllry {
+    padding-top: 64px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.projekt_gllry {
+    padding-top: 64px;
+  }
+}
+section.projekt_gllry p.topline {
+  margin-bottom: 0;
+}
+section.projekt_gllry .filter_btns {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.projekt_gllry .filter_btns {
+    margin-top: 24px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.projekt_gllry .filter_btns {
+    margin-top: 24px;
+  }
+}
+section.projekt_gllry .filter_btns button.gllry_filter {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-right: 22px;
+  margin-bottom: 24px;
+  width: auto;
+}
+section.projekt_gllry .filter_btns button.gllry_filter:last-of-type {
+  margin-right: 0;
+}
+section.projekt_gllry .filter_btns button.gllry_filter::before {
+  content: "";
+  height: 32px;
+  width: 32px;
+  border: solid 2px #C9D1D1;
+  display: block;
+  margin-right: 16px;
+}
+section.projekt_gllry .filter_btns .mixitup-control-active::after {
+  content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>');
+  position: absolute;
+  top: 6px;
+  left: 10px;
+}
+section.projekt_gllry .gllry__content {
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.projekt_gllry .gllry__content {
+    padding-top: 64px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.projekt_gllry .gllry__content {
+    padding-top: 64px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.projekt_gllry .gllry__content {
+    padding-bottom: 40px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.projekt_gllry .gllry__content {
+    padding-bottom: 40px;
+  }
+}
+section.projekt_gllry .gllry__content li.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.gllry ul.gllry__content li {
+    grid-column: span 6;
+  }
+}
+/*** DirekterKontakt Sections */
+section.direkterkontakt {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.direkterkontakt {
+    padding-top: 64px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.direkterkontakt {
+    padding-top: 64px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  section.direkterkontakt {
+    padding-bottom: 64px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.direkterkontakt {
+    padding-bottom: 64px;
+  }
+}
+section.direkterkontakt .wrapper .sctn_content {
+  text-align: left;
+}
+section.direkterkontakt .wrapper .sctn_content .item_1 {
+  grid-column: 1/7;
+  max-height: 720px;
+}
+section.direkterkontakt .wrapper .sctn_content .item_1 span.caption {
+  margin-top: 16px;
+  display: block;
+}
+section.direkterkontakt .wrapper .sctn_content .item_2 {
+  grid-column: 8/-1;
+}
+section.direkterkontakt .wrapper .sctn_content .item_2 form fieldset label {
+  width: 100%;
 }
