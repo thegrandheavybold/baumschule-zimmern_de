@@ -3715,13 +3715,20 @@ button#menubutton {
   ul.leistungen_items li a picture, ul.karriere_items li a picture {
     display: none;
   }
-  .leistungen_items.open {
+  .leistungen_items.open, .karriere_items.open {
     visibility: visible;
     opacity: 1;
     max-height: 100%;
     margin-top: 24px;
   }
 }
+html.touch .leistungen_items, html.touch .karriere_items {
+  visibility: visible;
+  opacity: 1;
+  max-height: 100%;
+  margin-top: 24px;
+}
+
 @media only screen and (min-width: 0px) and (max-width: 767px) {
   #menubutton {
     right: 20px;

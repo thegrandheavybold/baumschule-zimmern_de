@@ -92,13 +92,19 @@
 				picture
 					display: none
 
-	.leistungen_items.open
+	.leistungen_items.open, .karriere_items.open
 		visibility: visible
 		opacity: 1
 		max-height: 100%
 		margin-top: 24px
 
-
+html.touch
+	.leistungen_items, .karriere_items
+		visibility: visible
+		opacity: 1
+		max-height: 100%
+		margin-top: 24px
+		
 @include s
 	#menubutton
 		right: 20px
