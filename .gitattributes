@@ -1,1 +1,6 @@
 src/assets/img/** filter=lfs diff=lfs merge=lfs -text
+src/assets/img/galleries/** filter=lfs diff=lfs merge=lfs -text
+src/assets/img/historie/** filter=lfs diff=lfs merge=lfs -text
+src/assets/img/karriere/** filter=lfs diff=lfs merge=lfs -text
+src/assets/img/stages/** filter=lfs diff=lfs merge=lfs -text
+src/assets/img/startseite/** filter=lfs diff=lfs merge=lfs -text
