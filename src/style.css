@@ -1156,7 +1156,8 @@ template {
     width: 80%;
   }
 }
-/*** inView Animations */ /* inViewport */
+/*** inView Animations */
+/* inViewport */
 [data=fade-up], [data="fade-up delay"] {
   transition: opacity ease 2s, border-color ease 0.7s, -webkit-transform ease 1s;
   transition: transform ease 1s, opacity ease 2s, border-color ease 0.7s;
@@ -3145,6 +3146,11 @@ svg.nxt_lvl__arrow {
   stroke-width: 2;
 }
 
+.scroll_down {
+  position: absolute;
+  bottom: 40px;
+}
+
 svg.scroll__arrow {
   width: 25px;
   height: 26px;
@@ -3215,7 +3221,8 @@ svg.mail, svg.route {
   fill: #628D33;
 }
 
-/*** Header */ /*** Header */
+/*** Header */
+/*** Header */
 header {
   margin: 0;
   padding: 24px 0 24px 0;
@@ -3349,6 +3356,10 @@ header.sticky > .header_bar .site-branding #logo svg.ww_logo_icon {
   font-weight: 700;
   font-style: normal;
   font-size: 20px;
+}
+.site-branding a#logo img {
+  width: inherit;
+  height: inherit;
 }
 
 /*** Hamburger Menu */
@@ -4082,10 +4093,6 @@ footer .footer_bar ul.footer_links li span.scrollUp {
   color: #FFFFFF;
   margin-bottom: 40px;
 }
-.main_stage .wrapper .opener_cta .scroll_down {
-  position: absolute;
-  bottom: 40px;
-}
 
 /*** detail_misc */
 .detail_stage {
@@ -4348,7 +4355,9 @@ section.quicklinks .wrapper button {
 }
 section.quicklinks .wrapper button:last-of-type {
   margin-right: 0;
-} /*** Teaser Tiles Leistungen */
+}
+
+/*** Teaser Tiles Leistungen */
 .tiles div[class*=item_] {
   align-items: center;
   margin-bottom: 80px;

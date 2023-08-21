@@ -50,6 +50,21 @@ document.querySelector('.scrollUp').addEventListener('click', function(){
   scrollTo(0, 0);
 });
 
+//Arrow Scroll +150px function
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollDown = document.getElementById('scrollDown');
+  
+  scrollDown.addEventListener('click', function() {
+    // Calculate the new scroll position and scroll
+    const introSection = document.getElementById('intro');
+    if (introSection) {
+      const newPosition = introSection.offsetTop + 15;
+      window.scrollTo({
+        top: newPosition
+      });
+    }
+  });
+});
 
 //Fade in when in view Function
 const inViewport = (entries) => {
@@ -57,6 +72,7 @@ const inViewport = (entries) => {
     entry.target.classList.toggle("is_inview", entry.isIntersecting);
   });
 };
+
 
 const Obs = new IntersectionObserver(inViewport);
 const obsOptions = {
