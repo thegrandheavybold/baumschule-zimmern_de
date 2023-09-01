@@ -116,14 +116,14 @@ import  ScrollTrigger  from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 //gsap outofview fadeUp
-const oov = gsap.utils.toArray('.oov');
+const oov = gsap.utils.toArray('[data="oov"]');
   oov.forEach(oov => {
     gsap.from(oov, {
-    y: 150,
+    y: 50,
     opacity: 0,
       scrollTrigger: {
         trigger: oov,
-        scrub: 2,
+        scrub: 4,
         end: "bottom 90%"
       }
     })
@@ -203,3 +203,5 @@ const footerElement = document.querySelector('footer');
           footerElement.classList.add('mm__isopen');
       }
   });
+
+  import 'formValidation.js'

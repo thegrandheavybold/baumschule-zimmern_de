@@ -1747,6 +1747,11 @@ button.swiper-pagination-bullet {
   margin-right: 32px;
 }
 
+.historie_swiper .swiper-wrapper .swiper-slide {
+  height: auto;
+  max-height: 100%;
+}
+
 .reasons_swiper .swiper-pagination {
   display: flex;
   width: 50%;
@@ -3423,6 +3428,8 @@ button#menubutton {
   padding: 0;
   margin: 0;
   cursor: pointer;
+  position: absolute;
+  top: -15px;
 }
 
 .hamburger {
@@ -3693,9 +3700,11 @@ html.touch .hamburger:hover span, html.touch .hamburger:hover span::before, html
 /*** Mobile Navigation */
 @media only screen and (max-width: 1023px) {
   .menu-button-links {
-    height: 0;
+    height: 90vh;
     width: 100vw;
     display: flex;
+    position: absolute;
+    top: 0;
   }
   .menu-button-links button, .menu-button-links button:active, .menu-button-links button:focus, .menu-button-links button:visited, .menu-button-links button:focus-visible, #menubutton {
     margin: 0;
@@ -3715,7 +3724,7 @@ html.touch .hamburger:hover span, html.touch .hamburger:hover span::before, html
     align-items: center;
     text-align: center;
     background: #FFFFFF;
-    height: 150vh;
+    height: 100%;
     width: 100%;
     overflow-y: scroll;
     -webkit-transform: translateY(50vw);

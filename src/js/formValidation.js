@@ -1,44 +1,28 @@
-//FormValidation
-const form = document.querySelector('form');
-const error = document.querySelector('.error-message');
-const input = document.querySelector('input');
-const label = document.querySelector('label');
-const success = document.querySelector('.success');
-const formSection = document.querySelector('.form_section');
-
-
-form.addEventListener('submit', event => {
-  success.classList.add('hidden');
-  formSection.classList.remove('hidden');
-  
-  form.checkValidity();
-  
+const handleSubmit = (event) => {
   event.preventDefault();
 
-  if (form.checkValidity()) {
-    success.classList.remove('hidden');
-    formSection.classList.add('hidden');    
-  }
-});
+  const myForm = event.target;
+  const formData = new FormData(myForm);
 
-// Revalidate on each keypress once the field has changed 
-input.addEventListener('input', event => {
-  // Clear out any previous error.
-  error.style.display = "none";
-  label.classList.remove('error');
-  
-  // Trigger the validation check. If the input field is invalid, it will emit an
-  // 'invalid' event.
-  input.checkValidity();
-});
+  fetch(myForm.action, {
+    method: myForm.method,
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => {
+      // Hide the form and h2 element
+      myForm.style.display = "none";
+      const h2Element = myForm.previousElementSibling; // Get the previous sibling (the h2 element)
+      if (h2Element) {
+        h2Element.style.display = "none";
+      }
 
-input.addEventListener('invalid', event => {
-  // Even with the novalidate attribute the form still
-  // gives us a suitable error message; we just have to display it
-  // ourselves.
-  error.style.display = "block";
-  label.classList.add('error');
-  input.focus();
-});
+      // Unhide the success message
+      const successMessage = document.getElementById('success');
+      successMessage.classList.remove('hidden');
+    })
+    .catch((error) => alert(error));
+};
 
-
+const form = document.getElementById('kontakt');
+form.addEventListener("submit", handleSubmit);
