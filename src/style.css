@@ -3717,7 +3717,7 @@ html.touch .hamburger:hover span, html.touch .hamburger:hover span::before, html
     background: #FFFFFF;
     height: 150vh;
     width: 100%;
-    overflow-y: visible;
+    overflow-y: scroll;
     -webkit-transform: translateY(50vw);
             transform: translateY(50vw);
     transition: opacity ease 0.7s, -webkit-transform ease 0.7s;
