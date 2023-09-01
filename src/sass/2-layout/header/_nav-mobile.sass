@@ -54,12 +54,12 @@
 			margin-bottom: 24px
 
 	[aria-expanded="true"] + ul.nav
-		margin-top: 55px
+		margin-top: 47px
 		transition: margin-top ease 1.4s
 		will-change: margin-top
 
 	header.sticky .header_bar .menu-button-links [aria-expanded="true"] + ul.nav
-		margin-top: 47px
+		margin-top: 39px
 
 	[aria-expanded="true"] + [role="menu"]
 		opacity: 1
@@ -100,6 +100,8 @@
 
 html.touch 
 	[aria-expanded="true"] + [role="menu"]
+		svg.nxt_lvl__arrow 
+			display: none
 		.leistungen_items, .karriere_items
 			visibility: visible
 			opacity: 1
@@ -116,3 +118,8 @@ html.touch
 @include s
 	#menubutton
 		right: 20px
+
+
+html.touch 
+	[aria-expanded="true"] ~ main
+		display: none

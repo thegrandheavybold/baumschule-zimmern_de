@@ -20,3 +20,14 @@ section.direkterkontakt
           fieldset
             label
               width: 100%
+
+@include s
+  section.direkterkontakt
+    .wrapper
+      .sctn_content.grd
+        display: block
+        .item_1
+          max-height: 100%
+        
+        .item_2
+          @include mb-12

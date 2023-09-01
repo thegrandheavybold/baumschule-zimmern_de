@@ -1,6 +1,6 @@
 header
   margin: 0
-  padding: 1.5vw 0 1.5vw 0
+  padding: 23px 0 23px 0
   position: fixed
   top: 0
   width: 100vw
@@ -12,7 +12,7 @@ header
   border-bottom: solid 2px rgba($blue-gray, 0.1)
 
   &.sticky
-    padding: .75vw 0 .75vw 0
+    padding: 16px 0 16px 0
 
   .wrapper
     align-items: center
@@ -80,6 +80,10 @@ header
 
 @include s
   header
+    padding: 16px 0
+    &.sticky
+      padding: 8px 0
+
     .grd
       display: flex
     .header_bar

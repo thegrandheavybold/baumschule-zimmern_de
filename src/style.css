@@ -2414,6 +2414,11 @@ picture img {
 main {
   margin-top: 106px;
 }
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  main {
+    margin-top: 92px;
+  }
+}
 
 section {
   background: #FFFFFF;
@@ -3265,7 +3270,7 @@ svg.mail, svg.route {
 /*** Header */
 header {
   margin: 0;
-  padding: 1.5vw 0 1.5vw 0;
+  padding: 23px 0 23px 0;
   position: fixed;
   top: 0;
   width: 100vw;
@@ -3277,7 +3282,7 @@ header {
   border-bottom: solid 2px rgba(24, 28, 28, 0.1);
 }
 header.sticky {
-  padding: 0.75vw 0 0.75vw 0;
+  padding: 16px 0 16px 0;
 }
 header .wrapper {
   align-items: center;
@@ -3352,6 +3357,12 @@ header.sticky > .header_bar .site-branding #logo svg.ww_logo_icon {
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
+  header {
+    padding: 16px 0;
+  }
+  header.sticky {
+    padding: 8px 0;
+  }
   header .grd {
     display: flex;
   }
@@ -3731,12 +3742,12 @@ button#menubutton {
     margin-bottom: 24px;
   }
   [aria-expanded=true] + ul.nav {
-    margin-top: 55px;
+    margin-top: 47px;
     transition: margin-top ease 1.4s;
     will-change: margin-top;
   }
   header.sticky .header_bar .menu-button-links [aria-expanded=true] + ul.nav {
-    margin-top: 47px;
+    margin-top: 39px;
   }
   [aria-expanded=true] + [role=menu] {
     opacity: 1;
@@ -3776,6 +3787,9 @@ button#menubutton {
     margin-top: 24px;
   }
 }
+html.touch [aria-expanded=true] + [role=menu] svg.nxt_lvl__arrow {
+  display: none;
+}
 html.touch [aria-expanded=true] + [role=menu] .leistungen_items, html.touch [aria-expanded=true] + [role=menu] .karriere_items {
   visibility: visible;
   opacity: 1;
@@ -3794,6 +3808,10 @@ html.touch [aria-expanded=false] + [role=menu] .leistungen_items, html.touch [ar
     right: 20px;
   }
 }
+html.touch [aria-expanded=true] ~ main {
+  display: none;
+}
+
 /*** Footer */
 footer {
   background: #3B4D4D;
@@ -4115,7 +4133,7 @@ footer .footer_bar ul.footer_links li span.scrollUp {
   width: 100vw;
   height: auto;
 }
-.main_stage .wrapper .opener_cta {
+.main_stage .opener_cta {
   position: absolute;
   left: 0;
   z-index: 10;
@@ -4128,11 +4146,11 @@ footer .footer_bar ul.footer_links li span.scrollUp {
   justify-content: center;
   text-align: center;
 }
-.main_stage .wrapper .opener_cta p {
+.main_stage .opener_cta p {
   font-size: 23px;
   line-height: 150%;
 }
-.main_stage .wrapper .opener_cta h1, .main_stage .wrapper .opener_cta p {
+.main_stage .opener_cta h1, .main_stage .opener_cta p {
   color: #FFFFFF;
   margin-bottom: 40px;
 }
@@ -5652,23 +5670,23 @@ section.ad_schnuppern .wrapper .item_1 {
   section.ad {
     background: #FFFFFF;
   }
-  section.ad_ausbildung .wrapper .item_1 {
+  section.ad_ausbildung .wrapper .item_1, section.ad_berufserfahrene .wrapper .item_1 {
     grid-column: 1/-1;
     margin-bottom: 48px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) and (min-width: 768px) and (max-width: 1023px) {
-  section.ad_ausbildung .wrapper .item_1 {
+  section.ad_ausbildung .wrapper .item_1, section.ad_berufserfahrene .wrapper .item_1 {
     margin-bottom: 32px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) and (min-width: 0px) and (max-width: 767px) {
-  section.ad_ausbildung .wrapper .item_1 {
+  section.ad_ausbildung .wrapper .item_1, section.ad_berufserfahrene .wrapper .item_1 {
     margin-bottom: 32px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  section.ad_ausbildung .wrapper .item_2 {
+  section.ad_ausbildung .wrapper .item_2, section.ad_berufserfahrene .wrapper .item_2 {
     grid-column: 1/-1;
     place-self: normal;
   }
@@ -5947,4 +5965,26 @@ section.direkterkontakt .wrapper .sctn_content .item_2 {
 }
 section.direkterkontakt .wrapper .sctn_content .item_2 form fieldset label {
   width: 100%;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  section.direkterkontakt .wrapper .sctn_content.grd {
+    display: block;
+  }
+  section.direkterkontakt .wrapper .sctn_content.grd .item_1 {
+    max-height: 100%;
+  }
+  section.direkterkontakt .wrapper .sctn_content.grd .item_2 {
+    margin-bottom: 48px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) and (min-width: 768px) and (max-width: 1023px) {
+  section.direkterkontakt .wrapper .sctn_content.grd .item_2 {
+    margin-bottom: 32px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) and (min-width: 0px) and (max-width: 767px) {
+  section.direkterkontakt .wrapper .sctn_content.grd .item_2 {
+    margin-bottom: 32px;
+  }
 }
