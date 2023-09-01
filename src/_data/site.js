@@ -5,6 +5,6 @@ module.exports = {
   author: "Christian Kriegsheim",
   metaImage: "",
   //buildTime: new Date(),
-  metaTitle: "Zimmern Garten und  Landschaftsbau GmbH ",
+  metaTitle: "Zimmern – Garten- und Landschaftsbau GmbH",
   metaDescription: "Wir kümmern uns um Gärten. Von klein bis groß."
 };

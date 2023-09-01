@@ -82,9 +82,11 @@
 
   .swiper-wrapper
     .swiper-slide
-      width: 538px
-      height: 100%
+      width: 100%
+      height: 404px
       max-width: 538px
+      max-height: 404px
+      overflow: hidden
       //max-height: 404px
       p
         margin-bottom: 0
@@ -92,7 +94,7 @@
 
   .swiper-pagination
     position: relative
-    margin-top: 86px
+    @include mt-14
     display: flex
     justify-content: flex-end
 
@@ -153,7 +155,7 @@
 
     .swiper-pagination
       width: 100%
-      bottom: 54%
+      bottom: 105vw
 
   .galerie_swiper, .historie_swiper
     .swiper-nav
@@ -162,3 +164,10 @@
     .swiper-pagination
       span.swiper-pagination-bullet
         width: 16px
+
+@media only screen and (min-width: 0px) and (max-width: 406px)
+  .reasons_swiper
+
+    .swiper-pagination
+      width: 100%
+      bottom: 120vw

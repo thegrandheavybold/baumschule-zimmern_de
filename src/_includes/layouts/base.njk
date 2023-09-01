@@ -10,7 +10,7 @@
 
     <!-- favicon -->
     <link rel="icon" href="/assets/fav/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/fav/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/fav/favicon-32x32.png" type="image/png">
     <link rel="apple-touch-icon" href="/assets/fav/apple-touch-icon.png">
     <link rel="manifest" href="/assets/fav/site.webmanifest">
 
@@ -30,16 +30,16 @@
     <link rel="stylesheet" href="/style.css">
 
     <!-- else -->
-    <meta name="theme-color" content="#CB0B0F">
+    <meta name="theme-color" content="#990033">
 
     <!-- open graph -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{ seoTitle }} · {{ site.metaTitle }}">
-    <meta property="og:image" content="{{ site.url }}/assets/img/{{ metaImage }}">
-    <meta property="og:image:secure_url" content="{{ site.url }}/assets/img/{{ metaImage }}}">
+    <meta property="og:image" content="{{ site.url }}assets/img{{ metaImage }}">
+    <meta property="og:image:secure_url" content="{{ site.url }}assets/img{{ metaImage }}">
     <meta property="og:site_name" content="{{ site.name }}">
     <meta property="og:description" content="{{ seoDescription }}">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.fileSlug }}">
 
 
   </head>

@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "accordion-js": "^3.3.2",
+    "all": "^0.0.0",
     "dimbox": "^1.0.2",
     "gsap": "npm:@gsap/shockingly@^3.11.3",
     "moment": "^2.29.1",
