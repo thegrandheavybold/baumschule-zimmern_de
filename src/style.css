@@ -3525,6 +3525,10 @@ button#menubutton {
     display: none;
   }
 }
+html.touch .hamburger:hover span, html.touch .hamburger:hover span::before, html.touch .hamburger:hover span::after, html.touch .hamburger:active span, html.touch .hamburger:active span::before, html.touch .hamburger:active span::after, html.touch .hamburger:focus span, html.touch .hamburger:focus span::before, html.touch .hamburger:focus span::after {
+  width: 32px;
+}
+
 /*** Navigation */
 .menu-button-links {
   margin: 0;
@@ -3787,6 +3791,27 @@ button#menubutton {
     margin-top: 24px;
   }
 }
+html.touch li#legal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  html.touch li#legal {
+    margin-top: 32px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  html.touch li#legal {
+    margin-top: 32px;
+  }
+}
+html.touch li#legal a:nth-child(1) {
+  margin-right: 20px;
+}
+html.touch li#legal h6 {
+  color: #990033;
+}
 html.touch [aria-expanded=true] + [role=menu] svg.nxt_lvl__arrow {
   display: none;
 }
@@ -3808,13 +3833,17 @@ html.touch [aria-expanded=false] + [role=menu] .leistungen_items, html.touch [ar
     right: 20px;
   }
 }
-html.touch [aria-expanded=true] ~ main {
-  display: none;
-}
-
 #menubutton:hover, #menubutton:focus, #menubutton:active {
   border: none;
   outline: none;
+}
+
+li#legal {
+  display: none;
+}
+
+.mm__isopen {
+  display: none;
 }
 
 /*** Footer */

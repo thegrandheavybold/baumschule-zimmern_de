@@ -99,6 +99,15 @@
 		margin-top: 24px
 
 html.touch 
+	li#legal
+		display: flex
+		justify-content: space-between
+		@include mt-10
+		a
+			&:nth-child(1)
+				margin-right: 20px
+		h6
+			color: $red50
 	[aria-expanded="true"] + [role="menu"]
 		svg.nxt_lvl__arrow 
 			display: none
@@ -118,11 +127,6 @@ html.touch
 @include s
 	#menubutton
 		right: 20px
-
-
-html.touch 
-	[aria-expanded="true"] ~ main
-		display: none
 	
 #menubutton
 	&:hover,
@@ -130,3 +134,9 @@ html.touch
 	&:active
 		border: none
 		outline: none
+
+li#legal
+	display: none
+
+.mm__isopen
+	display: none
