@@ -23,9 +23,9 @@
 		align-items: center
 		text-align: center
 		background: $neutral0
-		height: 100vh
+		height: 150vh
 		width: 100%
-		overflow: scroll
+		overflow-y: visible
 		transform: translateY(50vw)
 		transition: transform ease .7s, opacity ease .7s
 		will-change: transform, opacity, translate
@@ -57,6 +57,7 @@
 		margin-top: 47px
 		transition: margin-top ease 1.4s
 		will-change: margin-top
+		@include pb-60
 
 	header.sticky .header_bar .menu-button-links [aria-expanded="true"] + ul.nav
 		margin-top: 39px

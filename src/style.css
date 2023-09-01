@@ -3715,9 +3715,9 @@ html.touch .hamburger:hover span, html.touch .hamburger:hover span::before, html
     align-items: center;
     text-align: center;
     background: #FFFFFF;
-    height: 100vh;
+    height: 150vh;
     width: 100%;
-    overflow: scroll;
+    overflow-y: visible;
     -webkit-transform: translateY(50vw);
             transform: translateY(50vw);
     transition: opacity ease 0.7s, -webkit-transform ease 0.7s;
@@ -3749,7 +3749,20 @@ html.touch .hamburger:hover span, html.touch .hamburger:hover span::before, html
     margin-top: 47px;
     transition: margin-top ease 1.4s;
     will-change: margin-top;
+    padding-bottom: 240px;
   }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) and (max-width: 1023px) {
+  [aria-expanded=true] + ul.nav {
+    padding-bottom: 120px;
+  }
+}
+@media only screen and (max-width: 1023px) and (min-width: 0px) and (max-width: 767px) {
+  [aria-expanded=true] + ul.nav {
+    padding-bottom: 120px;
+  }
+}
+@media only screen and (max-width: 1023px) {
   header.sticky .header_bar .menu-button-links [aria-expanded=true] + ul.nav {
     margin-top: 39px;
   }
