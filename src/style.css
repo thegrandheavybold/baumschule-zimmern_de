@@ -2662,17 +2662,22 @@ input:hover, textarea:hover, select:hover {
   display: none;
 }
 
-.error {
-  color: #E33E0A;
-}
-.error input, .error input:focus {
+input.invalid, textarea.invalid {
   border: solid 2px #E33E0A;
+}
+
+label.invalid span.error-message {
+  color: #E33E0A;
 }
 
 span.error-message {
   display: none;
   text-align: left;
   color: #E33E0A;
+}
+
+input.invalid:focus {
+  border: solid 2px #E33E0A;
 }
 
 input:focus-visible, textarea:focus-visible, select:focus-visible,
@@ -2704,13 +2709,26 @@ fieldset.privacy {
   display: flex;
   align-items: center;
 }
+fieldset.privacy .datenschutz-checkbox {
+  display: flex;
+}
 fieldset.privacy label[for=datenschutz] {
-  flex-direction: row;
   width: auto;
   flex-wrap: nowrap;
 }
 fieldset.privacy label[for=datenschutz] p {
   margin-bottom: 0;
+}
+fieldset.privacy label[for=datenschutz] span.error-message {
+  width: 100%;
+}
+fieldset.privacy input#datenschutz[type=checkbox]:checked::before {
+  content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>');
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  left: 5px;
 }
 
 input[type=checkbox] {
@@ -2720,14 +2738,6 @@ input[type=checkbox] {
   margin-top: 0;
   display: grid;
   place-content: center;
-}
-input[type=checkbox]:checked::before {
-  content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>');
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 2px;
-  left: 5px;
 }
 input[type=checkbox] label {
   width: 100%;
@@ -4191,10 +4201,10 @@ footer .footer_bar ul.footer_links li span.scrollUp {
 }
 .main_stage .opener_cta {
   position: absolute;
-  left: 0;
   z-index: 10;
   width: 100%;
   height: 70vh;
+  max-width: 100%;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;

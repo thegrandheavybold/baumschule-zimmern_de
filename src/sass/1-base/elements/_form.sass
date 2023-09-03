@@ -44,26 +44,24 @@ input:hover, textarea:hover, select:hover
 .hidden
   display: none
 
-.error
-  color: $error
-  input, input:focus
-    border: solid 2px $error
-
-//input:not(:focus):not(:placeholder-shown):invalid, input:not(:focus):not(:placeholder-shown):required:invalid
+input.invalid, textarea.invalid
   border: solid 2px $error
+
+label.invalid
+  span.error-message
+    color: $error
 
 span.error-message
   display: none
   text-align: left
   color: $error
 
+input.invalid
+  &:focus
+    border: solid 2px $error
+
 //input:not(:focus):not(:placeholder-shown):invalid ~ span.error-message
-  display: block
-
-
-//input:focus:invalid
-  border: solid 3px $red_light50
-  color: $red_light50
+  //display: block
 
 input:focus-visible, textarea:focus-visible, select:focus-visible,
 input:focus, textarea:focus, select:focus
@@ -94,12 +92,30 @@ fieldset.privacy
   display: flex
   align-items: center
 
+  .datenschutz-checkbox
+    display: flex
+
   label[for="datenschutz"]
-    flex-direction: row
+    //flex-direction: row
     width: auto
     flex-wrap: nowrap
     p 
       margin-bottom: 0
+  
+    span.error-message
+      width: 100%
+
+  input#datenschutz[type=checkbox]:checked::before 
+    content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>')
+    position: absolute
+    width: 24px
+    height: 24px
+    top: 2px
+    left: 5px
+
+
+
+
 
 input[type="checkbox"]
   height: 32px
@@ -108,14 +124,7 @@ input[type="checkbox"]
   margin-top: 0
   display: grid
   place-content: center
-  &:checked
-    &::before
-      content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>')
-      position: absolute
-      width: 24px
-      height: 24px
-      top: 2px
-      left: 5px
+  
   label
     width: 100%
     display: flex
@@ -125,8 +134,10 @@ input[type="checkbox"]
     p
       margin-bottom: 0
       width: auto
+
     span.error-message
       width: 100%
+
 
 input[type="checkbox"].radio
   width: 32px
