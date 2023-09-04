@@ -180,6 +180,16 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Handle the "Ansprache" checkboxes
+    const anspracheCheckboxes = myForm.querySelectorAll('input[name="Ansprache"]:checked');
+    const selectedAnsprache = Array.from(anspracheCheckboxes).map((checkbox) => {
+      const label = myForm.querySelector(`label[for="${checkbox.id}"]`);
+      return label.textContent.trim();
+    });
+
+    // Append the selectedAnsprache to the form data
+    formData.append('SelectedAnsprache', selectedAnsprache.join(', '));
+
     // Send the form data using fetch
     fetch("/", {
       body: formData,
@@ -223,11 +233,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form) {
       form.addEventListener('submit', handleSubmit);
     }
-    // Optionally, you can add an else clause to handle cases where the form is not present.
-    // For example:
-    // else {
-    //   console.error(`Form element with ID "${formId}" not found.`);
-    // }
   }
 
   // Initialize forms with different IDs
@@ -239,6 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeForm('kontakt_berufserfahren_bewerbung');
   initializeForm('kontakt_berufserfahren');
 });
+
 
 
 
