@@ -168,10 +168,15 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Send the form data using fetch
+    errorMessages.forEach(function (error) {
+      formData.delete(error.getAttribute('for'));
+    });
+
     fetch(myForm.action, {
       method: myForm.method,
       headers: { 'Content-Type': 'multipart/form-data' },
-      body: formData,
+      body: new URLSearchParams(formData).toString(),
     })
       .then((response) => {
         if (response.ok) {
@@ -203,8 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => {
         // Handle fetch errors, e.g., display an alert
         alert(error);
-      });
-
+    });
   }
 
   function initializeForm(formId) {
