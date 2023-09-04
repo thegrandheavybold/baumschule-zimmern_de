@@ -64,26 +64,30 @@
         <ul class="fileUpload_fields">
            <li>
             <label for="anschreiben">Anschreiben hochladen (PDF, max. 4 MB) *</label>
-            <input type="file" id="anschreiben" name="anschreiben" class="fileUploadBtn" accept="application/pdf" required="">
+            <input type="file" id="anschreiben" name="anschreiben" class="fileUploadBtn" accept="application/pdf" required>
             <button id="clear_anschreiben" class="clear-file-button" type="button" data-input="anschreiben" onclick="clearFileInput('anschreiben')"></button>
             <span class="error-message" id="anschreiben-error" style="display: none;">Bitte füllen Sie dieses Formularfeld aus.</span>
+            <span class="error-message" id="anschreiben-size-error" style="display: none;">Die Datei darf maximal 4 MB groß sein.</span>
           </li>
           <li>
             <label for="foto">Foto hochladen (JPG, max. 4 MB)*</label>
             <input type="file" id="foto" name="foto" class="fileUploadBtn" accept="image/jpeg" required>
             <button id="clear_foto" class="clear-file-button" type="button" data-input="foto" onclick="clearFileInput('foto')"></button>
             <span class="error-message" id="foto-error" style="display: none;">Bitte füllen Sie dieses Formularfeld aus.</span>
+            <span class="error-message" id="foto-size-error" style="display: none;">Die Datei darf maximal 4 MB groß sein.</span>
           </li>
           <li>
             <label for="lebenslauf">Lebenslauf hochladen (PDF, max. 4 MB)*</label>
             <input type="file" id="lebenslauf" name="lebenslauf" class="fileUploadBtn" accept="application/pdf" required>
             <button id="clear_lebenslauf" class="clear-file-button" type="button" data-input="lebenslauf" onclick="clearFileInput('lebenslauf')"></button>
             <span class="error-message" id="lebenslauf-error" style="display: none;">Bitte füllen Sie dieses Formularfeld aus.</span>
+            <span class="error-message" id="lebenslauf-size-error" style="display: none;">Die Datei darf maximal 4 MB groß sein.</span>
           </li>
           <li>
             <label for="weitereDateien">Weitere Datei hochladen (PDF/JPG/MOV, max. 4 MB)</label>
             <input type="file" id="weitereDateien" name="weitereDateien" class="fileUploadBtn" accept="application/pdf, image/jpeg, video/*">
             <button id="clear_weitereDateien" class="clear-file-button" type="button" data-input="weitereDateien" onclick="clearFileInput('weitereDateien')"></button>
+            <span class="error-message" id="weitereDateien-size-error" style="display: none;">Die Datei darf maximal 4 MB groß sein.</span>
           </li>
         </ul>
       </fieldset>

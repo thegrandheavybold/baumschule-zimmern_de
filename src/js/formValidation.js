@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   // Function to validate email using a regular expression
   function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -10,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
 
     const myForm = event.target;
-    const formData = new FormData();
+    const formData = new FormData(myForm);
 
     // Reset error messages and input classes
     const errorMessages = myForm.querySelectorAll('.error-message');
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const labels = myForm.querySelectorAll('label');
     labels.forEach(function (label) {
-      label.classList.remove('invalid'); // Remove the invalid class from labels
+      label.classList.remove('invalid');
     });
 
     // Validation logic
@@ -98,82 +97,87 @@ document.addEventListener("DOMContentLoaded", function () {
       myForm.querySelector('label[for="datenschutz"]').classList.remove('invalid');
     }
 
-    // Additional fields for the "kontakt_ausbildung_bewerbung" form
-    if (myForm.classList.contains('bewerbung')) {
-      const vorname = myForm.elements.vorname ? myForm.elements.vorname.value.trim() : '';
-      const nachname = myForm.elements.nachname ? myForm.elements.nachname.value.trim() : '';
-
-      // Check if vorname is empty (only if the field exists in the form)
-      if (myForm.elements.vorname && vorname === '') {
-        const vornameError = myForm.querySelector('#vorname + .error-message');
-        vornameError.style.display = 'block';
-        myForm.elements.vorname.classList.add('invalid');
-        hasErrors = true;
-        const vornameLabel = myForm.querySelector('label[for="vorname"]');
-        if (vornameLabel) {
-          vornameLabel.classList.add('invalid');
+    // File size validation for "anschreiben" input
+    const anschreibenInput = myForm.querySelector('#anschreiben');
+    if (anschreibenInput) {
+      const anschreibenError = myForm.querySelector('#anschreiben-error');
+      const anschreibenSizeError = myForm.querySelector('#anschreiben-size-error');
+      const files = anschreibenInput.files;
+      if (files.length > 0) {
+        const maxSizeBytes = 4 * 1024 * 1024; // 4MB
+        const fileSizeBytes = files[0].size;
+        if (fileSizeBytes > maxSizeBytes) {
+          anschreibenSizeError.style.display = 'block';
+          hasErrors = true;
+          anschreibenInput.classList.add('invalid');
         }
-      } else if (myForm.elements.vorname) {
-        myForm.elements.vorname.classList.remove('invalid');
-      }
-
-      // Check if nachname is empty (only if the field exists in the form)
-      if (myForm.elements.nachname && nachname === '') {
-        const nachnameError = myForm.querySelector('#nachname + .error-message');
-        nachnameError.style.display = 'block';
-        myForm.elements.nachname.classList.add('invalid');
-        hasErrors = true;
-        const nachnameLabel = myForm.querySelector('label[for="nachname"]');
-        if (nachnameLabel) {
-          nachnameLabel.classList.add('invalid');
-        }
-      } else if (myForm.elements.nachname) {
-        myForm.elements.nachname.classList.remove('invalid');
-      }
-    }
-
-    // Additional fields for the "files" section using IDs
-    const anschreiben = document.getElementById('anschreiben');
-    const foto = document.getElementById('foto');
-    const lebenslauf = document.getElementById('lebenslauf');
-
-    if (myForm.classList.contains('bewerbung')) {
-      // Check if Anschreiben field is empty
-      if (anschreiben && anschreiben.value === '') {
-        const anschreibenError = document.getElementById('anschreiben-error'); // Updated selector
+      } else {
         anschreibenError.style.display = 'block';
         hasErrors = true;
-        anschreiben.classList.add('invalid');
+        anschreibenInput.classList.add('invalid');
       }
+    }
 
-      // Check if Foto field is empty
-      if (foto && foto.value === '') {
-        const fotoError = document.getElementById('foto-error'); // Updated selector
+    // File size validation for "foto" input
+    const fotoInput = myForm.querySelector('#foto');
+    if (fotoInput) {
+      const fotoError = myForm.querySelector('#foto-error');
+      const fotoSizeError = myForm.querySelector('#foto-size-error');
+      const files = fotoInput.files;
+      if (files.length > 0) {
+        const maxSizeBytes = 4 * 1024 * 1024; // 4MB
+        const fileSizeBytes = files[0].size;
+        if (fileSizeBytes > maxSizeBytes) {
+          fotoSizeError.style.display = 'block';
+          hasErrors = true;
+          fotoInput.classList.add('invalid');
+        }
+      } else {
         fotoError.style.display = 'block';
         hasErrors = true;
-        foto.classList.add('invalid');
+        fotoInput.classList.add('invalid');
       }
+    }
 
-      // Check if Lebenslauf field is empty
-      if (lebenslauf && lebenslauf.value === '') {
-        const lebenslaufError = document.getElementById('lebenslauf-error'); // Updated selector
+    // File size validation for "lebenslauf" input
+    const lebenslaufInput = myForm.querySelector('#lebenslauf');
+    if (lebenslaufInput) {
+      const lebenslaufError = myForm.querySelector('#lebenslauf-error');
+      const lebenslaufSizeError = myForm.querySelector('#lebenslauf-size-error');
+      const files = lebenslaufInput.files;
+      if (files.length > 0) {
+        const maxSizeBytes = 4 * 1024 * 1024; // 4MB
+        const fileSizeBytes = files[0].size;
+        if (fileSizeBytes > maxSizeBytes) {
+          lebenslaufSizeError.style.display = 'block';
+          hasErrors = true;
+          lebenslaufInput.classList.add('invalid');
+        }
+      } else {
         lebenslaufError.style.display = 'block';
         hasErrors = true;
-        lebenslauf.classList.add('invalid');
+        lebenslaufInput.classList.add('invalid');
       }
     }
 
-    // If there are validation errors, return and do not proceed with the fetch request
+    // File size validation for "weitereDateien" input
+    const weitereDateienInput = myForm.querySelector('#weitereDateien');
+    if (weitereDateienInput) {
+      const weitereDateienSizeError = myForm.querySelector('#weitereDateien-size-error');
+      const files = weitereDateienInput.files;
+      if (files.length > 0) {
+        const maxSizeBytes = 4 * 1024 * 1024; // 4MB
+        const fileSizeBytes = files[0].size;
+        if (fileSizeBytes > maxSizeBytes) {
+          weitereDateienSizeError.style.display = 'block';
+          hasErrors = true;
+          weitereDateienInput.classList.add('invalid');
+        }
+      }
+    }
+
     if (hasErrors) {
       return;
-    }
-
-    // Add valid form fields to formData, excluding error messages
-    for (const [key, value] of myForm.elements.entries()) {
-      // Check if the key doesn't contain "error"
-      if (!key.includes("error")) {
-        formData.append(key, value);
-      }
     }
 
     // Send the form data using fetch
@@ -235,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeForm('kontakt_berufserfahren_bewerbung');
   initializeForm('kontakt_berufserfahren');
 });
+
 
 
 
