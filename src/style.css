@@ -4217,14 +4217,14 @@ footer .footer_bar ul.footer_links li span.scrollUp {
 /*** detail_misc */
 .detail_stage {
   width: 100vw;
-  height: 50vh;
+  height: 70vh;
 }
 .detail_stage .wrapper .opener {
   z-index: 10;
   position: relative;
   left: 0;
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4244,6 +4244,10 @@ footer .footer_bar ul.footer_links li span.scrollUp {
 .detail_stage .visual {
   z-index: 2;
   background: rgba(0, 0, 0, 0.35);
+}
+
+.ffty {
+  height: 50vh !important;
 }
 
 .wrapper .sctn_content {
