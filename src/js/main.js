@@ -204,4 +204,5 @@ const footerElement = document.querySelector('footer');
       }
   });
 
+
 import 'formValidation.js'
