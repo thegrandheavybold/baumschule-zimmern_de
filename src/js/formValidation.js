@@ -168,11 +168,10 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Send the form data using fetch
     fetch(myForm.action, {
       method: myForm.method,
       headers: { 'Content-Type': 'multipart/form-data' },
-      body: new URLSearchParams(formData).toString(),
+      body: formData,
     })
       .then((response) => {
         if (response.ok) {
@@ -194,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
             successMessage.style.display = 'block';
 
             // Scroll to the top of the success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         } else {
           // Handle error cases here, e.g., display an error message
@@ -205,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Handle fetch errors, e.g., display an alert
         alert(error);
       });
+
   }
 
   function initializeForm(formId) {
