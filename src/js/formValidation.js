@@ -174,42 +174,43 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Send the form data using fetch
-    fetch(myForm.action, {
-      method: myForm.method,
-      headers: { 'Content-Type': 'multipart/form-data' },
-      body: formData,
-    })
-      .then((response) => {
-        if (response.ok) {
-          // Successfully submitted, hide the form and show success message
-          myForm.style.display = 'none';
+fetch(myForm.action, {
+  method: myForm.method,
+  headers: { 'Content-Type': 'multipart/form-data' },
+  body: formData, // Remove the new URLSearchParams line
+})
+  .then((response) => {
+    if (response.ok) {
+      // Successfully submitted, hide the form and show success message
+      myForm.style.display = 'none';
 
-          // Get all previous siblings of myForm and hide them
-          let previousSibling = myForm.previousElementSibling;
-          while (previousSibling) {
-            previousSibling.style.display = 'none';
-            previousSibling = previousSibling.previousElementSibling;
-          }
+      // Get all previous siblings of myForm and hide them
+      let previousSibling = myForm.previousElementSibling;
+      while (previousSibling) {
+        previousSibling.style.display = 'none';
+        previousSibling = previousSibling.previousElementSibling;
+      }
 
-          // Determine the ID of the success message based on the form's ID
-          const formId = myForm.id;
-          const successMessageId = `success-${formId}`;
-          const successMessage = document.getElementById(successMessageId);
-          if (successMessage) {
-            successMessage.style.display = 'block';
+      // Determine the ID of the success message based on the form's ID
+      const formId = myForm.id;
+      const successMessageId = `success-${formId}`;
+      const successMessage = document.getElementById(successMessageId);
+      if (successMessage) {
+        successMessage.style.display = 'block';
 
-            // Scroll to the top of the success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        } else {
-          // Handle error cases here, e.g., display an error message
-          throw new Error('Failed to submit the form.');
-        }
-      })
-      .catch((error) => {
-        // Handle fetch errors, e.g., display an alert
-        alert(error);
-      });
+        // Scroll to the top of the success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      // Handle error cases here, e.g., display an error message
+      throw new Error('Failed to submit the form.');
+    }
+  })
+  .catch((error) => {
+    // Handle fetch errors, e.g., display an alert
+    alert(error);
+  });
+
   }
 
   function initializeForm(formId) {
