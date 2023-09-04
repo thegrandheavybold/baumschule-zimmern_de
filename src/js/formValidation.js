@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Send the form data using fetch
     fetch(myForm.action, {
       method: myForm.method,
+      headers: { 'Content-Type': 'multipart/form-data' },
       body: new URLSearchParams(formData).toString(),
     })
       .then((response) => {
