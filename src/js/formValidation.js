@@ -209,6 +209,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
+    // Extract the selected value from the radio button group
+    const selectedAnsprache = myForm.querySelector('input[name="ansprache"]:checked');
+    if (selectedAnsprache) {
+      const anspracheValue = selectedAnsprache.value;
+      formData.append('Ansprache', `Ansprache: ${anspracheValue}`);
+    }
+
     if (hasErrors) {
       return;
     }
