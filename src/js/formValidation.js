@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
 
     const myForm = event.target;
-    const formData = new FormData(myForm);
+    const formData = new FormData();
 
     // Reset error messages and input classes
     const errorMessages = myForm.querySelectorAll('.error-message');
     errorMessages.forEach(function (error) {
       error.style.display = 'none';
     });
-  
+
     const labels = myForm.querySelectorAll('label');
     labels.forEach(function (label) {
       label.classList.remove('invalid'); // Remove the invalid class from labels
@@ -168,14 +168,18 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Remove the error messages from the form data
-    formData.delete('.error-message');
+    // Add valid form fields to formData, excluding error messages
+    for (const [key, value] of myForm.elements.entries()) {
+      // Check if the key doesn't contain "error"
+      if (!key.includes("error")) {
+        formData.append(key, value);
+      }
+    }
 
     // Send the form data using fetch
-    fetch(myForm.action, {
-      method: myForm.method,
-      headers: { 'Content-Type': 'multipart/form-data' },
-      body: new URLSearchParams(formData).toString(),
+    fetch("/", {
+      body: formData,
+      method: "POST",
     })
       .then((response) => {
         if (response.ok) {
@@ -231,6 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeForm('kontakt_berufserfahren_bewerbung');
   initializeForm('kontakt_berufserfahren');
 });
+
 
 
 
