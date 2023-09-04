@@ -12,15 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const myForm = event.target;
     const formData = new FormData(myForm);
 
-    // Remove the error messages from the form data
-    formData.delete('error-message');
-
     // Reset error messages and input classes
     const errorMessages = myForm.querySelectorAll('.error-message');
     errorMessages.forEach(function (error) {
       error.style.display = 'none';
     });
-
+  
     const labels = myForm.querySelectorAll('label');
     labels.forEach(function (label) {
       label.classList.remove('invalid'); // Remove the invalid class from labels
@@ -171,10 +168,14 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Remove the error messages from the form data
+    formData.delete('.error-message');
+
     // Send the form data using fetch
-    fetch("/", {
-      body: formData,
-      method: "POST",
+    fetch(myForm.action, {
+      method: myForm.method,
+      headers: { 'Content-Type': 'multipart/form-data' },
+      body: new URLSearchParams(formData).toString(),
     })
       .then((response) => {
         if (response.ok) {
