@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const myForm = event.target;
     const formData = new FormData(myForm);
 
+    // Remove the error messages from the form data
+    formData.delete('error-message');
+
     // Reset error messages and input classes
     const errorMessages = myForm.querySelectorAll('.error-message');
     errorMessages.forEach(function (error) {
