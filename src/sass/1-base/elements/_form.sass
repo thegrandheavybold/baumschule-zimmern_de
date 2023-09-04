@@ -91,6 +91,7 @@ fieldset
   display: flex
   justify-content: space-between
   flex-wrap: wrap
+  align-items: baseline
 
 fieldset.client_contact
   label
@@ -108,16 +109,18 @@ fieldset.privacy
 
   .datenschutz-checkbox
     display: flex
-
-  label[for="datenschutz"]
-    //flex-direction: row
-    width: auto
-    flex-wrap: nowrap
+    flex-wrap: wrap
     p 
       margin-bottom: 0
   
     span.error-message
       width: 100%
+
+  label[for="datenschutz"]
+    //flex-direction: row
+    width: auto
+    flex-wrap: nowrap
+    
 
   input#datenschutz[type=checkbox]:checked::before 
     content: url('data:image/svg+xml,<svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7.90909L9.6 15L21 2" stroke="%23CB0B0F" stroke-width="2" stroke-linecap="square"/></svg>')
@@ -152,11 +155,12 @@ input[type="checkbox"]
       width: 100%
 
 
-input[type="checkbox"].radio
+input.radio
   width: 32px
   height: 32px
   border-radius: 50%
   display: block
+  margin-right: 16px
   &:checked
     &::before
       content: ''
@@ -174,6 +178,7 @@ span.ansprache
   //align-items: center
   justify-content: flex-start
   flex-wrap: wrap
+  align-items: flex-end
   @include mb-8
 
   label
