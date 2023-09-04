@@ -184,11 +184,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const anspracheCheckboxes = myForm.querySelectorAll('input[name="Ansprache"]:checked');
     const selectedAnsprache = Array.from(anspracheCheckboxes).map((checkbox) => {
       const label = myForm.querySelector(`label[for="${checkbox.id}"]`);
-      return label.textContent.trim();
+      return label ? label.textContent.trim() : '';
     });
 
     // Append the selectedAnsprache to the form data
     formData.append('SelectedAnsprache', selectedAnsprache.join(', '));
+
 
     // Send the form data using fetch
     fetch("/", {
