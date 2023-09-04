@@ -181,41 +181,51 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Send the form data using fetch
-    fetch("/", {
-      body: formData,
-      method: "POST",
-    })
-      .then((response) => {
-        if (response.ok) {
-          // Successfully submitted, hide the form and show success message
-          myForm.style.display = 'none';
+  fetch("/", {
+    body: formData,
+    method: "POST",
+  })
+    .then((response) => {
+      if (response.ok) {
+        // Successfully submitted, hide the form and show success message
+        myForm.style.display = 'none';
 
-          // Get all previous siblings of myForm and hide them
-          let previousSibling = myForm.previousElementSibling;
-          while (previousSibling) {
-            previousSibling.style.display = 'none';
-            previousSibling = previousSibling.previousElementSibling;
-          }
-
-          // Determine the ID of the success message based on the form's ID
-          const formId = myForm.id;
-          const successMessageId = `success-${formId}`;
-          const successMessage = document.getElementById(successMessageId);
-          if (successMessage) {
-            successMessage.style.display = 'block';
-
-            // Scroll to the top of the success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }
-        } else {
-          // Handle error cases here, e.g., display an error message
-          throw new Error('Failed to submit the form.');
+        // Get all previous siblings of myForm and hide them
+        let previousSibling = myForm.previousElementSibling;
+        while (previousSibling) {
+          previousSibling.style.display = 'none';
+          previousSibling = previousSibling.previousElementSibling;
         }
-      })
-      .catch((error) => {
-        // Handle fetch errors, e.g., display an alert
-        alert(error);
-      });
+
+        // Construct the success message
+        const successMessage = document.createElement('div');
+        successMessage.classList.add('success-message');
+        successMessage.innerHTML = `
+          <p>Ansprache:</p>
+          <p>Vorname*: ${formData.get('name')}</p>
+          <p>Nachname*: ${formData.get('nachname')}</p>
+          <p>E-Mail-Adresse*: ${formData.get('email')}</p>
+          <p>Nachricht*: ${formData.get('message')}</p>
+          <p>Anschreiben: ${formData.get('anschreiben') ? 'Ja' : 'Nein'}</p>
+          <p>Foto: ${formData.get('foto') ? 'Ja' : 'Nein'}</p>
+          <p>Lebenslauf: ${formData.get('lebenslauf') ? 'Ja' : 'Nein'}</p>
+        `;
+
+        // Add success message to the document
+        myForm.parentNode.insertBefore(successMessage, myForm.nextSibling);
+
+        // Scroll to the top of the success message
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        // Handle error cases here, e.g., display an error message
+        throw new Error('Failed to submit the form.');
+      }
+    })
+    .catch((error) => {
+      // Handle fetch errors, e.g., display an alert
+      alert(error);
+    });
+
   }
 
   function initializeForm(formId) {
