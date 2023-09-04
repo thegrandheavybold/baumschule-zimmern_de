@@ -5,29 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return emailRegex.test(email);
   }
 
-  // Function to build the email content
-  function buildEmailContent(myForm) {
-    const formData = new FormData(myForm);
-    const contentArray = [];
-
-    // Iterate over form elements
-    for (const [key, value] of formData.entries()) {
-      // Exclude known elements that should not be included in the email content
-      if (key === "EmailContent" || key === "EmailAnsprache" || key === "datenschutz") {
-        continue;
-      }
-
-      // Construct the email content entry
-      const label = myForm.querySelector(`label[for="${key}"]`);
-      const labelText = label ? label.textContent.trim() : key;
-      const formattedEntry = `${labelText}: ${value.trim()}`;
-      contentArray.push(formattedEntry);
-    }
-
-    // Combine all entries into a single string
-    return contentArray.join('\n\n');
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -203,25 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Handle the "Ansprache" checkboxes
-    const anspracheCheckboxes = myForm.querySelectorAll('input[name="Ansprache"]:checked');
-    const selectedAnsprache = Array.from(anspracheCheckboxes).map((checkbox) => {
-      const label = myForm.querySelector(`label[for="${checkbox.id}"]`);
-      return label ? label.textContent.trim() : '';
-    });
-
-    // Construct the "Ansprache" string for the email
-    const anspracheString = `Ansprache: ${selectedAnsprache.join(', ')}`;
-
-    // Append the anspracheString to the form data with a specific key
-    formData.append('EmailAnsprache', anspracheString);
-
-    // Construct the email content
-    const emailContent = buildEmailContent(myForm);
-
-    // Append the email content to the form data with a specific key
-    formData.append('EmailContent', emailContent);
-
     // Send the form data using fetch
     fetch("/", {
       body: formData,
@@ -265,6 +223,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form) {
       form.addEventListener('submit', handleSubmit);
     }
+    // Optionally, you can add an else clause to handle cases where the form is not present.
+    // For example:
+    // else {
+    //   console.error(`Form element with ID "${formId}" not found.`);
+    // }
   }
 
   // Initialize forms with different IDs
@@ -276,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeForm('kontakt_berufserfahren_bewerbung');
   initializeForm('kontakt_berufserfahren');
 });
+
 
 
 
