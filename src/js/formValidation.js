@@ -10,10 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
 
     const myForm = event.target;
+
+    // Send the form data using fetch, excluding error messages
     const formData = new FormData(myForm);
+    const errorMessages = myForm.querySelectorAll('.error-message');
+    errorMessages.forEach(function (error) {
+      formData.delete(error.getAttribute('for'));
+    });
 
     // Reset error messages and input classes
-    const errorMessages = myForm.querySelectorAll('.error-message');
     errorMessages.forEach(function (error) {
       error.style.display = 'none';
     });
@@ -169,14 +174,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Send the form data using fetch
-    errorMessages.forEach(function (error) {
-      formData.delete(error.getAttribute('for'));
-    });
-
     fetch(myForm.action, {
       method: myForm.method,
       headers: { 'Content-Type': 'multipart/form-data' },
-      body: new URLSearchParams(formData).toString(),
+      body: formData,
     })
       .then((response) => {
         if (response.ok) {
@@ -198,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
             successMessage.style.display = 'block';
 
             // Scroll to the top of the success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         } else {
           // Handle error cases here, e.g., display an error message
@@ -208,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => {
         // Handle fetch errors, e.g., display an alert
         alert(error);
-    });
+      });
   }
 
   function initializeForm(formId) {
@@ -233,6 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeForm('kontakt_berufserfahren');
 
 });
+
 
 
 
