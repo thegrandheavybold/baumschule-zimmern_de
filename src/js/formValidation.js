@@ -174,10 +174,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Send the form data using fetch
+// Send the form data using fetch
 fetch(myForm.action, {
   method: myForm.method,
-  headers: { 'Content-Type': 'multipart/form-data' },
-  body: formData, // Remove the new URLSearchParams line
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  body: new URLSearchParams(formData).toString(),
 })
   .then((response) => {
     if (response.ok) {
@@ -210,6 +211,7 @@ fetch(myForm.action, {
     // Handle fetch errors, e.g., display an alert
     alert(error);
   });
+
 
   }
 
