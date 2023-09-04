@@ -5,6 +5,29 @@ document.addEventListener("DOMContentLoaded", function () {
     return emailRegex.test(email);
   }
 
+  // Function to build the email content
+  function buildEmailContent(myForm) {
+    const formData = new FormData(myForm);
+    const contentArray = [];
+
+    // Iterate over form elements
+    for (const [key, value] of formData.entries()) {
+      // Exclude known elements that should not be included in the email content
+      if (key === "EmailContent" || key === "EmailAnsprache" || key === "datenschutz") {
+        continue;
+      }
+
+      // Construct the email content entry
+      const label = myForm.querySelector(`label[for="${key}"]`);
+      const labelText = label ? label.textContent.trim() : key;
+      const formattedEntry = `${labelText}: ${value.trim()}`;
+      contentArray.push(formattedEntry);
+    }
+
+    // Combine all entries into a single string
+    return contentArray.join('\n\n');
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -97,25 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
       myForm.querySelector('label[for="datenschutz"]').classList.remove('invalid');
     }
 
-    // Construct the email content for each field
-    const emailContent = `
-      Anrede: ${getSelectedAnrede()} // Call a function to get the selected Anrede value
-      Vorname: ${myForm.elements.vorname ? myForm.elements.vorname.value.trim() : ''}
-      Nachname: ${myForm.elements.nachname ? myForm.elements.nachname.value.trim() : ''}
-      Name: ${name}
-      E-Mail-Adresse: ${email}
-      Telefon: ${myForm.elements.telefon ? myForm.elements.telefon.value.trim() : ''}
-      Nachricht: ${message}
-      Lebenslauf: ${myForm.elements.lebenslauf ? myForm.elements.lebenslauf.value.trim() : ''}
-      Weitere Dateien: ${myForm.elements.weitereDateien ? myForm.elements.weitereDateien.value.trim() : ''}
-      Datenschutz: ${datenschutzCheckbox.checked ? 'Ja' : 'Nein'}
-    `;
-
-    // Append the email content to the form data with a specific key
-    formData.append('EmailContent', emailContent);
-
-    // ... (Add email content for other fields as needed) ...
-
     // File size validation for "anschreiben" input
     const anschreibenInput = myForm.querySelector('#anschreiben');
     if (anschreibenInput) {
@@ -199,6 +203,25 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
+    // Handle the "Ansprache" checkboxes
+    const anspracheCheckboxes = myForm.querySelectorAll('input[name="Ansprache"]:checked');
+    const selectedAnsprache = Array.from(anspracheCheckboxes).map((checkbox) => {
+      const label = myForm.querySelector(`label[for="${checkbox.id}"]`);
+      return label ? label.textContent.trim() : '';
+    });
+
+    // Construct the "Ansprache" string for the email
+    const anspracheString = `Ansprache: ${selectedAnsprache.join(', ')}`;
+
+    // Append the anspracheString to the form data with a specific key
+    formData.append('EmailAnsprache', anspracheString);
+
+    // Construct the email content
+    const emailContent = buildEmailContent(myForm);
+
+    // Append the email content to the form data with a specific key
+    formData.append('EmailContent', emailContent);
+
     // Send the form data using fetch
     fetch("/", {
       body: formData,
@@ -253,19 +276,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeForm('kontakt_berufserfahren_bewerbung');
   initializeForm('kontakt_berufserfahren');
 });
-
-// Function to get the selected "Anrede" value
-function getSelectedAnrede() {
-  const anspracheCheckboxes = document.querySelectorAll('input[name="Ansprache"]:checked');
-  const selectedAnrede = Array.from(anspracheCheckboxes).map((checkbox) => {
-    const label = document.querySelector(`label[for="${checkbox.id}"]`);
-    return label ? label.textContent.trim() : '';
-  });
-  return selectedAnrede.join(', ');
-}
-
-
-
 
 
 
