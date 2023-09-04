@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = myForm.elements.email ? myForm.elements.email.value.trim() : '';
     const message = myForm.elements.message ? myForm.elements.message.value.trim() : '';
     const datenschutzCheckbox = myForm.querySelector('input[name="datenschutz"]');
+    if (datenschutzCheckbox && datenschutzCheckbox.checked) {
+      formData.append('Datenschutz', 'Datenschutzbestimmungen akzeptiert');
+    }
     const privacyError = myForm.querySelector('.privacy .error-message');
 
     // Check if name is empty (only if the field exists in the form)
@@ -209,12 +212,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Extract the selected value from the radio button group
-    const selectedAnsprache = myForm.querySelector('input[name="ansprache"]:checked');
-    if (selectedAnsprache) {
-      const anspracheValue = selectedAnsprache.value;
-      formData.append('Ansprache', `Ansprache: ${anspracheValue}`);
-    }
+    // Handle the "Ansprache" checkboxes
+    const anspracheCheckboxes = myForm.querySelectorAll('input[name="ansprache"]:checked');
+    const selectedAnsprache = Array.from(anspracheCheckboxes).map((checkbox) => {
+      const label = myForm.querySelector(`label[for="${checkbox.id}"]`);
+      return label ? `"${label.textContent.trim()}"` : '';
+    });
+
+    // Construct the "Ansprache" string for the email
+    const anspracheString = selectedAnsprache.length > 0 ? `Ansprache: ${selectedAnsprache.join(', ')}` : '';
+
+    // Append the anspracheString to the form data with a specific key
+    formData.append('EmailAnsprache', anspracheString);
+
+
 
     if (hasErrors) {
       return;
