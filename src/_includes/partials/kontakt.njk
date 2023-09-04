@@ -13,42 +13,44 @@
 
       <fieldset data="fade-up" class="client_contact">
 
-        <label for="name">Name*
-          <input type="text" id="name" name="name" minlength="2" required/>
-					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
-        </label>
+        <span class="field_half">
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="name" required/>
+          <span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
+        </span>
 
-
-        <label for="email">E-Mail-Adresse*
+        <span class="field_half">
+          <label for="email">E-Mail-Adresse*</label>
           <input type="email" id="email" name="email" required/>
-					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
-        </label>
+          <span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
+        </span>
 
-				<label for="tel">Telefon
+        <span class="field_half">
+          <label for="tel">Telefon</label>
           <input type="tel" id="tel" name="tel" pattern="[0-9]"/>
-        </label>
+        </span>
 
-				<label for="interesse">Ich interessiere mich für ...
+        <span class="field_half">
+          <label for="interesse">Ich interessiere mich für ...</label>
           <select id="interesse" name="interesse">
             <option value="Bitte wählen" disabled selected>Bitte wählen</option>
             <option value="Gartenneubau">Gartenneubau</option>
             <option value="Baumpflege">Baumpflege</option>
-						<option value="Gartenpflege">Gartenpflege</option>
+            <option value="Gartenpflege">Gartenpflege</option>
             <option value="Baumschule">Baumschule</option>
             <option value="Baufelderschließung">Baufelderschließung</option>
             <option value="Idee, Beratung, Planung">Idee, Beratung, Planung</option>
           </select>
-        </label>
+        </span>
 
       </fieldset>
 
 
       <fieldset data="fade-up delay" class="message">
-
-        <label for="message">Nachricht*
-          <textarea id="message" name="message" minlength="2" required></textarea>
-					<span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
-        </label>
+        
+        <label for="message">Nachricht*</label>
+        <textarea id="message" name="message" required></textarea>
+        <span class="error-message">Bitte füllen Sie dieses Formularfeld aus.</span>
 
       </fieldset>
 

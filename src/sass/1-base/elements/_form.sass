@@ -25,7 +25,7 @@ input, textarea, select, input:required
   border-radius: 0px
   appearance: none
 
-label
+.field_half
   display: flex
   flex-direction: column
   width: 48%
@@ -96,12 +96,15 @@ fieldset.client_contact
   label
 
 fieldset.message
+  @include mb-8
   label
     width: 100%
+    text-align: left
 
 fieldset.privacy
   display: flex
   align-items: center
+  @include mb-8
 
   .datenschutz-checkbox
     display: flex
@@ -168,9 +171,10 @@ input[type="checkbox"].radio
 
 span.ansprache
   display: flex
-  align-items: center
+  //align-items: center
   justify-content: flex-start
   flex-wrap: wrap
+  @include mb-8
 
   label
     display: flex
@@ -237,7 +241,7 @@ input[type="file"].fileUploadBtn
     color: $red50
 
 @include s
-  label
+  .field_half
     width: 100%
 
   fieldset.files

@@ -176,6 +176,39 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
+     // Check for the "bewerbung" class to enable validation for additional fields
+    if (myForm.classList.contains('bewerbung')) {
+      // Validate "Vorname" and "Nachname" fields
+      const vorname = myForm.elements.vorname ? myForm.elements.vorname.value.trim() : '';
+      const nachname = myForm.elements.nachname ? myForm.elements.nachname.value.trim() : '';
+
+      if (myForm.elements.vorname && vorname === '') {
+        const vornameError = myForm.querySelector('#vorname + .error-message');
+        vornameError.style.display = 'block';
+        myForm.elements.vorname.classList.add('invalid');
+        hasErrors = true;
+        const vornameLabel = myForm.querySelector('label[for="vorname"]');
+        if (vornameLabel) {
+          vornameLabel.classList.add('invalid');
+        }
+      } else if (myForm.elements.vorname) {
+        myForm.elements.vorname.classList.remove('invalid');
+      }
+
+      if (myForm.elements.nachname && nachname === '') {
+        const nachnameError = myForm.querySelector('#nachname + .error-message');
+        nachnameError.style.display = 'block';
+        myForm.elements.nachname.classList.add('invalid');
+        hasErrors = true;
+        const nachnameLabel = myForm.querySelector('label[for="nachname"]');
+        if (nachnameLabel) {
+          nachnameLabel.classList.add('invalid');
+        }
+      } else if (myForm.elements.nachname) {
+        myForm.elements.nachname.classList.remove('invalid');
+      }
+    }
+
     if (hasErrors) {
       return;
     }

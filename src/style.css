@@ -2607,7 +2607,7 @@ input, textarea, select, input:required {
           appearance: none;
 }
 
-label {
+.field_half {
   display: flex;
   flex-direction: column;
   width: 48%;
@@ -2620,12 +2620,12 @@ label {
   line-height: 150%;
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  label {
+  .field_half {
     margin-bottom: 24px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  label {
+  .field_half {
     margin-bottom: 24px;
   }
 }
@@ -2694,13 +2694,38 @@ fieldset {
   flex-wrap: wrap;
 }
 
+fieldset.message {
+  margin-bottom: 32px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  fieldset.message {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  fieldset.message {
+    margin-bottom: 24px;
+  }
+}
 fieldset.message label {
   width: 100%;
+  text-align: left;
 }
 
 fieldset.privacy {
   display: flex;
   align-items: center;
+  margin-bottom: 32px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  fieldset.privacy {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  fieldset.privacy {
+    margin-bottom: 24px;
+  }
 }
 fieldset.privacy .datenschutz-checkbox {
   display: flex;
@@ -2767,9 +2792,19 @@ input[type=checkbox].radio:checked::before {
 
 span.ansprache {
   display: flex;
-  align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  span.ansprache {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  span.ansprache {
+    margin-bottom: 24px;
+  }
 }
 span.ansprache label {
   display: flex;
@@ -2877,7 +2912,7 @@ input[type=file].fileUploadBtn::file-selector-button {
 }
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  label {
+  .field_half {
     width: 100%;
   }
   fieldset.files ul.fileUpload_fields li span, fieldset.files ul.fileUpload_fields li input {
@@ -6026,7 +6061,7 @@ section.direkterkontakt .wrapper .sctn_content .item_1 span.caption {
 section.direkterkontakt .wrapper .sctn_content .item_2 {
   grid-column: 8/-1;
 }
-section.direkterkontakt .wrapper .sctn_content .item_2 form fieldset label {
+section.direkterkontakt .wrapper .sctn_content .item_2 form fieldset .field_half {
   width: 100%;
 }
 
