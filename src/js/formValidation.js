@@ -10,15 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
 
     const myForm = event.target;
-
-    // Send the form data using fetch, excluding error messages
     const formData = new FormData(myForm);
-    const errorMessages = myForm.querySelectorAll('.error-message');
-    errorMessages.forEach(function (error) {
-      formData.delete(error.getAttribute('for'));
-    });
 
     // Reset error messages and input classes
+    const errorMessages = myForm.querySelectorAll('.error-message');
     errorMessages.forEach(function (error) {
       error.style.display = 'none';
     });
@@ -174,10 +169,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Send the form data using fetch
-    fetch(myForm.action, {
-      method: myForm.method,
-      headers: { 'Content-Type': 'multipart/form-data' },
+    fetch("/", {
       body: formData,
+      method: "POST",
     })
       .then((response) => {
         if (response.ok) {
@@ -210,8 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Handle fetch errors, e.g., display an alert
         alert(error);
       });
-
-
   }
 
   function initializeForm(formId) {
@@ -234,8 +226,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeForm('direkterkontakt_berufserfahrene');
   initializeForm('kontakt_berufserfahren_bewerbung');
   initializeForm('kontakt_berufserfahren');
-
 });
+
 
 
 
