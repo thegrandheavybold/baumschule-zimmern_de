@@ -30,9 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const email = myForm.elements.email ? myForm.elements.email.value.trim() : '';
     const message = myForm.elements.message ? myForm.elements.message.value.trim() : '';
     const datenschutzCheckbox = myForm.querySelector('input[name="datenschutz"]');
-    if (datenschutzCheckbox && datenschutzCheckbox.checked) {
-      formData.append('Datenschutz', 'Datenschutzbestimmungen akzeptiert');
-    }
     const privacyError = myForm.querySelector('.privacy .error-message');
 
     // Check if name is empty (only if the field exists in the form)
@@ -212,19 +209,35 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Handle the "Ansprache" checkboxes
-    const anspracheCheckboxes = myForm.querySelectorAll('input[name="ansprache"]:checked');
-    const selectedAnsprache = Array.from(anspracheCheckboxes).map((checkbox) => {
-      const label = myForm.querySelector(`label[for="${checkbox.id}"]`);
-      return label ? `"${label.textContent.trim()}"` : '';
+    // Function to get the computed style of an element
+    function getComputedStyleValue(element, property) {
+      return window.getComputedStyle(element).getPropertyValue(property);
+    }
+
+    // ...
+
+    // Check for selected "ansprache" value based on label styles
+    const anspracheLabels = myForm.querySelectorAll('.ansprache label');
+    let selectedAnsprache = '';
+
+    anspracheLabels.forEach(function (label) {
+      if (getComputedStyleValue(label, 'checked') === 'true') {
+        selectedAnsprache = label.textContent.trim();
+      }
     });
 
     // Construct the "Ansprache" string for the email
-    const anspracheString = selectedAnsprache.length > 0 ? `Ansprache: ${selectedAnsprache.join(', ')}` : '';
+    const anspracheString = `Ansprache: ${selectedAnsprache}`;
 
     // Append the anspracheString to the form data with a specific key
     formData.append('EmailAnsprache', anspracheString);
 
+    // Check if "datenschutz" label has the "checked" style applied
+    const datenschutzLabel = myForm.querySelector('label[for="datenschutz"]');
+
+    if (getComputedStyleValue(datenschutzLabel, 'checked') === 'true') {
+      formData.append('Datenschutz', 'Datenschutzbestimmungen akzeptiert');
+    }
 
 
     if (hasErrors) {

@@ -5146,6 +5146,7 @@ section.vacancies .wrapper .item_2 .topline span.vacancies_amount {
   display: inline-block;
   color: #FFFFFF;
   margin-right: 8px;
+  display: none;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
