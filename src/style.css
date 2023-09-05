@@ -2914,7 +2914,7 @@ input[type=file].fileUploadBtn::file-selector-button {
   color: #990033;
 }
 
-label[for=datenschutzValue] {
+label.datenschutzValue {
   display: none;
 }
 
