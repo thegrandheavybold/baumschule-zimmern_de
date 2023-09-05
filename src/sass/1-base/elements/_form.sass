@@ -186,7 +186,10 @@ span.ansprache
     margin-right: 32px
     input
       margin: 0 16px 0 0
-  
+
+  label[for="ansprache"], input#ansprache
+    display: none
+
 
 fieldset.files
   ul.fileUpload_fields
@@ -243,7 +246,7 @@ input[type="file"].fileUploadBtn
     border-color: $green50
     color: $red50
 
-label[for="ansprache"], input#ansprache, label[for="datenschutzValue"]
+label[for="datenschutzValue"]
   display: none
 
 @include s
