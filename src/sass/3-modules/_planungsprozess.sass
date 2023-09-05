@@ -11,11 +11,11 @@ section.planungsprozess
 		p
 			@include mb-4
 	.prcss
-		overflow: hidden
+		overflow: scroll
 	ul.phasen
 		display: flex
 		flex-direction: row
-		justify-content: center
+		//justify-content: center
 		width: 100%
 
 		li
@@ -45,11 +45,10 @@ section.planungsprozess
 
 			&:nth-of-type(5)
 				flex-grow: 2
-
 	ul.phasen_stages
 		display: flex
 		flex-direction: row
-		justify-content: center
+		//justify-content: center
 		width: 100%
 
 		li
@@ -77,13 +76,17 @@ section.planungsprozess
 
 			&:nth-of-type(5)
 				flex-grow: 2
-				&::after
-					content: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 5.33317L8 10.6665L2 5.33317" stroke="%23788C8C" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></svg>')
-					display: block
-					position: absolute
-					bottom: -14px
-					right: -14px
-					transform: rotate(-90deg)
+				//&::before
+					//content: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 5.33317L8 10.6665L2 5.33317" stroke="%23788C8C" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></svg>')
+					//display: block
+					//position: absolute
+					//bottom: -14px
+					//right: -14px
+					//transform: rotate(-90deg)
+					//top: 50%
+					//right: 0
+					//transform: translateY(-50%) /* Vertically center the arrow */
+
 	.timeline
 		color: $blue-grey50
 		@include mt-2
@@ -141,3 +144,7 @@ section.planungsprozess
 			height: auto
 			overflow: visible
 			opacity: 1
+
+@include s
+	.phase_detail.frty 
+		width: 60%

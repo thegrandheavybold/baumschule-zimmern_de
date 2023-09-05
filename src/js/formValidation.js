@@ -209,36 +209,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Function to get the computed style of an element
-    function getComputedStyleValue(element, property) {
-      return window.getComputedStyle(element).getPropertyValue(property);
-    }
-
-    // ...
-
-    // Check for selected "ansprache" value based on label styles
-    const anspracheLabels = myForm.querySelectorAll('.ansprache label');
-    let selectedAnsprache = '';
-
-    anspracheLabels.forEach(function (label) {
-      if (getComputedStyleValue(label, 'checked') === 'true') {
-        selectedAnsprache = label.textContent.trim();
-      }
-    });
-
-    // Construct the "Ansprache" string for the email
-    const anspracheString = `Ansprache: ${selectedAnsprache}`;
-
-    // Append the anspracheString to the form data with a specific key
-    formData.append('EmailAnsprache', anspracheString);
-
-    // Check if "datenschutz" label has the "checked" style applied
-    const datenschutzLabel = myForm.querySelector('label[for="datenschutz"]');
-
-    if (getComputedStyleValue(datenschutzLabel, 'checked') === 'true') {
-      formData.append('Datenschutz', 'Datenschutzbestimmungen akzeptiert');
-    }
-
 
     if (hasErrors) {
       return;

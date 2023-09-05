@@ -50,20 +50,19 @@ document.querySelector('.scrollUp').addEventListener('click', function(){
   scrollTo(0, 0);
 });
 
-//Arrow Scroll +150px function
 document.addEventListener('DOMContentLoaded', function() {
   const scrollDown = document.getElementById('scrollDown');
+  const introSection = document.getElementById('intro');
   
-  scrollDown.addEventListener('click', function() {
-    // Calculate the new scroll position and scroll
-    const introSection = document.getElementById('intro');
-    if (introSection) {
+  if (scrollDown && introSection) {
+    scrollDown.addEventListener('click', function() {
+      // Calculate the new scroll position and scroll
       const newPosition = introSection.offsetTop + 15;
       window.scrollTo({
         top: newPosition
       });
-    }
-  });
+    });
+  }
 });
 
 //Fade in when in view Function
@@ -86,13 +85,37 @@ ELs_inViewport.forEach(EL => {
 });
 
 
-//Detail toggle more Content
-//window.addEventListener('click', function () {
-  //const button = document.getElementById('#detail_oc');
-  //const more = document.querySelector('.phase_detail__more');
-  //more.classList.toggle("is_open");
-  //button.classList.toggle("is_open");
-//});
+document.addEventListener('DOMContentLoaded', function() {
+  // Get a reference to the "Detailansicht" span
+  const detailSpan = document.getElementById('detail_oc');
+
+  // Get a reference to the "phase_detail__more" element
+  const detailElement = document.querySelector('.phase_detail__more');
+
+  // Get a reference to the section to scroll to
+  const planungsprozessSection = document.getElementById('planungsprozess');
+
+  // Initialize a variable to track the state (open/closed)
+  let isOpen = false;
+
+  // Check if the "Detailansicht" span and "phase_detail__more" element exist
+  if (detailSpan && detailElement) {
+    // Add a click event listener to the "Detailansicht" span
+    detailSpan.addEventListener('click', function() {
+      // Toggle the state (open/closed)
+      isOpen = !isOpen;
+
+      // Toggle the "is_open" class on the "phase_detail__more" element
+      detailElement.classList.toggle('is_open', isOpen);
+
+      // Check if the state is closed (second click)
+      if (!isOpen && planungsprozessSection) {
+        // Scroll to the top of the "planungsprozess" section
+        planungsprozessSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+});
 
 
 //Import Accordion js
@@ -166,24 +189,6 @@ dimbox.setConfig({
         dimboxContent.appendChild(nav);
     }
 
-import mixitup from 'mixitup';
- 
-var containerEl = document.querySelector('.gllry__content');
-var mixer;
-
-if (containerEl) {
-  mixer = mixitup('.gllry__content', {
-    animation: {
-        effects: 'fade scale(0.7)',
-        easing: 'ease-in-out'
-    },
-    controls: {
-          toggleDefault: 'none',
-          toggleLogic: 'or'
-      }
-  });
-}
-
 // Get the main and footer elements by their ids
 const mainElement = document.querySelector('main');
 const footerElement = document.querySelector('footer');
@@ -206,3 +211,21 @@ const footerElement = document.querySelector('footer');
 
 
 import 'formValidation.js'
+
+import mixitup from 'mixitup';
+ 
+var containerEl = document.querySelector('.gllry__content');
+var mixer;
+
+if (containerEl) {
+  mixer = mixitup('.gllry__content', {
+    animation: {
+        effects: 'fade scale(0.7)',
+        easing: 'ease-in-out'
+    },
+    controls: {
+          toggleDefault: 'none',
+          toggleLogic: 'or'
+      }
+  });
+}

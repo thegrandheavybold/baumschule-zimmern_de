@@ -2123,11 +2123,6 @@ button.swiper-pagination-bullet {
   right: 20px;
   z-index: 1;
 }
-@-moz-document url-prefix() {
-  .gllry__zoom::before {
-    top: -360px;
-  }
-}
 
 .galerie_swiper .swiper-wrapper .gllry__zoom::before {
   top: -360px;
@@ -3472,6 +3467,8 @@ button#menubutton {
   cursor: pointer;
   position: absolute;
   top: -15px;
+  visibility: visible;
+  z-index: 100;
 }
 
 .hamburger {
@@ -3747,13 +3744,13 @@ html.touch .hamburger:hover span, html.touch .hamburger:hover span::before, html
     display: flex;
     position: absolute;
     top: 0;
+    visibility: hidden;
   }
   .menu-button-links button, .menu-button-links button:active, .menu-button-links button:focus, .menu-button-links button:visited, .menu-button-links button:focus-visible, #menubutton {
     margin: 0;
     padding: 0;
     background: none !important;
     border: none !important;
-    z-index: 100;
     position: absolute;
     right: 24px;
     align-self: center;
@@ -5214,12 +5211,11 @@ section.planungsprozess .prozess_intro p {
   margin-bottom: 16px;
 }
 section.planungsprozess .prcss {
-  overflow: hidden;
+  overflow: scroll;
 }
 section.planungsprozess ul.phasen {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   width: 100%;
 }
 section.planungsprozess ul.phasen li {
@@ -5256,7 +5252,6 @@ section.planungsprozess ul.phasen li:nth-of-type(5) {
 section.planungsprozess ul.phasen_stages {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   width: 100%;
 }
 section.planungsprozess ul.phasen_stages li {
@@ -5285,15 +5280,6 @@ section.planungsprozess ul.phasen_stages li:nth-of-type(4) {
 }
 section.planungsprozess ul.phasen_stages li:nth-of-type(5) {
   flex-grow: 2;
-}
-section.planungsprozess ul.phasen_stages li:nth-of-type(5)::after {
-  content: url('data:image/svg+xml,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 5.33317L8 10.6665L2 5.33317" stroke="%23788C8C" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></svg>');
-  display: block;
-  position: absolute;
-  bottom: -14px;
-  right: -14px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
 }
 section.planungsprozess .timeline {
   color: #788C8C;
@@ -5387,6 +5373,11 @@ section.planungsprozess .phase_detail__more.is_open {
   opacity: 1;
 }
 
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+  .phase_detail.frty {
+    width: 60%;
+  }
+}
 /***Gartenplanung */
 section.leistungen_detail, section.benefits {
   background: #FFFFFF;
