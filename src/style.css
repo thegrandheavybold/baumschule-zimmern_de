@@ -2816,7 +2816,7 @@ span.ansprache label {
 span.ansprache label input {
   margin: 0 16px 0 0;
 }
-span.ansprache label[for=ansprache] {
+span.ansprache label[for=ansprache], span.ansprache input#ansprache {
   display: none;
 }
 

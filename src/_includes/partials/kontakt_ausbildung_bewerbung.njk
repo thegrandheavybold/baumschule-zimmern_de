@@ -14,7 +14,9 @@
       <fieldset data="fade-up" class="client_contact">
 
         <span class="ansprache">
+          <input class="radio" type="radio" name="ansprache" id="ansprache" value="Ansprache" />
           <label for="ansprache">Ansprache</label>
+
           <input class="radio" type="radio" name="ansprache" id="frau" value="Frau" />
           <label for="frau">Frau</label>
           
@@ -97,6 +99,8 @@
 			<fieldset data="fade-up" class="privacy">
         <div class="datenschutz-checkbox">
           <input type="checkbox" id="datenschutz" name="datenschutz" required>
+          <input type="hidden" name="datenschutzValue" id="datenschutzValue" value="">
+
           <label for="datenschutz" class="datenschutz-label">Datenschutz</label>
             <p>Ich habe die <a href="/datenschutz" class="link">Datenschutzbestimmungen</a> gelesen und akzeptiere diese.*</p>
             <span class="error-message">Bitte stimmen Sie den Datenschutzbestimmungen zu.</span>

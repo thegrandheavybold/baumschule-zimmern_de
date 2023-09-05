@@ -101,8 +101,11 @@ document.addEventListener("DOMContentLoaded", function () {
         privacyLabel.classList.add("invalid");
       }
     } else {
-      // Set the value of the checkbox to "Datenschutzbestimmungen akzeptiert"
-      datenschutzCheckbox.value = "Datenschutzbestimmungen akzeptiert";
+      // Add a hidden input field with the desired value when the checkbox is checked
+      const datenschutzValueInput = myForm.querySelector('input[name="datenschutzValue"]');
+      if (datenschutzValueInput) {
+        datenschutzValueInput.value = "Datenschutzbestimmungen akzeptiert";
+      }
       privacyError.style.display = "none";
       myForm.querySelector('label[for="datenschutz"]').classList.remove("invalid");
     }
