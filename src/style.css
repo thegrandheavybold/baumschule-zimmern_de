@@ -2816,6 +2816,9 @@ span.ansprache label {
 span.ansprache label input {
   margin: 0 16px 0 0;
 }
+span.ansprache label[for=ansprache] {
+  display: none;
+}
 
 fieldset.files ul.fileUpload_fields {
   width: 100%;
