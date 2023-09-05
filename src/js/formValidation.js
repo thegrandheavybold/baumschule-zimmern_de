@@ -12,182 +12,203 @@ document.addEventListener("DOMContentLoaded", function () {
     const formData = new FormData(myForm);
 
     // Reset error messages and input classes
-    const errorMessages = myForm.querySelectorAll(".error-message");
+    const errorMessages = myForm.querySelectorAll('.error-message');
     errorMessages.forEach(function (error) {
-      error.style.display = "none";
+      error.style.display = 'none';
     });
 
-    const labels = myForm.querySelectorAll("label");
+    const labels = myForm.querySelectorAll('label');
     labels.forEach(function (label) {
-      label.classList.remove("invalid");
+      label.classList.remove('invalid');
     });
 
     // Validation logic
     let hasErrors = false;
 
     // Common fields
-    const name = myForm.elements.name
-      ? myForm.elements.name.value.trim()
-      : "";
-    const email = myForm.elements.email
-      ? myForm.elements.email.value.trim()
-      : "";
-    const message = myForm.elements.message
-      ? myForm.elements.message.value.trim()
-      : "";
-    const datenschutzCheckbox = myForm.querySelector(
-      'input[name="datenschutz"]'
-    );
-    const privacyError = myForm.querySelector(".privacy .error-message");
+    const name = myForm.elements.name ? myForm.elements.name.value.trim() : '';
+    const email = myForm.elements.email ? myForm.elements.email.value.trim() : '';
+    const message = myForm.elements.message ? myForm.elements.message.value.trim() : '';
+    const datenschutzCheckbox = myForm.querySelector('input[name="datenschutz"]');
+    const privacyError = myForm.querySelector('.privacy .error-message');
 
     // Check if name is empty (only if the field exists in the form)
-    if (myForm.elements.name && name === "") {
-      const nameError = myForm.querySelector("#name + .error-message");
-      nameError.style.display = "block";
-      myForm.elements.name.classList.add("invalid");
+    if (myForm.elements.name && name === '') {
+      const nameError = myForm.querySelector('#name + .error-message');
+      nameError.style.display = 'block';
+      myForm.elements.name.classList.add('invalid');
       hasErrors = true;
       const nameLabel = myForm.querySelector('label[for="name"]');
       if (nameLabel) {
-        nameLabel.classList.add("invalid");
+        nameLabel.classList.add('invalid');
       }
     } else if (myForm.elements.name) {
-      myForm.elements.name.classList.remove("invalid");
+      myForm.elements.name.classList.remove('invalid');
     }
 
     // Check if email is empty or invalid (only if the field exists in the form)
-    if (myForm.elements.email && email === "") {
-      const emailError = myForm.querySelector("#email + .error-message");
-      emailError.style.display = "block";
-      myForm.elements.email.classList.add("invalid");
+    if (myForm.elements.email && email === '') {
+      const emailError = myForm.querySelector('#email + .error-message');
+      emailError.style.display = 'block';
+      myForm.elements.email.classList.add('invalid');
       hasErrors = true;
       const emailLabel = myForm.querySelector('label[for="email"]');
       if (emailLabel) {
-        emailLabel.classList.add("invalid");
+        emailLabel.classList.add('invalid');
       }
     } else if (myForm.elements.email && !isValidEmail(email)) {
-      const emailError = myForm.querySelector("#email + .error-message");
-      emailError.textContent = "Bitte geben Sie eine gültige E-Mail-Adresse ein.";
-      emailError.style.display = "block";
-      myForm.elements.email.classList.add("invalid");
+      const emailError = myForm.querySelector('#email + .error-message');
+      emailError.textContent = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.';
+      emailError.style.display = 'block';
+      myForm.elements.email.classList.add('invalid');
       hasErrors = true;
       const emailLabel = myForm.querySelector('label[for="email"]');
       if (emailLabel) {
-        emailLabel.classList.add("invalid");
+        emailLabel.classList.add('invalid');
       }
     } else if (myForm.elements.email) {
-      myForm.elements.email.classList.remove("invalid");
+      myForm.elements.email.classList.remove('invalid');
     }
 
     // Check if message is empty (only if the field exists in the form)
-    if (myForm.elements.message && message === "") {
-      const messageError = myForm.querySelector("#message + .error-message");
-      messageError.style.display = "block";
-      myForm.elements.message.classList.add("invalid");
+    if (myForm.elements.message && message === '') {
+      const messageError = myForm.querySelector('#message + .error-message');
+      messageError.style.display = 'block';
+      myForm.elements.message.classList.add('invalid');
       hasErrors = true;
       const messageLabel = myForm.querySelector('label[for="message"]');
       if (messageLabel) {
-        messageLabel.classList.add("invalid");
+        messageLabel.classList.add('invalid');
       }
     } else if (myForm.elements.message) {
-      myForm.elements.message.classList.remove("invalid");
+      myForm.elements.message.classList.remove('invalid');
     }
 
     // Check if privacy checkbox is checked
     if (!datenschutzCheckbox.checked) {
-      privacyError.style.display = "block";
+      privacyError.style.display = 'block';
       hasErrors = true;
       const privacyLabel = myForm.querySelector('label[for="datenschutz"]');
       if (privacyLabel) {
-        privacyLabel.classList.add("invalid");
+        privacyLabel.classList.add('invalid');
       }
     } else {
-      // Add a hidden input field with the desired value when the checkbox is checked
-      const datenschutzValueInput = myForm.querySelector('input[name="datenschutzValue"]');
-      if (datenschutzValueInput) {
-        datenschutzValueInput.value = "Datenschutzbestimmungen akzeptiert";
-      }
-      privacyError.style.display = "none";
-      myForm.querySelector('label[for="datenschutz"]').classList.remove("invalid");
+      privacyError.style.display = 'none';
+      myForm.querySelector('label[for="datenschutz"]').classList.remove('invalid');
     }
 
     // File size validation for "anschreiben" input
-    const anschreibenInput = myForm.querySelector("#anschreiben");
+    const anschreibenInput = myForm.querySelector('#anschreiben');
     if (anschreibenInput) {
-      const anschreibenError = myForm.querySelector("#anschreiben-error");
-      const anschreibenSizeError = myForm.querySelector("#anschreiben-size-error");
+      const anschreibenError = myForm.querySelector('#anschreiben-error');
+      const anschreibenSizeError = myForm.querySelector('#anschreiben-size-error');
       const files = anschreibenInput.files;
       if (files.length > 0) {
         const maxSizeBytes = 4 * 1024 * 1024; // 4MB
         const fileSizeBytes = files[0].size;
         if (fileSizeBytes > maxSizeBytes) {
-          anschreibenSizeError.style.display = "block";
+          anschreibenSizeError.style.display = 'block';
           hasErrors = true;
-          anschreibenInput.classList.add("invalid");
+          anschreibenInput.classList.add('invalid');
         }
       } else {
-        anschreibenError.style.display = "block";
+        anschreibenError.style.display = 'block';
         hasErrors = true;
-        anschreibenInput.classList.add("invalid");
+        anschreibenInput.classList.add('invalid');
       }
     }
 
     // File size validation for "foto" input
-    const fotoInput = myForm.querySelector("#foto");
+    const fotoInput = myForm.querySelector('#foto');
     if (fotoInput) {
-      const fotoError = myForm.querySelector("#foto-error");
-      const fotoSizeError = myForm.querySelector("#foto-size-error");
+      const fotoError = myForm.querySelector('#foto-error');
+      const fotoSizeError = myForm.querySelector('#foto-size-error');
       const files = fotoInput.files;
       if (files.length > 0) {
         const maxSizeBytes = 4 * 1024 * 1024; // 4MB
         const fileSizeBytes = files[0].size;
         if (fileSizeBytes > maxSizeBytes) {
-          fotoSizeError.style.display = "block";
+          fotoSizeError.style.display = 'block';
           hasErrors = true;
-          fotoInput.classList.add("invalid");
+          fotoInput.classList.add('invalid');
         }
       } else {
-        fotoError.style.display = "block";
+        fotoError.style.display = 'block';
         hasErrors = true;
-        fotoInput.classList.add("invalid");
+        fotoInput.classList.add('invalid');
       }
     }
 
     // File size validation for "lebenslauf" input
-    const lebenslaufInput = myForm.querySelector("#lebenslauf");
+    const lebenslaufInput = myForm.querySelector('#lebenslauf');
     if (lebenslaufInput) {
-      const lebenslaufError = myForm.querySelector("#lebenslauf-error");
-      const lebenslaufSizeError = myForm.querySelector("#lebenslauf-size-error");
+      const lebenslaufError = myForm.querySelector('#lebenslauf-error');
+      const lebenslaufSizeError = myForm.querySelector('#lebenslauf-size-error');
       const files = lebenslaufInput.files;
       if (files.length > 0) {
         const maxSizeBytes = 4 * 1024 * 1024; // 4MB
         const fileSizeBytes = files[0].size;
         if (fileSizeBytes > maxSizeBytes) {
-          lebenslaufSizeError.style.display = "block";
+          lebenslaufSizeError.style.display = 'block';
           hasErrors = true;
-          lebenslaufInput.classList.add("invalid");
+          lebenslaufInput.classList.add('invalid');
         }
       } else {
-        lebenslaufError.style.display = "block";
+        lebenslaufError.style.display = 'block';
         hasErrors = true;
-        lebenslaufInput.classList.add("invalid");
+        lebenslaufInput.classList.add('invalid');
       }
     }
 
     // File size validation for "weitereDateien" input
-    const weitereDateienInput = myForm.querySelector("#weitereDateien");
+    const weitereDateienInput = myForm.querySelector('#weitereDateien');
     if (weitereDateienInput) {
-      const weitereDateienSizeError = myForm.querySelector("#weitereDateien-size-error");
+      const weitereDateienSizeError = myForm.querySelector('#weitereDateien-size-error');
       const files = weitereDateienInput.files;
       if (files.length > 0) {
         const maxSizeBytes = 4 * 1024 * 1024; // 4MB
         const fileSizeBytes = files[0].size;
         if (fileSizeBytes > maxSizeBytes) {
-          weitereDateienSizeError.style.display = "block";
+          weitereDateienSizeError.style.display = 'block';
           hasErrors = true;
-          weitereDateienInput.classList.add("invalid");
+          weitereDateienInput.classList.add('invalid');
         }
       }
     }
+
+     // Check for the "bewerbung" class to enable validation for additional fields
+    if (myForm.classList.contains('bewerbung')) {
+      // Validate "Vorname" and "Nachname" fields
+      const vorname = myForm.elements.vorname ? myForm.elements.vorname.value.trim() : '';
+      const nachname = myForm.elements.nachname ? myForm.elements.nachname.value.trim() : '';
+
+      if (myForm.elements.vorname && vorname === '') {
+        const vornameError = myForm.querySelector('#vorname + .error-message');
+        vornameError.style.display = 'block';
+        myForm.elements.vorname.classList.add('invalid');
+        hasErrors = true;
+        const vornameLabel = myForm.querySelector('label[for="vorname"]');
+        if (vornameLabel) {
+          vornameLabel.classList.add('invalid');
+        }
+      } else if (myForm.elements.vorname) {
+        myForm.elements.vorname.classList.remove('invalid');
+      }
+
+      if (myForm.elements.nachname && nachname === '') {
+        const nachnameError = myForm.querySelector('#nachname + .error-message');
+        nachnameError.style.display = 'block';
+        myForm.elements.nachname.classList.add('invalid');
+        hasErrors = true;
+        const nachnameLabel = myForm.querySelector('label[for="nachname"]');
+        if (nachnameLabel) {
+          nachnameLabel.classList.add('invalid');
+        }
+      } else if (myForm.elements.nachname) {
+        myForm.elements.nachname.classList.remove('invalid');
+      }
+    }
+
 
     if (hasErrors) {
       return;
@@ -201,12 +222,12 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => {
         if (response.ok) {
           // Successfully submitted, hide the form and show success message
-          myForm.style.display = "none";
+          myForm.style.display = 'none';
 
           // Get all previous siblings of myForm and hide them
           let previousSibling = myForm.previousElementSibling;
           while (previousSibling) {
-            previousSibling.style.display = "none";
+            previousSibling.style.display = 'none';
             previousSibling = previousSibling.previousElementSibling;
           }
 
@@ -215,14 +236,14 @@ document.addEventListener("DOMContentLoaded", function () {
           const successMessageId = `success-${formId}`;
           const successMessage = document.getElementById(successMessageId);
           if (successMessage) {
-            successMessage.style.display = "block";
+            successMessage.style.display = 'block';
 
             // Scroll to the top of the success message
-            successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         } else {
           // Handle error cases here, e.g., display an error message
-          throw new Error("Failed to submit the form.");
+          throw new Error('Failed to submit the form.');
         }
       })
       .catch((error) => {
@@ -234,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function initializeForm(formId) {
     const form = document.getElementById(formId);
     if (form) {
-      form.addEventListener("submit", handleSubmit);
+      form.addEventListener('submit', handleSubmit);
     }
     // Optionally, you can add an else clause to handle cases where the form is not present.
     // For example:
@@ -244,13 +265,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Initialize forms with different IDs
-  initializeForm("kontakt_ausbildung_bewerbung");
-  initializeForm("kontakt_ausbildung");
-  initializeForm("kontakt");
-  initializeForm("direkterkontakt_ausbildung");
-  initializeForm("direkterkontakt_berufserfahrene");
-  initializeForm("kontakt_berufserfahren_bewerbung");
-  initializeForm("kontakt_berufserfahren");
+  initializeForm('kontakt_ausbildung_bewerbung');
+  initializeForm('kontakt_ausbildung');
+  initializeForm('kontakt');
+  initializeForm('direkterkontakt_ausbildung');
+  initializeForm('direkterkontakt_berufserfahrene');
+  initializeForm('kontakt_berufserfahren_bewerbung');
+  initializeForm('kontakt_berufserfahren');
 });
 
 

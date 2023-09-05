@@ -2816,9 +2816,6 @@ span.ansprache label {
 span.ansprache label input {
   margin: 0 16px 0 0;
 }
-span.ansprache label[for=ansprache], span.ansprache input#ansprache {
-  display: none;
-}
 
 fieldset.files ul.fileUpload_fields {
   width: 100%;
@@ -2912,6 +2909,10 @@ input[type=file].fileUploadBtn::file-selector-button {
   z-index: 90;
   border-color: #628D33;
   color: #990033;
+}
+
+label[for=ansprache], input#ansprache, label[for=datenschutzValue] {
+  display: none;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
