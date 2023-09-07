@@ -4293,6 +4293,11 @@ footer .footer_bar ul.footer_links li span.scrollUp {
 .ffty {
   height: 50vh !important;
 }
+@media only screen and (max-width: 420px) {
+  .ffty {
+    height: 120vw !important;
+  }
+}
 
 .wrapper .sctn_content {
   text-align: center;
