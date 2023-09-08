@@ -4,137 +4,259 @@
 	cursor: pointer
 	position: relative
 
-//******* Desktop Menu *******//
-@media only screen and (min-width: 1024px)
-	.menu-button-links [role="menu"]
-		//margin: 1rem auto 0
-		display: flex
-		//justify-content: center
+html.no-touch 
+	//******* Desktop Menu *******//
+	@media only screen and (min-width: 1024px)
+		.menu-button-links [role="menu"]
+			//margin: 1rem auto 0
+			display: flex
+			//justify-content: center
 
-	.menu-button-links [role="menuitem"],
-	.menu-button-links [role="separator"]
-		margin: 0
-		padding: 0
-		font-size: 20px
-		@include font_heavy
-		color: $red50
-		&:hover
-			color: $green50
-
-	ul.leistungen_items, ul.karriere_items
-		background: $neutral0
-		position: fixed
-		width: 100vw
-		height: 370px
-		padding: 40px 0
-		//margin-top: 39px
-		transition: opacity ease .7s, translateY ease .4s, margin-top ease 1.4s
-		will-change: opacity, translateY, border-top
-		justify-content: center
-		flex-wrap: wrap
-		align-content: center
-		display: flex
-		visibility: hidden
-		opacity: 0
-		transform: translateY(-600px)
-		z-index: 90
-		left: 0
-		border-top: solid 16px transparent
-		&::before
-			content: ''
-			border-bottom: solid 2px rgba($blue-gray, 0.1)
-			display: block
-			width: 100%
-			position: absolute
-			top: 20px
-			transition: top ease 1.4s
-			will-change: top
-		li
-			display: block
-			width: 194px
-			margin-right: 25px
-			&:last-of-type
-				margin-right: 0
-			a
-				h6
-					color: $red50
-					transition: inherit
-				picture
-					display: block
-					overflow: hidden
-					max-width: 194px
-					max-height: 129px
-					height: 129px
-					margin-bottom: 16px
-					img
-						object-fit: cover
-						height: 100%
-						width: 100%
-						transition: transform ease .7s, opacity ease .7s
-						will-change: transform, opacity
-			&:hover
-				h6
-					color: $green50
-				picture
-					img
-						transform: scale(1.15)
-						opacity: .9
-
-
-		[role="menuitem"],
-		[role="separator"]
+		.menu-button-links [role="menuitem"],
+		.menu-button-links [role="separator"]
 			margin: 0
 			padding: 0
-			display: block
-			color: $red
-			font-size: 32px
+			font-size: 20px
+			@include font_heavy
+			color: $red50
+			&:hover
+				color: $green50
 
-	header.sticky .menu-button-links ul.nav li.nav__item > ul.leistungen_items::before,
-	header.sticky .menu-button-links ul.nav li.nav__item > ul.karriere_items::before
-		top: 10px
+		ul.leistungen_items, ul.karriere_items
+			background: $neutral0
+			position: fixed
+			width: 100vw
+			height: 370px
+			padding: 40px 0
+			//margin-top: 39px
+			transition: opacity ease .7s, translateY ease .4s, margin-top ease 1.4s
+			will-change: opacity, translateY, border-top
+			justify-content: center
+			flex-wrap: wrap
+			align-content: center
+			display: flex
+			visibility: hidden
+			opacity: 0
+			transform: translateY(-600px)
+			z-index: 90
+			left: 0
+			border-top: solid 16px transparent
+			&::before
+				content: ''
+				border-bottom: solid 2px rgba($blue-gray, 0.1)
+				display: block
+				width: 100%
+				position: absolute
+				top: 20px
+				transition: top ease 1.4s
+				will-change: top
+			li
+				display: block
+				width: 194px
+				margin-right: 25px
+				&:last-of-type
+					margin-right: 0
+				a
+					h6
+						color: $red50
+						transition: inherit
+					picture
+						display: block
+						overflow: hidden
+						max-width: 194px
+						max-height: 129px
+						height: 129px
+						margin-bottom: 16px
+						img
+							object-fit: cover
+							height: 100%
+							width: 100%
+							transition: transform ease .7s, opacity ease .7s
+							will-change: transform, opacity
+				&:hover
+					h6
+						color: $green50
+					picture
+						img
+							transform: scale(1.15)
+							opacity: .9
 
-	a.st_lvl__link
-		margin-right: 32px !important
-		@include l
-			margin-right: 16px !important
-		&:last-child
-			margin-right: 0
-		&.active
-			color: $green50
-			span svg.nxt_lvl__arrow
-				stroke: $green50
+
+			[role="menuitem"],
+			[role="separator"]
+				margin: 0
+				padding: 0
+				display: block
+				color: $red
+				font-size: 32px
+
+		header.sticky .menu-button-links ul.nav li.nav__item > ul.leistungen_items::before,
+		header.sticky .menu-button-links ul.nav li.nav__item > ul.karriere_items::before
+			top: 10px
+
+		a.st_lvl__link
+			margin-right: 32px !important
+			@include l
+				margin-right: 16px !important
+			&:last-child
+				margin-right: 0
+			&.active
+				color: $green50
+				span svg.nxt_lvl__arrow
+					stroke: $green50
 
 
-	[role="menuitem"][aria-current="currentpage"], [role="menuitem"][aria-current="active"]
-		color: $green50 !important
-		h6
+		[role="menuitem"][aria-current="currentpage"], [role="menuitem"][aria-current="active"]
 			color: $green50 !important
+			h6
+				color: $green50 !important
 
-	.nxt_lvl svg.nxt_lvl__arrow
-		margin-left: 6px
-		margin-bottom: 1px
-		transition: all ease .7s
-		will-change: all
+		.nxt_lvl svg.nxt_lvl__arrow
+			margin-left: 6px
+			margin-bottom: 1px
+			transition: all ease .7s
+			will-change: all
 
-	.nxt_lvl:hover
-		svg.nxt_lvl__arrow
-			transform: rotate(180deg)
-			stroke: $green50
-			will-change: rotate
+		.nxt_lvl:hover
+			svg.nxt_lvl__arrow
+				transform: rotate(180deg)
+				stroke: $green50
+				will-change: rotate
 
-	.nxt_lvl:hover > .leistungen_items,
-	.nxt_lvl:hover > .karriere_items
-		visibility: visible
-		opacity: 1
-		transform: translateY(0)
+		.nxt_lvl:hover > .leistungen_items,
+		.nxt_lvl:hover > .karriere_items
+			visibility: visible
+			opacity: 1
+			transform: translateY(0)
 
-	.nxt_lvl:hover > a:first-child
-		color: $green50
+		.nxt_lvl:hover > a:first-child
+			color: $green50
 
 
-	.menu-button-links button
-		display: none
-
-	.menu-button-links #menu
-		li.st_lvl__item:first-child
+		.menu-button-links button
 			display: none
+
+		.menu-button-links #menu
+			li.st_lvl__item:first-child
+				display: none
+				
+		#legal
+			display: none
+
+	@media only screen and (max-width: 1023px)
+		.menu-button-links
+			height: 90vh
+			width: 100vw
+			display: flex
+			position: absolute
+			top: 0
+			visibility: hidden
+
+		.menu-button-links button, .menu-button-links button:active, .menu-button-links button:focus, .menu-button-links button:visited, .menu-button-links button:focus-visible, #menubutton
+			margin: 0
+			padding: 0
+			background: none !important
+			border: none !important
+			//z-index: 100
+			position: absolute
+			right: 24px
+			align-self: center
+
+		.menu-button-links [role="menu"]
+			margin-left: auto
+			margin-right:  auto
+			display: flex
+			flex-direction: column
+			align-items: center
+			text-align: center
+			background: $neutral0
+			height: 100%
+			width: 100%
+			overflow-y: scroll
+			transform: translateY(50vw)
+			transition: transform ease .7s, opacity ease .7s
+			will-change: transform, opacity, translate
+
+		.menu-button-links [role="menuitem"],
+		.menu-button-links [role="separator"]
+			margin: 0
+			padding: 0
+			color: $red50
+			font-size: 28px
+			line-height: 34px
+
+		a.st_lvl__link
+			font-size: 29px !important
+			line-height: 120% !important
+
+		svg.nxt_lvl__arrow
+			display: none
+
+
+		ul.nav
+			padding-top: 40px
+			position: relative
+			z-index: 90
+			li.st_lvl__item
+				margin-bottom: 24px
+
+		[aria-expanded="true"] + ul.nav
+			margin-top: 47px
+			transition: margin-top ease 1.4s
+			will-change: margin-top
+			@include pb-60
+
+		header.sticky .header_bar .menu-button-links [aria-expanded="true"] + ul.nav
+			margin-top: 39px
+
+		[aria-expanded="true"] + [role="menu"]
+			opacity: 1
+			visibility: visible
+			transform: translateY(0)
+
+		[aria-expanded="false"] + [role="menu"]
+			opacity: 0
+			visibility: hidden
+
+
+
+
+		ul.leistungen_items, ul.karriere_items
+			display: flex
+			flex-direction: column
+			justify-content: center
+			transition: opacity ease 1s, max-height ease 1.4s
+			overflow: hidden
+			visibility: visible
+			opacity: 1
+			max-height: 100%
+			margin-top: 24px
+			li
+				margin-bottom: 16px
+				a
+					h6
+						color: $red50
+						transition: inherit
+						margin-bottom: 0
+					picture
+						display: none
+
+		.leistungen_items.open, .karriere_items.open
+			visibility: visible
+			opacity: 1
+			max-height: 100%
+			margin-top: 24px
+		
+
+		li#legal
+			display: flex
+			justify-content: space-between
+			@include mt-10
+			a
+				&:nth-child(1)
+					margin-right: 20px
+			h6
+				color: $red50
+
+	.mm__isopen
+		display: none

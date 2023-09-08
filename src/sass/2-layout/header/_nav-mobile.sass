@@ -1,6 +1,5 @@
 //******* Mobile Menu *******//
-
-@media only screen and (max-width: 1023px)
+html.touch 
 	.menu-button-links
 		height: 90vh
 		width: 100vw
@@ -47,7 +46,7 @@
 		line-height: 120% !important
 
 	svg.nxt_lvl__arrow
-		//display: none
+		display: none
 
 
 	ul.nav
@@ -75,18 +74,17 @@
 		opacity: 0
 		visibility: hidden
 
-
-
-
 	ul.leistungen_items, ul.karriere_items
 		display: flex
 		flex-direction: column
 		justify-content: center
 		transition: opacity ease 1s, max-height ease 1.4s
-		opacity: 0
-		max-height: 0
 		overflow: hidden
-		visibility: hidden
+		visibility: visible
+		opacity: 1
+		max-height: 100%
+		margin-top: 24px
+		//transform: translateY(0)
 		li
 			margin-bottom: 16px
 			a
@@ -103,7 +101,7 @@
 		max-height: 100%
 		margin-top: 24px
 
-html.touch 
+
 	li#legal
 		display: flex
 		justify-content: space-between
@@ -113,14 +111,16 @@ html.touch
 				margin-right: 20px
 		h6
 			color: $red50
+
 	[aria-expanded="true"] + [role="menu"]
-		svg.nxt_lvl__arrow 
-			display: none
 		.leistungen_items, .karriere_items
 			visibility: visible
-			opacity: 1
+			opacity: 1 
 			max-height: 100%
 			margin-top: 24px
+			visibility: visible
+			opacity: 1
+	
 	
 	[aria-expanded="false"] + [role="menu"]
 		.leistungen_items, .karriere_items
@@ -139,9 +139,18 @@ html.touch
 		&:active
 			border: none
 			outline: none
-
-	li#legal
+	
+	svg.nxt_lvl__arrow 
 		display: none
+
+	.menu-button-links #menu
+		li.st_lvl__item:first-child
+			display: block !important
+			visibility: visible !important
+			opacity: 1 !important
+
+	.menu-button-links button
+		display: block
 
 	.mm__isopen
 		display: none

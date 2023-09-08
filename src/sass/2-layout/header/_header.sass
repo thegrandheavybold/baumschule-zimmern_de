@@ -102,3 +102,61 @@ header
           display: none
       .badge
         display: none
+
+html.touch 
+  @include xxl
+  .header_aside
+    a.header_aside__phone
+      svg.phone
+        margin-right: 0px !important
+      span
+        display: none
+    .badge
+      margin: 0 64px 0 32px
+
+  @include xl
+    .header_aside
+      a.header_aside__phone
+        svg.phone
+          margin-right: 0px !important
+        span
+          display: none
+      .badge
+        margin: 0 64px 0 32px
+
+
+  @include l
+    .header_aside
+      a.header_aside__phone
+        svg.phone
+          margin-right: 0px !important
+        span
+          display: none
+      .badge
+        margin: 0 64px 0 32px
+        display: block
+  
+  @include s
+    header
+      padding: 16px 0
+      &.sticky
+        padding: 8px 0
+
+      .grd
+        display: flex
+      .header_bar
+        position: absolute
+        width: 100vw
+        left: 0
+        display: block
+
+      .header_aside
+        width: 100%
+        justify-content: flex-end
+        a.header_aside__phone
+          svg.phone
+            margin-right: 64px !important
+          span
+            display: none
+        .badge
+          display: none

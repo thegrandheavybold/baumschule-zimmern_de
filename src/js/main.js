@@ -9,9 +9,11 @@ function is_touch_device() {
 
   if(is_touch_device()) {
     html.classList.add("touch");
+    html.classList.remove("no-touch");
   }
   else {
     html.classList.remove("touch");
+    html.classList.add("no-touch");
   }
 
 import 'navigation.js'
