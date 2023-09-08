@@ -2254,8 +2254,8 @@ button.dimbox-btn-prev {
 }
 
 .dimbox-container.dimbox-gallery .dimbox-content.dimbox-transition-left {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.5s, -webkit-transform 0.5s;
   transition: opacity 0.5s, transform 0.5s;
@@ -2263,8 +2263,8 @@ button.dimbox-btn-prev {
 }
 
 .dimbox-container.dimbox-gallery .dimbox-content.dimbox-transition-right {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
   opacity: 0;
   transition: opacity 0.5s, -webkit-transform 0.5s;
   transition: opacity 0.5s, transform 0.5s;
