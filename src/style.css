@@ -3973,8 +3973,9 @@ html.touch .menu-button-links button, html.touch .menu-button-links button:activ
   padding: 0;
   background: none !important;
   border: none !important;
-  position: absolute;
+  position: fixed;
   right: 24px;
+  top: 33px;
   align-self: center;
 }
 html.touch .menu-button-links [role=menu] {
