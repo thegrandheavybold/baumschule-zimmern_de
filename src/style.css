@@ -3744,7 +3744,6 @@ html.touch .hamburger:hover span, html.touch .hamburger:hover span::before, html
     display: none;
   }
 }
-/*** Mobile Navigation */
 @media only screen and (max-width: 1023px) {
   .menu-button-links {
     height: 90vh;
@@ -3860,6 +3859,7 @@ html.touch .hamburger:hover span, html.touch .hamburger:hover span::before, html
     margin-top: 24px;
   }
 }
+/*** Mobile Navigation */
 html.touch li#legal {
   display: flex;
   justify-content: space-between;
@@ -3896,22 +3896,19 @@ html.touch [aria-expanded=false] + [role=menu] .leistungen_items, html.touch [ar
   max-height: 100%;
   margin-top: 24px;
 }
-
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  #menubutton {
+  html.touch #menubutton {
     right: 20px;
   }
 }
-#menubutton:hover, #menubutton:focus, #menubutton:active {
+html.touch #menubutton:hover, html.touch #menubutton:focus, html.touch #menubutton:active {
   border: none;
   outline: none;
 }
-
-li#legal {
+html.touch li#legal {
   display: none;
 }
-
-.mm__isopen {
+html.touch .mm__isopen {
   display: none;
 }
 

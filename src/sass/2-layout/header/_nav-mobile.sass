@@ -1,5 +1,6 @@
 //******* Mobile Menu *******//
-@media only screen and (max-width: 1023px)
+html.touch 
+//@media only screen and (max-width: 1023px)
 	.menu-button-links
 		height: 90vh
 		width: 100vw
@@ -128,19 +129,19 @@ html.touch
 			max-height: 100%
 			margin-top: 24px
 			
-@include s
+	@include s
+		#menubutton
+			right: 20px
+		
 	#menubutton
-		right: 20px
-	
-#menubutton
-	&:hover,
-	&:focus,
-	&:active
-		border: none
-		outline: none
+		&:hover,
+		&:focus,
+		&:active
+			border: none
+			outline: none
 
-li#legal
-	display: none
+	li#legal
+		display: none
 
-.mm__isopen
-	display: none
+	.mm__isopen
+		display: none
