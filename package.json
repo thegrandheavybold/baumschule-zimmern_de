@@ -23,6 +23,7 @@
     "dimbox": "^1.0.2",
     "gsap": "npm:@gsap/shockingly@^3.11.3",
     "moment": "^2.29.1",
+    "netlify-cms": "^2.8.0",
     "normalize.css": "^8.0.1",
     "require-dir": "^1.2.0",
     "swiper": "^8.3.2"

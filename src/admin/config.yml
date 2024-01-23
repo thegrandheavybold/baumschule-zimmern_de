@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://baumschule-zimmern.de/
+
+media_folder: "src/assets/img/uploads"
+
+public_folder: "/assets/img/uploads"
+
+publish_mode: editorial_workflow
+
+logo_url: "/assets/img/zimmern_logo.png"
+
+collections:
+  - name: "ausbildung"
+    label: "Ausbildung"
+    folder: "src/ausbildung"
+    slug: "{{vorname}}-{{nachname}}"
+    create: true
+    media_library:
+      config:
+        multiple: true
+    fields:
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Filter", name: "filter", widget: "select", options: ["goalie", "forward", "defense"]}
+      - {label: "Portrait", name: "portrait", widget: "image"}
+   
