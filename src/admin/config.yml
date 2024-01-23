@@ -24,7 +24,6 @@ collections:
     slug: "{{ausschreibung-ausbildung}}"
     create: true
     fields:
-      - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Ausschreibung Ausbildung", name: "ausschreibung-ausbildung", widget: "string"}
 
 
@@ -34,5 +33,4 @@ collections:
     slug: "{{ausschreibung-berufserfahrene}}"
     create: true
     fields:
-      - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Ausschreibung Berufserfahrene", name: "ausschreibung-berufserfahrene", widget: "string"}
