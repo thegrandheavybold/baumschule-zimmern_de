@@ -20,7 +20,7 @@ collections:
     create: true
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Ausschreibung", name: "ausschreibung", widget: "string"}
+      - {label: "Ausschreibung Ausbildung", name: "ausschreibung-ausbildung", widget: "string"}
 
 
 collections:
@@ -31,4 +31,4 @@ collections:
     create: true
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Ausschreibung", name: "ausschreibung", widget: "string"}
+      - {label: "Ausschreibung Berufserfahrene", name: "ausschreibung-berufserfahrene", widget: "string"}
