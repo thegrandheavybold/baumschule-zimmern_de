@@ -1,4 +1,4 @@
 {
   "tags": "berufserfahrene",
-  "layout": "layout/berufserfahrene.njk"
+  "layout": "layouts/berufserfahrene.njk"
 }

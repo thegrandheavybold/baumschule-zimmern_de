@@ -5,3 +5,5 @@ dist
 .BridgeSort
 # Local Netlify folder
 .netlify
+.idea
+.vscode

@@ -1,4 +1,4 @@
 {
   "tags": "pausbildung",
-  "layout": "layout/ausbildung.njk"
+  "layout": "layouts/ausbildung.njk"
 }
