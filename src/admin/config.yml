@@ -12,6 +12,11 @@ publish_mode: editorial_workflow
 
 logo_url: "/assets/img/zimmern_logo.png"
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
+
 collections:
   - name: "ausbildung"
     label: "Stellenanzeige Ausbildung"
