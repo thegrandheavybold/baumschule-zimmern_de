@@ -14,15 +14,21 @@ logo_url: "/assets/img/zimmern_logo.png"
 
 collections:
   - name: "ausbildung"
-    label: "Ausbildung"
+    label: "Stellenanzeige Ausbildung"
     folder: "src/ausbildung"
-    slug: "{{vorname}}-{{nachname}}"
+    slug: "{{ ausschreibung }}"
     create: true
-    media_library:
-      config:
-        multiple: true
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
-      - {label: "Filter", name: "filter", widget: "select", options: ["goalie", "forward", "defense"]}
-      - {label: "Portrait", name: "portrait", widget: "image"}
-   
+      - {label: "Ausschreibung", name: "ausschreibung", widget: "string"}
+
+
+   collections:
+  - name: "berufserfahrene"
+    label: "Stellenanzeige Berufserfahrene"
+    folder: "src/berufserfahrene"
+    slug: "{{ ausschreibung }}"
+    create: true
+    fields:
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Ausschreibung", name: "ausschreibung", widget: "string"}
