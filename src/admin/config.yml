@@ -17,6 +17,8 @@ collections:
     label: "Stellenanzeige Ausbildung"
     folder: "src/ausbildung"
     slug: "{{ausschreibung-ausbildung}}"
+      encoding: "ascii"
+      clean_accents: true
     create: true
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
@@ -27,6 +29,8 @@ collections:
     label: "Stellenanzeige Berufserfahrene"
     folder: "src/berufserfahrene"
     slug: "{{ausschreibung-berufserfahrene}}"
+      encoding: "ascii"
+      clean_accents: true
     create: true
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
