@@ -23,7 +23,7 @@ collections:
       - {label: "Ausschreibung", name: "ausschreibung", widget: "string"}
 
 
-   collections:
+collections:
   - name: "berufserfahrene"
     label: "Stellenanzeige Berufserfahrene"
     folder: "src/berufserfahrene"
