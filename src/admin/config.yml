@@ -16,18 +16,17 @@ collections:
   - name: "ausbildung"
     label: "Stellenanzeige Ausbildung"
     folder: "src/ausbildung"
-    slug: "{{ ausschreibung }}"
+    slug: "{{ ausschreibung-ausbildung }}"
     create: true
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Ausschreibung Ausbildung", name: "ausschreibung-ausbildung", widget: "string"}
 
 
-collections:
   - name: "berufserfahrene"
     label: "Stellenanzeige Berufserfahrene"
     folder: "src/berufserfahrene"
-    slug: "{{ ausschreibung }}"
+    slug: "{{ ausschreibung-berufserfahrene }}"
     create: true
     fields:
       - {label: "Slug", name: "slug", widget: "string"}
