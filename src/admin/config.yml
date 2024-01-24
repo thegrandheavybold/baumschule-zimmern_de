@@ -12,25 +12,22 @@ publish_mode: editorial_workflow
 
 logo_url: "/assets/img/zimmern_logo.png"
 
-slug:
-  encoding: "ascii"
-  clean_accents: true
-  sanitize_replacement: "_"
-
 collections:
   - name: "ausbildung"
     label: "Stellenanzeige Ausbildung"
     folder: "src/ausbildung"
-    slug: "{{ausschreibung-ausbildung}}"
+    preview_path: "ausbildung/{{slug}}"
     create: true
     fields:
       - {label: "Ausschreibung Ausbildung", name: "ausschreibung-ausbildung", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
 
 
   - name: "berufserfahrene"
     label: "Stellenanzeige Berufserfahrene"
     folder: "src/berufserfahrene"
-    slug: "{{ausschreibung-berufserfahrene}}"
+    preview_path: "berufserfahrene/{{slug}}"
     create: true
     fields:
       - {label: "Ausschreibung Berufserfahrene", name: "ausschreibung-berufserfahrene", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
