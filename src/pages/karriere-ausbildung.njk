@@ -57,10 +57,14 @@ metaImage: /stages/visual_stage_karriere_ausbildung.jpg
     <div class="item_2">
       <p data="fade-up" class="topline">Wir bilden aktuell aus:</p>
       <ul class="ad_list">
-        <li data="fade-up" class="ad_list__items">
-          <h5>Gärtner (m/w/d) Fachrichtung Garten- und Landschaftsbau</h5>
-          <button class="btn btn_red" onclick="location.href='/karriere-ausbildung-stellenanzeige'" type="button" data="fade-up">Jetzt bewerben</button>
+        
+        {%- for ausbildung in collections.ausbildung -%}
+          <li data="fade-up" class="ad_list__items">
+          <h5>{{ ausbildung.data.ausschreibung_ausbildung }}</h5>
+          <button class="btn btn_red" onclick="location.href='/karriere-ausbildung-ausschreibung/{{ ausbildung.data.slug }}'" type="button" data="fade-up">Jetzt bewerben</button>
         </li>
+        {%- endfor -%}
+
       </ul>
     </div>
 

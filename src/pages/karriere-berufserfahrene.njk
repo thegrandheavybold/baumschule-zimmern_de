@@ -57,22 +57,14 @@ metaImage: /stages/visual_stage_karriere_berufserfahrene.jpg
     <div class="item_2">
       <p data="fade-up" class="topline">Wir suchen aktuell:</p>
       <ul class="ad_list">
-        <li data="fade-up" class="ad_list__items">
-          <h5>Hilfsarbeitskraft im Bereich Garten- und Landschaftsbau (m/w/d)</h5>
-          <button class="btn btn_red" onclick="location.href='/karriere-berufserfahren-stellenanzeige'" type="button" data="fade-up">Jetzt bewerben</button>
+      
+        {%- for berufserfahrene in collections.berufserfahrene -%}
+          <li data="fade-up" class="ad_list__items">
+          <h5>{{ berufserfahrene.data.ausschreibung_berufserfahrene }}</h5>
+          <button class="btn btn_red" onclick="location.href='/karriere-berufserfahrene-ausschreibung/{{ berufserfahrene.data.slug }}'" type="button" data="fade-up">Jetzt bewerben</button>
         </li>
-        <li data="fade-up" class="ad_list__items">
-          <h5>Steinsetzer:in im Bereich Gartenneubau (m/w/d)</h5>
-          <button class="btn btn_red" onclick="location.href='/karriere-berufserfahren-stellenanzeige-2'" type="button" data="fade-up">Jetzt bewerben</button>
-        </li>
-        <li data="fade-up" class="ad_list__items">
-          <h5>Gartenpfleger:in (m/w/d)</h5>
-          <button class="btn btn_red" onclick="location.href='/karriere-berufserfahren-stellenanzeige-3'" type="button" data="fade-up">Jetzt bewerben</button>
-        </li>
-        <li data="fade-up" class="ad_list__items">
-          <h5>Baumpfleger:in (m/w/d)</h5>
-          <button class="btn btn_red" onclick="location.href='/karriere-berufserfahren-stellenanzeige-4'" type="button" data="fade-up">Jetzt bewerben</button>
-        </li>
+        {%- endfor -%}
+        
       </ul>
     </div>
 
