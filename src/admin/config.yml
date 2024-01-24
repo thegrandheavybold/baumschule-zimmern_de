@@ -15,8 +15,9 @@ logo_url: "/assets/img/zimmern_logo.png"
 collections:
   - name: "ausbildung"
     label: "Stellenanzeige Ausbildung"
-    folder: "src/ausbildung"
+    folder: "src/karriere-ausbildung-ausschreibung"
     slug: "{{fields.slug}}"
+    preview_path: karriere-ausbildung-ausschreibung/{{slug}}
     create: true
     fields:
       - {label: "Ausschreibung Ausbildung", name: "ausschreibung_ausbildung", widget: "string"}
@@ -25,8 +26,9 @@ collections:
 
   - name: "berufserfahrene"
     label: "Stellenanzeige Berufserfahrene"
-    folder: "src/berufserfahrene"
+    folder: "src/karriere-berufserfahrene-ausschreibung"
     slug: "{{fields.slug}}"
+    preview_path: karriere-berufserfahrene-ausschreibung/{{slug}}
     create: true
     fields:
       - {label: "Ausschreibung Berufserfahrene", name: "ausschreibung_berufserfahrene", widget: "string"}
