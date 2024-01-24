@@ -16,7 +16,6 @@ collections:
   - name: "ausbildung"
     label: "Stellenanzeige Ausbildung"
     folder: "src/ausbildung"
-    preview_path: "ausbildung/{{slug}}"
     create: true
     fields:
       - {label: "Ausschreibung Ausbildung", name: "ausschreibung_ausbildung", widget: "string"}
@@ -26,7 +25,6 @@ collections:
   - name: "berufserfahrene"
     label: "Stellenanzeige Berufserfahrene"
     folder: "src/berufserfahrene"
-    preview_path: "berufserfahrene/{{slug}}"
     create: true
     fields:
       - {label: "Ausschreibung Berufserfahrene", name: "ausschreibung_berufserfahrene", widget: "string"}
