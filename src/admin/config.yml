@@ -37,19 +37,7 @@ collections:
 
   - name: "projektgalerie"
     label: "Projektgalerie"
-    media_library:
-      config:
-        multiple: true
     fields:
-      - label: "Galerie-Filter"
-        name: "filter"
-        widget: "select"
-        options: ["gartenneubau", "baumpflege", "gartenpflege", "baumschule", "baufelderschliessung", "ideeberatungplanung"]
-      - label: "Galerie Image"
-        name: "galerie-image"
-        widget: "image"
-        choose_url: false
-        media_library:
-          config:
-            multiple: false
+      - {label: "Galerie-Filter", name: "filter", widget: "select", options: ["gartenneubau", "baumpflege", "gartenpflege", "baumschule", "baufelderschliessung", "ideeberatungplanung"]}
+      - {label: "Galerie Image", name: "galerie-image", widget: "image", choose_url: "false"}
 
