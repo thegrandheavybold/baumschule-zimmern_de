@@ -45,9 +45,11 @@ collections:
         name: "filter"
         widget: "select"
         options: ["gartenneubau", "baumpflege", "gartenpflege", "baumschule", "baufelderschliessung", "ideeberatungplanung"]
-      - label: "Next Game"
-        name: "nextgame"
-        file: "src/lore"
-        files:
-          - {label: "Image", name: "image", widget: "image"}
+      - label: "Galerie Image"
+        name: "galerie-image"
+        widget: "image"
+        choose_url: false
+        media_library:
+          config:
+            multiple: false
 
