@@ -46,9 +46,9 @@ collections:
     label: "Projektgalerie"
     delete: false
     files:
-      - label: "Projektgalerie"
-        name: "projektgalerie"
-        file: "src/_data/projektgalerie.json"
+      - label: "Gartenneubau"
+        name: "gartenneubau"
+        file: "src/_data/gartenneubau_gallery.json"
         editor:
           preview: false
         fields:
