@@ -44,10 +44,15 @@ metaImage: /startseite/teaser_startseite_baumpflege.jpg
 
       <ul class="gllry__content grd">
 
+       
+          {%- for gartenneubau in gartenneubau_gallery.images -%}
+
+            <li class="mix gartenneubau">
+              <a href="{{gartenneubau_gallery.url}}" class="gllry__zoom" data-dimbox="gllry_projekte" data-dimbox-caption="">{% picture "{{gartenneubau_gallery.url}}", "Gartenneubau in Bildern – Zimmern Garten- und Landschaftsbau GmbH" %}</a>
+            </li>
+
+          {%- endfor -%}
         
-        <li class="mix {{ projektgalerie.filter }}">
-          <a href="/assets/img/galleries/visual_gallery_gartenneubau_01.jpg" class="gllry__zoom" data-dimbox="gllry_projekte" data-dimbox-caption="">{% picture "/galleries/visual_gallery_gartenneubau_01.jpg", "{{ projektgalerie.filter }} in Bildern – Zimmern Garten- und Landschaftsbau GmbH" %}</a>
-        </li>
 
       </ul>
 
