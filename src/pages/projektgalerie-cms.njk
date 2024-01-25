@@ -1,0 +1,66 @@
+---
+title: Projektgalerie
+permalink: /projektgalerie-cms/
+layout: "layouts/base.njk"
+
+seoTitle: Projektgalerie
+seoDescription: Wir machen viel. Und das zeigen wir Ihnen hier gerne.
+metaImage: /startseite/teaser_startseite_baumpflege.jpg
+---
+<section class="detail_stage lax bg8 ffty">
+
+  <div class="wrapper">
+
+    <div class="opener ffty">
+      <h1>Erfahrung trifft auf Leidenschaft.</h1>
+      <p class="copy_intro">
+        Wir machen viel. Und das zeigen wir Ihnen hier gerne. <br><br>
+        Wenn Sie Fragen zu einem unserer Projekte haben oder mehr wissen wollen, <a class="link" href="">kontaktieren</a> Sie uns einfach. Wir freuen uns von Ihnen zu lesen oder zu hören.
+      </p>
+    </div><!-- .opener -->
+
+  </div><!-- .wrapper -->
+
+</section><!-- .header_stage -->
+
+<section class="sctn gllry projekt_gllry">
+  <div class="wrapper">
+
+    <div class="sctn_content">
+
+      <p class="topline" data="fade-up delay">Galerie-Filter</p>
+
+      <div class="filter_btns">
+        
+        <button class="gllry_filter" type="button" data-toggle="all">Alle Bilder</button>
+        <button class="gllry_filter" type="button" data-toggle=".gartenneubau">Gartenneubau</button>
+        <button class="gllry_filter" type="button" data-toggle=".baumpflege">Baumpflege</button>
+        <button class="gllry_filter" type="button" data-toggle=".gartenpflege">Gartenpflege</button>
+        <button class="gllry_filter" type="button" data-toggle=".baumschule">Baumschule</button>
+        <button class="gllry_filter" type="button" data-toggle=".baufelderschliessung">Baufelderschließung</button>
+        <button class="gllry_filter" type="button" data-toggle=".ideeberatungplanung">Idee, Beratung, Planung</button>
+
+      </div>
+
+      <ul class="gllry__content grd">
+
+        
+        <li class="mix {{ projektgalerie.filter }}">
+          <a href="/assets/img/galleries/visual_gallery_gartenneubau_01.jpg" class="gllry__zoom" data-dimbox="gllry_projekte" data-dimbox-caption="">{% picture "/galleries/visual_gallery_gartenneubau_01.jpg", "{{ projektgalerie.filter }} in Bildern – Zimmern Garten- und Landschaftsbau GmbH" %}</a>
+        </li>
+
+      </ul>
+
+      <!-- <button id="loadmore" class="btn btn_red" onclick="" type="button" data="fade-up">Mehr anzeigen</button> -->
+
+    </div><!-- .sctn_content -->
+
+  </div><!-- .wrapper -->
+</section><!-- .gllry -->
+
+
+
+{% include "partials/kontakt.njk"%}
+
+
+{% include "partials/quicklinks.njk" %}
