@@ -1157,6 +1157,26 @@ template {
   }
 }
 /*** inView Animations */
+/* inViewport */
+[data=fade-up], [data="fade-up delay"] {
+  transition: opacity ease 2s, border-color ease 0.7s, -webkit-transform ease 1s;
+  transition: transform ease 1s, opacity ease 2s, border-color ease 0.7s;
+  transition: transform ease 1s, opacity ease 2s, border-color ease 0.7s, -webkit-transform ease 1s;
+  opacity: 0;
+  -webkit-transform: translateY(3vw);
+          transform: translateY(3vw);
+}
+
+[data=fade-up].is_inview, [data="fade-up delay"].is_inview {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+[data="fade-up delay"] {
+  transition-delay: 0.5s;
+}
+
 /*** Swiper Styles */
 /**
  * Swiper 8.4.7
@@ -2139,10 +2159,10 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column-reverse;
 }
-.dimbox-container a,
-.dimbox-container a:focus,
-.dimbox-container a:active {
+
+.dimbox-container a, .dimbox-container *:focus, .dimbox-container *:active {
   outline: none !important;
+  outline-style: none !important;
 }
 
 .dimbox-container::before {
@@ -2452,13 +2472,6 @@ a.link.wht {
   background: linear-gradient(#FFFFFF, #FFFFFF) right bottom no-repeat;
   background-size: 100% 2px;
   transition: all 0.7s;
-}
-
-*:hover,
-*:focus,
-*:active {
-  border: none !important;
-  outline: none !important;
 }
 
 /*** lists */
