@@ -27,7 +27,11 @@
 .dimbox-container
     display: flex
     flex-direction: column-reverse
-
+    a,
+    a:focus,
+    a:active
+        outline: none !important
+            
 .dimbox-container::before
     background: $blue-grey70
     opacity: 1
@@ -63,6 +67,7 @@ button.dimbox-btn-prev
 .dimbox-content
     max-width: 936px
     max-height: 702px
+    height: 100%
     display: flex
     flex-wrap: wrap
     order: 1

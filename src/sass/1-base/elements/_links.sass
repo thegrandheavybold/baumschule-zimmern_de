@@ -7,6 +7,7 @@ a
 	cursor: pointer
 	position: relative
 	z-index: 90
+	outline: 0 !important
 
 	
 	&:visited
@@ -18,7 +19,7 @@ a
 	&:active
 		color: $red50
 		border: none
-		outline: none
+		outline: 0 !important
 
 	&:hover,
 	&:active
@@ -49,3 +50,10 @@ a.link.wht
 	background: linear-gradient($neutral0, $neutral0) right bottom no-repeat
 	background-size: 100% 2px
 	transition: all .7s
+
+
+*:hover,
+*:focus,
+*:active
+	border: none !important
+	outline: none !important

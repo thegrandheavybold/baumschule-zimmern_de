@@ -177,19 +177,6 @@ dimbox.setConfig({
     svgPrevNextButton: '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="62" height="62" stroke-width="2"/><path d="M28 23L36 32L28 41" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></svg>'
 });
 
-    function reorder() {
-        let nav = document.createElement('div');
-        let prevBtn= document.querySelector('.dimbox-btn-prev');
-        let nextBtn= document.querySelector('.dimbox-btn-next');
-        let dimboxContent= document.querySelector('.dimbox-content');
-
-        nav.className = 'dimbox-navigation';
-
-
-        nav.appendChild(prevBtn);
-        nav.appendChild(nextBtn);
-        dimboxContent.appendChild(nav);
-    }
 
 // Get the main and footer elements by their ids
 const mainElement = document.querySelector('main');

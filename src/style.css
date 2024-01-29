@@ -2139,6 +2139,11 @@ button.swiper-pagination-bullet {
   display: flex;
   flex-direction: column-reverse;
 }
+.dimbox-container a,
+.dimbox-container a:focus,
+.dimbox-container a:active {
+  outline: none !important;
+}
 
 .dimbox-container::before {
   background: #3B4D4D;
@@ -2182,6 +2187,7 @@ button.dimbox-btn-prev {
 .dimbox-content {
   max-width: 936px;
   max-height: 702px;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   order: 1;
@@ -2420,11 +2426,12 @@ a {
   cursor: pointer;
   position: relative;
   z-index: 90;
+  outline: 0 !important;
 }
 a:hover, a:focus, a:active {
   color: #990033;
   border: none;
-  outline: none;
+  outline: 0 !important;
 }
 a:hover, a:active {
   outline: 0;
@@ -2445,6 +2452,13 @@ a.link.wht {
   background: linear-gradient(#FFFFFF, #FFFFFF) right bottom no-repeat;
   background-size: 100% 2px;
   transition: all 0.7s;
+}
+
+*:hover,
+*:focus,
+*:active {
+  border: none !important;
+  outline: none !important;
 }
 
 /*** lists */
