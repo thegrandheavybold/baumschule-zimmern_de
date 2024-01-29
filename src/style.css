@@ -1835,6 +1835,13 @@ button.swiper-pagination-bullet {
   background-color: #fff;
 }
 
+.dimbox-container *:active,
+.dimbox-container *:focus,
+.dimbox-container *:focus-visible {
+  outline-style: dotted;
+  outline-offset: 4px;
+}
+
 .dimbox-loader {
   position: fixed;
   top: 50%;
@@ -2130,7 +2137,7 @@ button.swiper-pagination-bullet {
 
 .dimbox-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .dimbox-container::before {
@@ -2170,10 +2177,6 @@ button.dimbox-btn-next, button.dimbox-btn-prev {
 button.dimbox-btn-prev {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
-}
-
-button.dimbox-btn-prev {
-  margin-right: 32px;
 }
 
 .dimbox-content {
@@ -2219,27 +2222,26 @@ button.dimbox-btn-prev {
   flex-wrap: nowrap;
 }
 
-.dimbox-navigation {
+.gallery-navigation {
   position: relative;
   height: auto;
   width: 100%;
   margin-top: 24px;
-  order: 2;
   display: flex;
   max-width: 936px;
   justify-content: flex-end;
 }
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-  .dimbox-navigation {
+  .gallery-navigation {
     margin-top: 16px;
   }
 }
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-  .dimbox-navigation {
+  .gallery-navigation {
     margin-top: 16px;
   }
 }
-.dimbox-navigation .dimbox-btns {
+.gallery-navigation button {
   position: relative;
   order: 2;
   margin-left: 32px;

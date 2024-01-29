@@ -43,14 +43,14 @@ collections:
         widget: string
 
   - name: "projektgalerie"
-    label: "Projektgalerie"
+    label: "Projektgalerien"
     delete: false
+    editor:
+      preview: false
     files:
       - label: "Gartenneubau"
         name: "gartenneubau"
         file: "src/_data/gartenneubau_gallery.json"
-        editor:
-          preview: false
         fields:
           - label: "Images"
             name: "images"
@@ -58,5 +58,71 @@ collections:
             create: true
             fields:
               - label: "Image"
-                name: "url"
+                name: "image_url"
                 widget: "image"
+                choose_url: false
+      - label: "Baumpflege"
+        name: "baumpflege"
+        file: "src/_data/baumpflege_gallery.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            create: true
+            fields:
+              - label: "Image"
+                name: "image_url"
+                widget: "image"
+                choose_url: false
+      - label: "Gartenpflege"
+        name: "gartenpflege"
+        file: "src/_data/gartenpflege_gallery.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            create: true
+            fields:
+              - label: "Image"
+                name: "image_url"
+                widget: "image"
+                choose_url: false
+      - label: "Baumschule"
+        name: "baumschule"
+        file: "src/_data/baumschule_gallery.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            create: true
+            fields:
+              - label: "Image"
+                name: "image_url"
+                widget: "image"
+                choose_url: false
+      - label: "Baufelderschliessung"
+        name: "baufelderschliessung"
+        file: "src/_data/baufelderschliessung_gallery.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            create: true
+            fields:
+              - label: "Image"
+                name: "image_url"
+                widget: "image"
+                choose_url: false
+      - label: "Idee, Beratung, Planung"
+        name: "ideeberatungplanung"
+        file: "src/_data/ideeberatungplanung_gallery.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            create: true
+            fields:
+              - label: "Image"
+                name: "image_url"
+                widget: "image"
+                choose_url: false

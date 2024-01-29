@@ -26,7 +26,7 @@
 
 .dimbox-container
     display: flex
-    flex-direction: column
+    flex-direction: column-reverse
 
 .dimbox-container::before
     background: $blue-grey70
@@ -58,7 +58,7 @@ button.dimbox-btn-prev
     transform: rotate(180deg)
     
 button.dimbox-btn-prev
-    margin-right: 32px
+    //margin-right: 32px
 
 .dimbox-content
     max-width: 936px
@@ -87,17 +87,17 @@ button.dimbox-btn-prev
     display: flex
     flex-wrap: nowrap
 
-.dimbox-navigation
+.gallery-navigation
     position: relative
     height: auto
     width: 100%
     @include mt-6
-    order: 2
+    //order: 2
     display: flex
     max-width: 936px
     justify-content: flex-end
 
-    .dimbox-btns
+    button
         position: relative
         order: 2
         margin-left: 32px
