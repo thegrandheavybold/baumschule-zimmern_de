@@ -2,7 +2,7 @@
 title: Karriere Ausbildung Stellenanzeige
 layout: "layouts/base.njk"
 
-seoTitle: Karriere Ausbildung Stellenanzeige - {{ ausbildung.ausschreibung_ausbildung }}
+seoTitle: Karriere Ausbildung Stellenanzeige - {{ ausschreibung_ausbildung }}
 seoDescription: Mit einer Ausbildung bei Zimmern legst Du den Grundstein für Dein Berufsleben. Du lernst Schritt für Schritt alles, was für Deinen zukünftigen Beruf relevant ist.
 metaImage: /stages/visual_stage_karriere_ausbildung_stellenanzeigen.jpg
 ---
@@ -12,7 +12,7 @@ metaImage: /stages/visual_stage_karriere_ausbildung_stellenanzeigen.jpg
 
     <div class="opener">
       <p data="fade-up" class="topline wht">Ausbildung</p>
-      <h1 data="fade-up delay" class="wht">{{ ausbildung.ausschreibung_ausbildung }}</h1>
+      <h1 data="fade-up delay" class="wht">{{ ausschreibung_ausbildung }}</h1>
 
       <a id="scrollDown" class="scroll_down">
         <svg class="scroll__arrow" alt="Scroll to down">
@@ -37,7 +37,7 @@ metaImage: /stages/visual_stage_karriere_ausbildung_stellenanzeigen.jpg
 
 
       <p class="copy_intro" data="fade-up delay">
-        {{ ausbildung.infotext }}
+        {{ infotext }}
       </p>
 
     </div><!-- .intro_content -->
@@ -57,16 +57,16 @@ metaImage: /stages/visual_stage_karriere_ausbildung_stellenanzeigen.jpg
 
       <ul data="fade-up delay" class="leistungen_detail__content grd">
         <li>
-          {{ ausbildung.taetigkeiten.one }}
+          {{ taetigkeiten.one }}
         </li>
         <li>
-          {{ ausbildung.taetigkeiten.two }}
+          {{ taetigkeiten.two }}
         </li>
         <li>
-          {{ ausbildung.taetigkeiten.three }}
+          {{ taetigkeiten.three }}
         </li>
         <li>
-          {{ ausbildung.taetigkeiten.four }}
+          {{ taetigkeiten.four }}
         </li>
       </ul>
 
@@ -78,16 +78,16 @@ metaImage: /stages/visual_stage_karriere_ausbildung_stellenanzeigen.jpg
 
       <ul data="fade-up delay" class="leistungen_detail__content grd">
         <li>
-          {{ ausbildung.waswirbieten.one }}
+          {{ waswirbieten.one }}
         </li>
         <li>
-          {{ ausbildung.waswirbieten.two }}
+          {{ waswirbieten.two }}
         </li>
         <li>
-          {{ ausbildung.waswirbieten.three }}
+          {{ waswirbieten.three }}
         </li>
         <li>
-          {{ ausbildung.waswirbieten.four }}
+          {{ waswirbieten.four }}
         </li>
       </ul>
 
