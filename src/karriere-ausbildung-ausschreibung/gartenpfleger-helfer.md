@@ -1,10 +1,11 @@
 ---
-ausschreibung_ausbildung: Gartenpflege Helfer
-slug: gartenpflege-helfer
-infotext: Mit einer Ausbildung als {{ausschreibung_ausbildung}} bei Zimmern
-  legst Du den Grundstein für Dein Berufsleben. Von Beginn an bist Du ein
-  vollwertiges Teammitglied und lernst Schritt für Schritt alles, was für Deinen
-  zukünftigen Beruf relevant ist.
+ausschreibung_ausbildung: Gartenpfleger Helfer
+slug: gartenpfleger-helfer
+infotext: >-
+  Mit einer Ausbildung als Gartenpfleger Helfer bei Zimmern legst Du den
+  Grundstein für Dein Berufsleben. \
+
+  Von Beginn an bist Du ein vollwertiges Teammitglied und lernst Schritt für Schritt alles, was für Deinen zukünftigen Beruf relevant ist.
 taetigkeiten:
   one: Teilnahme an Berufsschule und Lehrgängen
   two: Erlernen von Kenntnissen im Neubau, Botanik, Pflanzungen und Pflege
