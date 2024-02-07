@@ -1,4 +1,4 @@
 ---
 ausschreibung_ausbildung: Gärtnerhilfe (m/w/d) Fachrichtung Garten- und Landschaftsbau
-slug: gaertnerhilfe-garten-landschaftsbau
+slug: gartenhilfe_garten_landschaftsbau
 ---
