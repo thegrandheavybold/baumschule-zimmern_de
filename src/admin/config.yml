@@ -43,18 +43,22 @@ collections:
             name: one
             widget: string
             default: "Teilnahme an Berufsschule und Lehrgängen"
+            required: false
           - label: Two
             name: two
             widget: string
             default: "Erlernen von Kenntnissen im Neubau, Botanik, Pflanzungen und Pflege"
+            required: false
           - label: Three
             name: three
             widget: string
             default: "Wiederholungen und Aufgaben der Ausbildung mit der/dem Ausbilder*in zusammen"
+            required: false
           - label: Four
             name: four
             widget: string
             default: "Bedienen von Maschinen"
+            required: false
       
       - label: Was wir Dir bieten
         name: waswirbieten
@@ -64,18 +68,22 @@ collections:
             name: one
             widget: string
             default: "Du arbeitest mit modernen Maschinen und Geräten – von klein bis groß"
+            required: false
           - label: Two
             name: two
             widget: string
             default: "Du arbeitest in einem Team, das Dir stets zur Seite steht – so wie Du dem Team"
+            required: false
           - label: Three
             name: three
             widget: string
             default: "Du arbeitest sowohl im Gartenneubau, als auch im Bereich der Pflanzenkunde in unserer direkt anliegenden Baumschule"
+            required: false
           - label: Four
             name: four
             widget: string
             default: "Du profitierst von jahrelange Erfahrung als Ausbildungsbetrieb"
+            required: false
 
 
         
