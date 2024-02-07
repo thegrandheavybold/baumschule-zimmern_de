@@ -3,7 +3,8 @@ ausschreibung_ausbildung: Baumpfleger
 slug: baumpfleger
 infotext: >-
   Mit einer Ausbildung als Baumpfleger bei Zimmern legst Du den Grundstein für
-  Dein Berufsleben. \
+  Dein Berufsleben. 
+
 
   Von Beginn an bist Du ein vollwertiges Teammitglied und lernst Schritt für Schritt alles, was für Deinen zukünftigen Beruf relevant ist.
 taetigkeiten:
