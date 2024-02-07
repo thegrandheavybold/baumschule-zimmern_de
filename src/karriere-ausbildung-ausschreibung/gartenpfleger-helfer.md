@@ -10,7 +10,7 @@ taetigkeiten:
   one: Teilnahme an Berufsschule und Lehrgängen
   two: Erlernen von Kenntnissen im Neubau, Botanik, Pflanzungen und Pflege
   three: Wiederholungen und Aufgaben der Ausbildung mit der/dem Ausbilder*in zusammen
-  four: Bedienen von Maschinen
+  four: ""
 waswirbieten:
   one: Du arbeitest mit modernen Maschinen und Geräten – von klein bis groß
   two: Du arbeitest in einem Team, das Dir stets zur Seite steht – so wie Du dem
