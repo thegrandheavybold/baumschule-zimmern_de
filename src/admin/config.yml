@@ -9,11 +9,10 @@ media_folder: "src/assets/img/galleries"
 public_folder: "/assets/img/galleries"
 
 publish_mode: editorial_workflow
-
-logo_url: "/assets/img/zimmern_logo.png"
-
 editor:
   preview: false
+
+logo_url: "/assets/img/zimmern_logo.png"
 
 collections:
   - name: "ausbildung"
@@ -33,7 +32,7 @@ collections:
       
       - label: Info Text
         name: infotext
-        widget: text
+        widget: markdown
         default: Mit einer Ausbildung als {{ausschreibung_ausbildung}} bei Zimmern legst Du den Grundstein für Dein Berufsleben. Von Beginn an bist Du ein vollwertiges Teammitglied und lernst Schritt für Schritt alles, was für Deinen zukünftigen Beruf relevant ist.
       
       - label: Deine Tätigkeiten
