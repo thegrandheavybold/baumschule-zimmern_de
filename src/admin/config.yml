@@ -12,6 +12,9 @@ publish_mode: editorial_workflow
 
 logo_url: "/assets/img/zimmern_logo.png"
 
+editor:
+  preview: false
+
 collections:
   - name: "ausbildung"
     label: "Stellenanzeige Ausbildung"
@@ -23,9 +26,61 @@ collections:
       - label: Ausschreibung Ausbildung
         name: ausschreibung_ausbildung
         widget: string
+      
       - label: Slug
         name: slug
         widget: string
+      
+      - label: Info Text
+        name: infotext
+        widget: text
+        default: Mit einer Ausbildung als {{ausschreibung_ausbildung}} bei Zimmern legst Du den Grundstein für Dein Berufsleben. Von Beginn an bist Du ein vollwertiges Teammitglied und lernst Schritt für Schritt alles, was für Deinen zukünftigen Beruf relevant ist.
+      
+      - label: Deine Tätigkeiten
+        name: taetigkeiten
+        widget: object
+        fields:
+          - label: One
+            name: one
+            widget: string
+            default: "Teilnahme an Berufsschule und Lehrgängen"
+          - label: Two
+            name: two
+            widget: string
+            default: "Erlernen von Kenntnissen im Neubau, Botanik, Pflanzungen und Pflege"
+          - label: Three
+            name: three
+            widget: string
+            default: "Wiederholungen und Aufgaben der Ausbildung mit der/dem Ausbilder*in zusammen"
+          - label: Four
+            name: four
+            widget: string
+            default: "Bedienen von Maschinen"
+      
+      - label: Was wir Dir bieten
+        name: waswirbieten
+        widget: object
+        fields:
+          - label: One
+            name: one
+            widget: string
+            default: "Du arbeitest mit modernen Maschinen und Geräten – von klein bis groß"
+          - label: Two
+            name: two
+            widget: string
+            default: "Du arbeitest in einem Team, das Dir stets zur Seite steht – so wie Du dem Team"
+          - label: Three
+            name: three
+            widget: string
+            default: "Du arbeitest sowohl im Gartenneubau, als auch im Bereich der Pflanzenkunde in unserer direkt anliegenden Baumschule"
+          - label: Four
+            name: four
+            widget: string
+            default: "Du profitierst von jahrelange Erfahrung als Ausbildungsbetrieb"
+
+
+        
+
 
 
   - name: "berufserfahrene"
