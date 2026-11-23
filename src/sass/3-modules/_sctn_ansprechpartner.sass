@@ -10,8 +10,6 @@ ul.ansprechpartner
 			align-items: center
 			flex-wrap: nowrap
 			width: 33.33%
-			&.person--without-photo
-				justify-content: center
 			span.profile
 				height: 160px
 				width: 160px
@@ -19,6 +17,8 @@ ul.ansprechpartner
 				display: block
 				background: $blue-grey40
 				margin-bottom: 24px
+				&--placeholder
+					overflow: hidden
 
 		p.name
 			@include font_heavy

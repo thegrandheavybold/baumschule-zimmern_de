@@ -4,3 +4,5 @@ src/assets/img/historie/** filter=lfs diff=lfs merge=lfs -text
 src/assets/img/karriere/** filter=lfs diff=lfs merge=lfs -text
 src/assets/img/stages/** filter=lfs diff=lfs merge=lfs -text
 src/assets/img/startseite/** filter=lfs diff=lfs merge=lfs -text
+src/assets/img/portraits/platzhalter_mann.jpg -filter -diff -merge -text
+src/assets/img/**/visual_historie_zimmern_2023_charlotte.jpg -filter -diff -merge -text

@@ -5728,8 +5728,8 @@ ul.ansprechpartner li {
   flex-wrap: nowrap;
   width: 33.33%;
 }
-ul.ansprechpartner li.person--without-photo {
-  justify-content: center;
+ul.ansprechpartner li span.profile--placeholder {
+  overflow: hidden;
 }
 ul.ansprechpartner li span.profile {
   height: 160px;
